@@ -10,24 +10,46 @@ import UIKit
 
 
 
-class HomeViewController: UIViewController {
+class HomeViewController: UIViewController,UIScrollViewDelegate {
     
-    var menuList = ["찜","최근본상품","내피드","내폰시세","우리동네","친구초대","전체메뉴","에르메스","여성가방","스니커즈","스타굿즈","캠핑","골프","피규어/인형"]
+    let menuList = ["찜","에르메스","최근본상품","여성가방","내피드","스니커즈","내폰시세","스타굿즈","우리동네","캠핑","친구초대","골프","전체메뉴","피규어/인형"]
     
-//    @IBAction func whole_menu(_ sender: Any) {
-//        let storyboard = UIStoryboard(name: "Menu", bundle: nil)
-//        let vc = storyboard.instantiateViewController(withIdentifier: "MenuViewController")
-//         self.present(vc, animated: true, completion: nil)
-//    }
+    let menuImg = ["menu_heart","menu_herm","menu_his","menu_bag","menu_feed","menu_sne","menu_phone","menu_goods","menu_loca","menu_camp","menu_friend","menu_golf","menu_whole","menu_doll"]
+    
+    let sectionInsets = UIEdgeInsets(top: 10, left: 10, bottom: 10, right: 10)
+
+
     
     @IBOutlet weak var Scroll_image: UIScrollView!
     
-    var images = ["a"]
+    var images = ["IMG_9686","IMG_9688"]
     var imageViews = [UIImageView]()
+    
+    private func addContentScrollView() {
+           for i in 0..<images.count {
+               let imageView = UIImageView()
+               let xPos = Scroll_image.frame.width * CGFloat(i)
+               imageView.frame = CGRect(x: xPos, y: 0, width: Scroll_image.bounds.width, height: Scroll_image.bounds.height)
+               imageView.image = UIImage(named: images[i])
+               
+               
+               Scroll_image.addSubview(imageView)
+               Scroll_image.contentSize.width = imageView.frame.width * CGFloat(i + 1)
+           }
+       }
+    
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+            let value = scrollView.contentOffset.x/scrollView.frame.size.width
+//            setPageControlSelectedPage(currentPage: Int(round(value)))
+        }
+    
+    
     @IBOutlet weak var MenuCollectionView: UICollectionView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        Scroll_image.delegate = self
+        addContentScrollView()
         
     }
     
@@ -45,6 +67,7 @@ class menuCollectionViewCell: UICollectionViewCell {
 
     override func awakeFromNib(){
         super.awakeFromNib()
+        
    
     }
     
@@ -53,6 +76,9 @@ class menuCollectionViewCell: UICollectionViewCell {
 
 extension HomeViewController: UICollectionViewDataSource,
                                  UICollectionViewDelegate,UICollectionViewDelegateFlowLayout{
+    
+   
+
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return 14
 
@@ -63,14 +89,38 @@ extension HomeViewController: UICollectionViewDataSource,
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as! menuCollectionViewCell
         
         cell.menuCell_label.text = menuList[indexPath.row]
+        cell.menuCell_img.image = UIImage(named: menuImg[indexPath.row])
 
-//
-//        let url = URL(string:collectData[indexPath.row][3])
-//        let data = try! Data(contentsOf: url!)
-//        cell.album.image = UIImage(data: data)
-//
         
         return cell
         
     }
+    
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+             let width = collectionView.frame.width
+             let height = collectionView.frame.height
+             let itemsPerRow: CGFloat = 7
+             let widthPadding = sectionInsets.left * (itemsPerRow + 1)
+             let itemsPerColumn: CGFloat = 2
+             let heightPadding = sectionInsets.top * (itemsPerColumn + 1)
+             let cellWidth = (width-widthPadding) / 4
+             let cellHeight = (height-heightPadding) / itemsPerColumn
+             
+             return CGSize(width: cellWidth, height: cellHeight)
+             
+         }
+         
+         func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
+             return sectionInsets
+         }
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
+            return 1
+        }
+    
+         func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
+             return sectionInsets.left
+         }
+    
+    
 }
