@@ -1,0 +1,6 @@
+framework module Pods_bunjangTests {
+  umbrella header "Pods-bunjangTests-umbrella.h"
+
+  export *
+  module * { export * }
+}

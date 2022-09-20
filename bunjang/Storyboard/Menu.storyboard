@@ -7,7 +7,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Item-->
+        <!--Menu View Controller-->
         <scene sceneID="s0d-6b-0kx">
             <objects>
                 <viewController storyboardIdentifier="MenuViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Y6W-OH-hqX" customClass="MenuViewController" customModule="bunjang" customModuleProvider="target" sceneMemberID="viewController">
@@ -22,7 +22,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IHK-ki-0RB">
-                                <rect key="frame" x="340" y="44" width="54" height="31"/>
+                                <rect key="frame" x="340" y="54" width="54" height="31"/>
                                 <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" image="xmark" catalog="system"/>
@@ -34,14 +34,14 @@
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="IHK-ki-0RB" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" constant="10" id="DYj-KS-DLR"/>
                             <constraint firstItem="IHK-ki-0RB" firstAttribute="trailing" secondItem="vDu-zF-Fre" secondAttribute="trailing" constant="-20" id="O7J-VK-mpf"/>
                             <constraint firstItem="EAd-d3-CXP" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="20" id="XKu-IY-N6U"/>
                             <constraint firstItem="IHK-ki-0RB" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="340" id="Zip-lJ-Ftm"/>
-                            <constraint firstItem="IHK-ki-0RB" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" id="aY1-xZ-SLH"/>
+                            <constraint firstItem="IHK-ki-0RB" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" constant="10" id="aY1-xZ-SLH"/>
                             <constraint firstItem="EAd-d3-CXP" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" constant="61" id="f9i-Gg-Qg7"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item" id="3kK-Kv-y6a"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

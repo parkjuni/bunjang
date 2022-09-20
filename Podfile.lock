@@ -1,0 +1,71 @@
+PODS:
+  - Alamofire (5.6.2)
+  - KakaoSDK (2.11.2):
+    - KakaoSDKAuth (= 2.11.2)
+    - KakaoSDKCommon (= 2.11.2)
+    - KakaoSDKFriend (= 2.11.2)
+    - KakaoSDKNavi (= 2.11.2)
+    - KakaoSDKShare (= 2.11.2)
+    - KakaoSDKStory (= 2.11.2)
+    - KakaoSDKTalk (= 2.11.2)
+    - KakaoSDKTemplate (= 2.11.2)
+    - KakaoSDKUser (= 2.11.2)
+  - KakaoSDKAuth (2.11.2):
+    - KakaoSDKCommon (= 2.11.2)
+  - KakaoSDKCommon (2.11.2):
+    - KakaoSDKCommon/Common (= 2.11.2)
+    - KakaoSDKCommon/Network (= 2.11.2)
+  - KakaoSDKCommon/Common (2.11.2)
+  - KakaoSDKCommon/Network (2.11.2):
+    - Alamofire (~> 5.1)
+    - KakaoSDKCommon/Common (= 2.11.2)
+  - KakaoSDKFriend (2.11.2):
+    - KakaoSDKUser (= 2.11.2)
+  - KakaoSDKNavi (2.11.2):
+    - KakaoSDKCommon/Common (= 2.11.2)
+  - KakaoSDKShare (2.11.2):
+    - KakaoSDKCommon (= 2.11.2)
+    - KakaoSDKTemplate (= 2.11.2)
+  - KakaoSDKStory (2.11.2):
+    - KakaoSDKUser (= 2.11.2)
+  - KakaoSDKTalk (2.11.2):
+    - KakaoSDKTemplate (= 2.11.2)
+    - KakaoSDKUser (= 2.11.2)
+  - KakaoSDKTemplate (2.11.2):
+    - KakaoSDKCommon/Common (= 2.11.2)
+  - KakaoSDKUser (2.11.2):
+    - KakaoSDKAuth (= 2.11.2)
+
+DEPENDENCIES:
+  - KakaoSDK
+
+SPEC REPOS:
+  trunk:
+    - Alamofire
+    - KakaoSDK
+    - KakaoSDKAuth
+    - KakaoSDKCommon
+    - KakaoSDKFriend
+    - KakaoSDKNavi
+    - KakaoSDKShare
+    - KakaoSDKStory
+    - KakaoSDKTalk
+    - KakaoSDKTemplate
+    - KakaoSDKUser
+
+SPEC CHECKSUMS:
+  Alamofire: d368e1ff8a298e6dde360e35a3e68e6c610e7204
+  KakaoSDK: 22afa3e4d43a0876c68abf50405cd22e44aaee7c
+  KakaoSDKAuth: 98f90fb67b2c2015cc94066a4489d54bb2f2a68e
+  KakaoSDKCommon: 83fef177bcad9a8f9cb728f92e04a464882d3a82
+  KakaoSDKFriend: 24147942cfe9a9237f40b7d96d9060daa6b520e4
+  KakaoSDKNavi: 51c599a1db8ca1da321853033e0954b4fec24a67
+  KakaoSDKShare: 2ee171a98329a172dab004ce1637f5d8c3e960d9
+  KakaoSDKStory: 9d97c5afcec418feb5baa589535fd77274e7baa4
+  KakaoSDKTalk: d2f935783388f200f97b6be6a0edb17321b8da6e
+  KakaoSDKTemplate: 19ce588aa1899731978c5358b409fd5e607ee457
+  KakaoSDKUser: bf7b02e23257199995cdd03d59feb716416d14d6
+
+PODFILE CHECKSUM: 051823238660276d8a7303a1ce85ac0a378a34ce
+
+COCOAPODS: 1.11.3
