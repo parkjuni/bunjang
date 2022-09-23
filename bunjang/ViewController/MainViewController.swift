@@ -27,16 +27,13 @@ extension MainViewController : UITabBarControllerDelegate{
 
         if viewController is AddViewController{
 
-        let modalViewController = MenuViewController()
-//            modalViewController.modalPresentationStyle = UIModalPresentationStyle.fullScreen
-        tabBarController.present(modalViewController, animated: true)
-
-
-                   return false
-
-              }
+            let add : UIStoryboard = UIStoryboard(name: "AddDetail", bundle: nil)
+            let addVC = add.instantiateViewController(withIdentifier: "AddDetailViewController") as! AddDetailViewController
+//            addVC.modalPresentationStyle = .fullScreen
+            self.present(addVC, animated: true, completion: nil)
+            
+            return false
+            }
         return true
-}
-
-
+    }
 }

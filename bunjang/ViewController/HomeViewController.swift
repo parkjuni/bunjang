@@ -53,6 +53,11 @@ class HomeViewController: UIViewController,UIScrollViewDelegate {
         Scroll_image.delegate = self
         addContentScrollView()
         
+//        let backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: self, action: nil)
+////        backBarButtonItem.tintColor = .black
+//        self.navigationItem.backBarButtonItem = backBarButtonItem
+//        
+        
     }
     
 

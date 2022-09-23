@@ -10,6 +10,17 @@
 		146182DFED61AEED11EA4C2A /* Pods_bunjang.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BB75CFECE75988A78C038DBE /* Pods_bunjang.framework */; };
 		B0733925B7BB86F3633D9801 /* Pods_bunjangTests_bunjangUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C4565EFFE2CC7E445FECA33A /* Pods_bunjangTests_bunjangUITests.framework */; };
 		B859335D8F0E252A9F4F7AB4 /* Pods_bunjangTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 33CE17A0127955990E12FA8C /* Pods_bunjangTests.framework */; };
+		BB05FCE828DD633D009DB49E /* Keyword_notiViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB05FCE728DD633D009DB49E /* Keyword_notiViewController.swift */; };
+		BB05FCEA28DD6B92009DB49E /* Setting_notiViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB05FCE928DD6B92009DB49E /* Setting_notiViewController.swift */; };
+		BB05FCEC28DD81EC009DB49E /* MyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB05FCEB28DD81EC009DB49E /* MyViewController.swift */; };
+		BB8E928728DBE7CC00D38A42 /* SetNickname.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BB8E928628DBE7CC00D38A42 /* SetNickname.storyboard */; };
+		BB8E928A28DBFA9800D38A42 /* request.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB8E928928DBFA9800D38A42 /* request.swift */; };
+		BB8E928C28DBFAA500D38A42 /* response.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB8E928B28DBFAA500D38A42 /* response.swift */; };
+		BB8E928E28DBFDA600D38A42 /* SetNicknameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB8E928D28DBFDA600D38A42 /* SetNicknameViewController.swift */; };
+		BB8E929028DC5E6700D38A42 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB8E928F28DC5E6700D38A42 /* SearchViewController.swift */; };
+		BB8E929228DC6ACA00D38A42 /* SegmentedControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB8E929128DC6ACA00D38A42 /* SegmentedControl.swift */; };
+		BB8E929428DC6CD100D38A42 /* Setting_notification.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BB8E929328DC6CD100D38A42 /* Setting_notification.storyboard */; };
+		BB8E929628DCB82100D38A42 /* Keyword_notification.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BB8E929528DCB82100D38A42 /* Keyword_notification.storyboard */; };
 		BBCDB55028D6D4E500CB766D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBCDB54F28D6D4E500CB766D /* AppDelegate.swift */; };
 		BBCDB55228D6D4E500CB766D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBCDB55128D6D4E500CB766D /* SceneDelegate.swift */; };
 		BBCDB55428D6D4E500CB766D /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBCDB55328D6D4E500CB766D /* MainViewController.swift */; };
@@ -61,7 +72,18 @@
 		6EA65031798585BE693898B9 /* Pods-bunjangTests-bunjangUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-bunjangTests-bunjangUITests.debug.xcconfig"; path = "Target Support Files/Pods-bunjangTests-bunjangUITests/Pods-bunjangTests-bunjangUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		6FAA3E2091586E4CE090FBF0 /* Pods-bunjang-bunjangUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-bunjang-bunjangUITests.debug.xcconfig"; path = "Target Support Files/Pods-bunjang-bunjangUITests/Pods-bunjang-bunjangUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		717D787F3AD113B2EDA08B72 /* Pods-bunjangTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-bunjangTests.debug.xcconfig"; path = "Target Support Files/Pods-bunjangTests/Pods-bunjangTests.debug.xcconfig"; sourceTree = "<group>"; };
+		BB05FCE728DD633D009DB49E /* Keyword_notiViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Keyword_notiViewController.swift; sourceTree = "<group>"; };
+		BB05FCE928DD6B92009DB49E /* Setting_notiViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Setting_notiViewController.swift; sourceTree = "<group>"; };
+		BB05FCEB28DD81EC009DB49E /* MyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyViewController.swift; sourceTree = "<group>"; };
 		BB75CFECE75988A78C038DBE /* Pods_bunjang.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_bunjang.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		BB8E928628DBE7CC00D38A42 /* SetNickname.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SetNickname.storyboard; sourceTree = "<group>"; };
+		BB8E928928DBFA9800D38A42 /* request.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = request.swift; sourceTree = "<group>"; };
+		BB8E928B28DBFAA500D38A42 /* response.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = response.swift; sourceTree = "<group>"; };
+		BB8E928D28DBFDA600D38A42 /* SetNicknameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetNicknameViewController.swift; sourceTree = "<group>"; };
+		BB8E928F28DC5E6700D38A42 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
+		BB8E929128DC6ACA00D38A42 /* SegmentedControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SegmentedControl.swift; sourceTree = "<group>"; };
+		BB8E929328DC6CD100D38A42 /* Setting_notification.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Setting_notification.storyboard; sourceTree = "<group>"; };
+		BB8E929528DCB82100D38A42 /* Keyword_notification.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Keyword_notification.storyboard; sourceTree = "<group>"; };
 		BBCDB54C28D6D4E500CB766D /* bunjang.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = bunjang.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BBCDB54F28D6D4E500CB766D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BBCDB55128D6D4E500CB766D /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -133,9 +155,19 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		BB8E928828DBFA8100D38A42 /* Server */ = {
+			isa = PBXGroup;
+			children = (
+				BB8E928928DBFA9800D38A42 /* request.swift */,
+				BB8E928B28DBFAA500D38A42 /* response.swift */,
+			);
+			path = Server;
+			sourceTree = "<group>";
+		};
 		BBCDB54328D6D4E500CB766D = {
 			isa = PBXGroup;
 			children = (
+				BB8E928828DBFA8100D38A42 /* Server */,
 				BBCDB54E28D6D4E500CB766D /* bunjang */,
 				BBCDB56528D6D4E800CB766D /* bunjangTests */,
 				BBCDB56F28D6D4E800CB766D /* bunjangUITests */,
@@ -192,11 +224,14 @@
 			children = (
 				BBCDB55528D6D4E500CB766D /* Main.storyboard */,
 				BBCDB58028D6D55400CB766D /* Home.storyboard */,
+				BB8E929528DCB82100D38A42 /* Keyword_notification.storyboard */,
 				BBCDB58B28D6DD7600CB766D /* Menu.storyboard */,
+				BB8E929328DC6CD100D38A42 /* Setting_notification.storyboard */,
 				BBCDB59728D6F3A400CB766D /* AddDetail.storyboard */,
 				BBCDB58D28D6DD9200CB766D /* Notification.storyboard */,
 				BBCDB58228D6D55E00CB766D /* Search.storyboard */,
 				BBCDB58428D6D58200CB766D /* Add.storyboard */,
+				BB8E928628DBE7CC00D38A42 /* SetNickname.storyboard */,
 				BBCDB59B28D7F56000CB766D /* Onboarding.storyboard */,
 				BBCDB58628D6D58A00CB766D /* Talk.storyboard */,
 				BBCDB58828D6D59700CB766D /* My.storyboard */,
@@ -207,8 +242,14 @@
 		BBCDB58A28D6DA1900CB766D /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
+				BB8E928D28DBFDA600D38A42 /* SetNicknameViewController.swift */,
 				BBCDB55328D6D4E500CB766D /* MainViewController.swift */,
+				BB8E928F28DC5E6700D38A42 /* SearchViewController.swift */,
+				BB8E929128DC6ACA00D38A42 /* SegmentedControl.swift */,
+				BB05FCEB28DD81EC009DB49E /* MyViewController.swift */,
+				BB05FCE728DD633D009DB49E /* Keyword_notiViewController.swift */,
 				BBCDB59D28D7F5F600CB766D /* OnboardingViewController.swift */,
+				BB05FCE928DD6B92009DB49E /* Setting_notiViewController.swift */,
 				BBCDB58F28D6DDA600CB766D /* HomeViewController.swift */,
 				BBCDB59128D6DDC700CB766D /* MenuViewController.swift */,
 				BBCDB59928D6F3C800CB766D /* AddDetailViewController.swift */,
@@ -356,9 +397,12 @@
 				BBCDB58C28D6DD7600CB766D /* Menu.storyboard in Resources */,
 				BBCDB55728D6D4E500CB766D /* Main.storyboard in Resources */,
 				BBCDB58128D6D55400CB766D /* Home.storyboard in Resources */,
+				BB8E929428DC6CD100D38A42 /* Setting_notification.storyboard in Resources */,
 				BBCDB58528D6D58200CB766D /* Add.storyboard in Resources */,
 				BBCDB58728D6D58A00CB766D /* Talk.storyboard in Resources */,
 				BBCDB58328D6D55E00CB766D /* Search.storyboard in Resources */,
+				BB8E929628DCB82100D38A42 /* Keyword_notification.storyboard in Resources */,
+				BB8E928728DBE7CC00D38A42 /* SetNickname.storyboard in Resources */,
 				BBCDB58E28D6DD9200CB766D /* Notification.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -471,13 +515,21 @@
 			buildActionMask = 2147483647;
 			files = (
 				BBCDB55428D6D4E500CB766D /* MainViewController.swift in Sources */,
+				BB05FCEA28DD6B92009DB49E /* Setting_notiViewController.swift in Sources */,
 				BBCDB59228D6DDC700CB766D /* MenuViewController.swift in Sources */,
 				BBCDB59628D6ED4900CB766D /* AddViewController.swift in Sources */,
+				BB8E929228DC6ACA00D38A42 /* SegmentedControl.swift in Sources */,
+				BB8E928E28DBFDA600D38A42 /* SetNicknameViewController.swift in Sources */,
+				BB8E928A28DBFA9800D38A42 /* request.swift in Sources */,
+				BB05FCEC28DD81EC009DB49E /* MyViewController.swift in Sources */,
 				BBCDB59A28D6F3C800CB766D /* AddDetailViewController.swift in Sources */,
 				BBCDB59428D6DDD400CB766D /* NotificationViewController.swift in Sources */,
+				BB05FCE828DD633D009DB49E /* Keyword_notiViewController.swift in Sources */,
 				BBCDB55028D6D4E500CB766D /* AppDelegate.swift in Sources */,
+				BB8E929028DC5E6700D38A42 /* SearchViewController.swift in Sources */,
 				BBCDB55228D6D4E500CB766D /* SceneDelegate.swift in Sources */,
 				BBCDB59E28D7F5F600CB766D /* OnboardingViewController.swift in Sources */,
+				BB8E928C28DBFAA500D38A42 /* response.swift in Sources */,
 				BBCDB59028D6DDA600CB766D /* HomeViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
