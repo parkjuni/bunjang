@@ -9,6 +9,11 @@ import UIKit
 
 class MenuViewController: UIViewController {
 
+    
+    @IBOutlet weak var firstView : UIView!
+    @IBOutlet weak var secondView : UIView!
+    @IBOutlet weak var thirdView : UIView!
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -19,14 +24,29 @@ class MenuViewController: UIViewController {
         dismiss(animated: true, completion: nil)
     }
     
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    @IBAction func switchViews(_ sender: UISegmentedControl){
+      
+         if sender.selectedSegmentIndex == 1 {
+            firstView.alpha = 0
+            secondView.alpha = 1
+            thirdView.alpha = 0
+        }
+        else if sender.selectedSegmentIndex == 2{
+            firstView.alpha = 0
+            secondView.alpha = 0
+            thirdView.alpha = 1
+            
+        }
+        else {
+             firstView.alpha = 1
+             secondView.alpha = 0
+             thirdView.alpha = 0
+        }
+        
+        
+        
     }
-    */
+    
+   
 
 }
