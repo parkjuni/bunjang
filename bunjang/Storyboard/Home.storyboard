@@ -205,48 +205,7 @@
                             <constraint firstItem="d9k-ky-RRr" firstAttribute="width" secondItem="5EZ-qb-Rvc" secondAttribute="width" id="m64-fH-tFN"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="km0-Us-3pn">
-                        <barButtonItem key="leftBarButtonItem" id="QvG-SL-AhE">
-                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" id="hYE-Q2-rdb">
-                                <rect key="frame" x="20" y="5" width="67" height="34.333333333333336"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" image="line.3.horizontal" catalog="system"/>
-                                <connections>
-                                    <segue destination="m7F-ay-CBX" kind="presentation" modalPresentationStyle="fullScreen" id="1PU-fx-fkU"/>
-                                </connections>
-                            </button>
-                        </barButtonItem>
-                        <rightBarButtonItems>
-                            <barButtonItem id="0E8-gA-BiW">
-                                <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" id="buK-lj-Qkz">
-                                    <rect key="frame" x="319" y="0.0" width="75" height="44"/>
-                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                    <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                    <state key="normal" title="Button"/>
-                                    <buttonConfiguration key="configuration" style="plain" image="bell" catalog="system"/>
-                                    <connections>
-                                        <segue destination="4kb-MR-Mkz" kind="show" id="1SP-92-c2O"/>
-                                    </connections>
-                                </button>
-                                <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                            </barButtonItem>
-                            <barButtonItem id="G6k-YW-7ox">
-                                <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" id="uRr-rR-vV5">
-                                    <rect key="frame" x="236" y="0.0" width="75" height="44"/>
-                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                    <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                    <state key="normal" title="Button"/>
-                                    <buttonConfiguration key="configuration" style="plain" image="magnifyingglass" catalog="system"/>
-                                    <connections>
-                                        <segue destination="dpp-M9-JWO" kind="show" id="70i-de-jTJ"/>
-                                    </connections>
-                                </button>
-                                <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                            </barButtonItem>
-                        </rightBarButtonItems>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" id="km0-Us-3pn"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="MenuCollectionView" destination="1I5-bp-twI" id="0X2-7K-os3"/>
@@ -262,16 +221,6 @@
                 </collectionReusableView>
             </objects>
             <point key="canvasLocation" x="856.52173913043487" y="83.705357142857139"/>
-        </scene>
-        <!--MenuViewController-->
-        <scene sceneID="IkH-6O-rl4">
-            <objects>
-                <viewControllerPlaceholder storyboardName="Menu" referencedIdentifier="MenuViewController" id="m7F-ay-CBX" sceneMemberID="viewController">
-                    <navigationItem key="navigationItem" id="0sf-C6-zRJ"/>
-                </viewControllerPlaceholder>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="9W4-fu-MZK" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1538" y="-101"/>
         </scene>
         <!--홈-->
         <scene sceneID="0iT-dL-6it">
@@ -294,33 +243,10 @@
             </objects>
             <point key="canvasLocation" x="2.8985507246376816" y="83.705357142857139"/>
         </scene>
-        <!--SearchViewcontroller-->
-        <scene sceneID="FVG-9G-Fvr">
-            <objects>
-                <viewControllerPlaceholder storyboardName="Search" referencedIdentifier="SearchViewcontroller" id="dpp-M9-JWO" sceneMemberID="viewController">
-                    <navigationItem key="navigationItem" id="Dy6-EX-5HS"/>
-                </viewControllerPlaceholder>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="qCe-Yb-pwP" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1739" y="54"/>
-        </scene>
-        <!--NotificationViewController-->
-        <scene sceneID="fwl-1J-Dss">
-            <objects>
-                <viewControllerPlaceholder storyboardIdentifier="NotificationViewcontroller" storyboardName="Notification" referencedIdentifier="NotificationViewController" id="4kb-MR-Mkz" sceneMemberID="viewController">
-                    <navigationItem key="navigationItem" id="4aT-u3-hq5"/>
-                </viewControllerPlaceholder>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="m1U-2f-IS2" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1741" y="232"/>
-        </scene>
     </scenes>
     <resources>
-        <image name="bell" catalog="system" width="128" height="124"/>
         <image name="house" catalog="system" width="128" height="106"/>
-        <image name="line.3.horizontal" catalog="system" width="128" height="64"/>
         <image name="loading" width="750" height="1334"/>
-        <image name="magnifyingglass" catalog="system" width="128" height="115"/>
         <image name="menu_heart" width="85" height="85"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

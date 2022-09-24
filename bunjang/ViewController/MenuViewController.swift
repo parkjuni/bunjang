@@ -14,8 +14,10 @@ class MenuViewController: UIViewController {
     @IBOutlet weak var secondView : UIView!
     @IBOutlet weak var thirdView : UIView!
 
+    @IBOutlet weak var segmentedControl: UISegmentedControl!
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.segmentedControl.selectedSegmentIndex = 0
 
         // Do any additional setup after loading the view.
     }

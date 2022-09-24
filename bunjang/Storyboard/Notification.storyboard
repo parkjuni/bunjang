@@ -88,6 +88,7 @@
                     </navigationItem>
                     <connections>
                         <outlet property="firstView" destination="rpQ-np-btF" id="s3X-yN-xVG"/>
+                        <outlet property="keyword" destination="Dzr-0y-tJk" id="XFb-wg-zT1"/>
                         <outlet property="secondView" destination="zp7-vs-s8S" id="NSv-Di-dUd"/>
                         <outlet property="segmentedControl" destination="Mx4-44-t5r" id="TQE-2C-T5i"/>
                     </connections>

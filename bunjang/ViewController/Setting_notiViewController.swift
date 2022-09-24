@@ -86,7 +86,7 @@ extension Setting_notiViewController:UITableViewDelegate, UITableViewDataSource 
         return cell
     }
     
-//
+
     func numberOfSections(in tableView: UITableView) -> Int {
            return sections.count
        }
@@ -94,20 +94,7 @@ extension Setting_notiViewController:UITableViewDelegate, UITableViewDataSource 
        func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
            return sections[section]
        }
-//
-//       func tableView(_ tableView: UITableView, titleForFooterInSection section: Int) -> String? {
-//           return sectionFooter[section]
-//       }
-//
-//    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-//        return cell.count
-//    }
-//
-//    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-//        let cell = tableView.dequeueReusableCell(withIdentifier: "myCell")!
-//                cell.textLabel?.text = cellDataSource[indexPath.row]
-//                return cell
-//    }
+
     
 }
 

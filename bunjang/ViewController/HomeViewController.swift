@@ -12,6 +12,31 @@ import UIKit
 
 class HomeViewController: UIViewController,UIScrollViewDelegate {
     
+
+
+    @IBOutlet weak var navi2B: UIButton!
+    @IBOutlet weak var navi3B: UIButton!
+    
+    
+//    let firstButtonImage = UIImage(systemName: "magnifyingglass")!
+//    let firstButton = UIButton(frame: CGRect(x: 0, y: 0, width: 10, height: 10))
+//
+//    firstButton.tintColor = .black
+//    firstButton.setImage(firstButtonImage, for: .normal)
+//
+//    let secondButtonImage = UIImage(systemName: "bell")!
+//    let secondButton = UIButton(frame: CGRect(x: 0, y: 0, width: 10, height: 10))
+//
+//    secondButton.tintColor = .black
+//    secondButton.setImage(secondButtonImage, for: .normal)
+//
+//
+//    let firstBarButton = UIBarButtonItem(customView: firstButton)
+//    let secondBarButton = UIBarButtonItem(customView: secondButton)
+//
+//    self.navigationItem.rightBarButtonItems = [firstBarButton, secondBarButton]
+
+    
     let menuList = ["찜","에르메스","최근본상품","여성가방","내피드","스니커즈","내폰시세","스타굿즈","우리동네","캠핑","친구초대","골프","전체메뉴","피규어/인형"]
     
     let menuImg = ["menu_heart","menu_herm","menu_his","menu_bag","menu_feed","menu_sne","menu_phone","menu_goods","menu_loca","menu_camp","menu_friend","menu_golf","menu_whole","menu_doll"]
@@ -48,17 +73,103 @@ class HomeViewController: UIViewController,UIScrollViewDelegate {
     
     @IBOutlet weak var goodsCollectionView: UICollectionView!
     
+    var configuration = UIButton.Configuration.plain()
+    
+    
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         Scroll_image.delegate = self
         addContentScrollView()
-        
-//        let backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: self, action: nil)
-////        backBarButtonItem.tintColor = .black
-//        self.navigationItem.backBarButtonItem = backBarButtonItem
-//        
+        setNavigationBar()
         
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+           super.viewWillAppear(animated)
+           self.navigationItem.title = " "
+                     }
+    
+    
+    func setNavigationBar(){
+        let menuButtonImage = UIImage(systemName: "line.3.horizontal")!
+        let menuButton = UIButton(frame: CGRect(x: 0, y: 0, width: 20, height: 20))
+        
+        let searchButtonImage = UIImage(systemName: "magnifyingglass")!
+        let searchButton = UIButton(frame: CGRect(x: 0, y: 0, width: 10, height: 10))
+        
+        let notiButtonImage = UIImage(systemName: "bell")!
+        let notiButton = UIButton(frame: CGRect(x: 0, y: 0, width: 10, height: 10))
+               
+        menuButton.tintColor = .white
+        menuButton.setImage(menuButtonImage, for: .normal)
+        
+        searchButton.tintColor = .white
+        searchButton.setImage(searchButtonImage, for: .normal)
+        
+        notiButton.tintColor = .white
+        notiButton.setImage(notiButtonImage, for: .normal)
+               
+        let menuBarButton = UIBarButtonItem(customView: menuButton)
+
+        let searchBarButton = UIBarButtonItem(customView: searchButton)
+        let notiBarButton = UIBarButtonItem(customView: notiButton)
+        
+        self.navigationItem.leftBarButtonItems = [menuBarButton]
+
+        self.navigationItem.rightBarButtonItems = [searchBarButton, notiBarButton]
+        
+        
+        var configuration = UIButton.Configuration.plain()
+        configuration.contentInsets = NSDirectionalEdgeInsets(top: 0, leading: 20, bottom: 0, trailing: 0)
+
+        searchButton.configuration = configuration
+        notiButton.configuration = configuration
+
+        menuButton.addTarget(self, action: #selector(menubuttonAction), for: .touchUpInside)
+        searchButton.addTarget(self, action: #selector(searchbuttonAction), for: .touchUpInside)
+        notiButton.addTarget(self, action: #selector(notibuttonAction), for: .touchUpInside)
+
+        
+    }
+   
+    
+    
+    
+    @objc func menubuttonAction(sender: UIButton!) {
+
+        let storyboard = UIStoryboard(name: "Menu2", bundle: nil)
+        let vc = storyboard.instantiateViewController(withIdentifier: "MenuViewController")
+        vc.modalPresentationStyle = .fullScreen
+
+         self.present(vc, animated: true, completion: nil)
+        
+           }
+    
+    
+    
+    @objc func searchbuttonAction(sender: UIButton!) {
+
+        let storyboard = UIStoryboard(name: "Search", bundle: nil)
+        let vc = storyboard.instantiateViewController(withIdentifier: "SearchViewcontroller")
+
+         self.show(vc, sender: self)
+
+        
+           }
+    
+    
+    @objc func notibuttonAction(sender: UIButton!) {
+
+        let storyboard = UIStoryboard(name: "Notification", bundle: nil)
+        let vc = storyboard.instantiateViewController(withIdentifier: "NotificationViewController")
+
+        self.show(vc, sender: self)
+
+           }
+    
+    
     
 
 
