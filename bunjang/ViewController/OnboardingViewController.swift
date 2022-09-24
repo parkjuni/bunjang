@@ -22,6 +22,7 @@ class OnboardingViewController: UIViewController  {
     @IBOutlet weak var pageControl: UIPageControl!
     @IBOutlet weak var Login_apple: UIButton!
 
+    @IBOutlet weak var other_login: UILabel!
     //이미지
     @IBAction func pageChanged(_ sender: Any) {
         imageView.image = UIImage(named: images[pageControl.currentPage])
@@ -30,6 +31,31 @@ class OnboardingViewController: UIViewController  {
     //var
     var imageViews = [UIImageView]()
 
+    
+    
+    
+
+    @objc func otherLoginTapped(sender: UITapGestureRecognizer) {
+
+        let storyboard = UIStoryboard(name: "OtherLogin", bundle: nil)
+        let vc = storyboard.instantiateViewController(withIdentifier: "OtherLoginViewController")
+        
+//        vc.view.backgroundColor = .gray
+//        if let sheet = vc.presentationController as? UISheetPresentationController{
+////            sheet.detents = [.medium()]
+//            sheet.preferredCornerRadius =
+//
+        
+//        }
+        
+        modalTransitionStyle = .coverVertical
+        self.present(vc, animated: true)
+        
+
+    }
+
+    
+    
     
     //kakao login
     @IBAction func Login_kakao(_ sender: Any) {
@@ -160,6 +186,24 @@ class OnboardingViewController: UIViewController  {
         imageView.image = UIImage(named: images[0])
 
         
+        let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(otherLoginTapped))
+
+      
+        
+        other_login.addGestureRecognizer(tapGestureRecognizer)
+
+        other_login.isUserInteractionEnabled = true
+
+        //gesture
+        let swipeLeft = UISwipeGestureRecognizer(target: self, action: #selector(OnboardingViewController.respondToSwipeGesture(_:)))
+               swipeLeft.direction = UISwipeGestureRecognizer.Direction.left
+               self.view.addGestureRecognizer(swipeLeft)
+               
+        let swipeRight = UISwipeGestureRecognizer(target: self, action: #selector(OnboardingViewController.respondToSwipeGesture(_:)))
+               swipeRight.direction = UISwipeGestureRecognizer.Direction.right
+               self.view.addGestureRecognizer(swipeRight)
+               
+        
         
         //애플 로그인 테두리
         Login_apple.layer.borderWidth = 1
@@ -167,6 +211,35 @@ class OnboardingViewController: UIViewController  {
     
     }
 
+    
+    @objc func respondToSwipeGesture(_ gesture: UIGestureRecognizer) {
+           // 만일 제스쳐가 있다면
+           if let swipeGesture = gesture as? UISwipeGestureRecognizer{
+           
+               
+               // 발생한 이벤트가 각 방향의 스와이프 이벤트라면 해당 이미지 뷰를 빨간색 화살표 이미지로 변경
+               switch swipeGesture.direction {
+                  
+                   case UISwipeGestureRecognizer.Direction.left :
+                   if  pageControl.currentPage != 3 {
+                       imageView.image = UIImage(named: images[pageControl.currentPage+1])
+                       pageControl.currentPage += 1
+
+                   }
+                   case UISwipeGestureRecognizer.Direction.right :
+                   if  pageControl.currentPage != 0 {
+                       imageView.image = UIImage(named: images[pageControl.currentPage-1])
+                       pageControl.currentPage -= 1
+
+                   }
+               default:
+                       break
+               }
+               
+           }
+           
+       }
+    
 
 }
 

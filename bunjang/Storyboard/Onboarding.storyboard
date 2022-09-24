@@ -120,6 +120,7 @@
                     <connections>
                         <outlet property="Login_apple" destination="JPz-sp-AEg" id="g9i-SM-Huh"/>
                         <outlet property="imageView" destination="1FS-jr-Pl3" id="vRr-mh-FsY"/>
+                        <outlet property="other_login" destination="cG6-mh-6Bg" id="S3i-yb-9zX"/>
                         <outlet property="pageControl" destination="lWq-Nj-Tvj" id="Qdb-Oq-gHm"/>
                     </connections>
                 </viewController>
