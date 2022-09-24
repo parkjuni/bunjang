@@ -8,28 +8,107 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Talk View Controller-->
         <scene sceneID="s0d-6b-0kx">
             <objects>
-                <viewController id="Y6W-OH-hqX" sceneMemberID="viewController">
+                <viewController id="Y6W-OH-hqX" customClass="TalkViewController" customModule="bunjang" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="5EZ-qb-Rvc">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="전체 대화" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="A0h-Sm-5dR">
+                                <rect key="frame" x="20" y="118" width="96" height="32"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="26"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ad_search" translatesAutoresizingMaskIntoConstraints="NO" id="bcP-lI-Nfq">
+                                <rect key="frame" x="0.0" y="160" width="414" height="81"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="81" id="f0c-H5-UiD"/>
+                                </constraints>
+                            </imageView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DNb-VH-E1f">
+                                <rect key="frame" x="0.0" y="240" width="414" height="105"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CQ9-9S-TwI">
+                                        <rect key="frame" x="356" y="37" width="37" height="31"/>
+                                        <color key="tintColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" image="chevron.right" catalog="system"/>
+                                    </button>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="채팅 알림이 꺼져있어요!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3xI-W6-gfs">
+                                        <rect key="frame" x="95" y="31" width="133" height="17"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="알림 켜고 채팅 놓치지 않기" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Vav-kO-meI">
+                                        <rect key="frame" x="95" y="51" width="178" height="21"/>
+                                        <color key="tintColor" red="0.25417365400000003" green="0.83503141110000001" blue="0.56531813050000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                        <color key="textColor" red="0.19591888546478958" green="0.65276659149484528" blue="0.4361984799145619" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="IMG_616066F5A044-1" translatesAutoresizingMaskIntoConstraints="NO" id="O2N-1M-eCv">
+                                        <rect key="frame" x="21" y="17" width="66" height="71"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="66" id="ixd-wy-jGH"/>
+                                            <constraint firstAttribute="height" constant="71" id="xkx-JT-rQn"/>
+                                        </constraints>
+                                    </imageView>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="CQ9-9S-TwI" secondAttribute="trailing" constant="21" id="0cX-Y6-HeK"/>
+                                    <constraint firstAttribute="bottom" secondItem="Vav-kO-meI" secondAttribute="bottom" constant="33" id="1sO-o7-l56"/>
+                                    <constraint firstItem="Vav-kO-meI" firstAttribute="leading" secondItem="O2N-1M-eCv" secondAttribute="trailing" constant="8" symbolic="YES" id="7SS-EP-rZL"/>
+                                    <constraint firstItem="Vav-kO-meI" firstAttribute="leading" secondItem="DNb-VH-E1f" secondAttribute="leading" constant="95" id="HDi-Zb-wp1"/>
+                                    <constraint firstItem="CQ9-9S-TwI" firstAttribute="centerY" secondItem="DNb-VH-E1f" secondAttribute="centerY" id="Z5T-gL-JcM"/>
+                                    <constraint firstItem="Vav-kO-meI" firstAttribute="top" secondItem="3xI-W6-gfs" secondAttribute="bottom" constant="3" id="e8C-te-f3c"/>
+                                    <constraint firstItem="O2N-1M-eCv" firstAttribute="centerY" secondItem="DNb-VH-E1f" secondAttribute="centerY" id="iV7-DH-HDz"/>
+                                    <constraint firstAttribute="height" constant="105" id="qN2-tC-dCi"/>
+                                    <constraint firstItem="Vav-kO-meI" firstAttribute="leading" secondItem="3xI-W6-gfs" secondAttribute="leading" id="ylE-KU-K7X"/>
+                                </constraints>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sAF-7d-Opj">
+                                <rect key="frame" x="118" y="118" width="44" height="31"/>
+                                <color key="tintColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" image="chevron.down" catalog="system"/>
+                            </button>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" systemColor="systemGray3Color"/>
+                        <constraints>
+                            <constraint firstItem="bcP-lI-Nfq" firstAttribute="top" secondItem="sAF-7d-Opj" secondAttribute="bottom" constant="11" id="0iO-I8-9Ip"/>
+                            <constraint firstItem="A0h-Sm-5dR" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="20" id="Bja-q8-Uty"/>
+                            <constraint firstItem="sAF-7d-Opj" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" constant="30" id="ELR-hG-ZqZ"/>
+                            <constraint firstItem="bcP-lI-Nfq" firstAttribute="width" secondItem="vDu-zF-Fre" secondAttribute="width" id="HN2-h4-9To"/>
+                            <constraint firstItem="DNb-VH-E1f" firstAttribute="top" secondItem="A0h-Sm-5dR" secondAttribute="bottom" constant="90" id="JqB-zH-f5y"/>
+                            <constraint firstItem="DNb-VH-E1f" firstAttribute="leading" secondItem="5EZ-qb-Rvc" secondAttribute="leading" id="QCq-36-y5R"/>
+                            <constraint firstItem="A0h-Sm-5dR" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" constant="30" id="QeQ-sP-stu"/>
+                            <constraint firstItem="sAF-7d-Opj" firstAttribute="leading" secondItem="A0h-Sm-5dR" secondAttribute="trailing" constant="2" id="W6L-WS-9pT"/>
+                            <constraint firstItem="DNb-VH-E1f" firstAttribute="width" secondItem="vDu-zF-Fre" secondAttribute="width" id="ZvB-LX-Tay"/>
+                            <constraint firstItem="DNb-VH-E1f" firstAttribute="leading" secondItem="bcP-lI-Nfq" secondAttribute="leading" id="c2J-hv-Icz"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="8jc-ln-hGM">
                         <barButtonItem key="rightBarButtonItem" style="plain" id="C1Z-FM-TCV">
                             <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" id="6GT-YD-Tbs">
                                 <rect key="frame" x="302" y="5" width="92" height="34.5"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="대화설정"/>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal" title="대화설정"/>
                             </button>
                         </barButtonItem>
                     </navigationItem>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="notiView" destination="DNb-VH-E1f" id="oQk-ob-cmj"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -44,6 +123,7 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="nXe-c9-JAQ">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
@@ -56,7 +136,14 @@
         </scene>
     </scenes>
     <resources>
+        <image name="IMG_616066F5A044-1" width="123" height="124"/>
+        <image name="ad_search" width="750" height="153"/>
+        <image name="chevron.down" catalog="system" width="128" height="72"/>
+        <image name="chevron.right" catalog="system" width="96" height="128"/>
         <image name="message" catalog="system" width="128" height="113"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
         <systemColor name="systemGray3Color">
             <color red="0.7803921568627451" green="0.7803921568627451" blue="0.80000000000000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>

@@ -20,6 +20,7 @@
 		BB05FCF628DEC502009DB49E /* Menu_brandViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB05FCF528DEC502009DB49E /* Menu_brandViewController.swift */; };
 		BB05FCF828DEC50F009DB49E /* Menu_servViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB05FCF728DEC50F009DB49E /* Menu_servViewController.swift */; };
 		BB05FCFA28DF1F99009DB49E /* Menu2.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BB05FCF928DF1F99009DB49E /* Menu2.storyboard */; };
+		BB05FCFC28DF7275009DB49E /* TalkViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB05FCFB28DF7275009DB49E /* TalkViewController.swift */; };
 		BB8E928728DBE7CC00D38A42 /* SetNickname.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BB8E928628DBE7CC00D38A42 /* SetNickname.storyboard */; };
 		BB8E928A28DBFA9800D38A42 /* request.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB8E928928DBFA9800D38A42 /* request.swift */; };
 		BB8E928C28DBFAA500D38A42 /* response.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB8E928B28DBFAA500D38A42 /* response.swift */; };
@@ -87,6 +88,7 @@
 		BB05FCF528DEC502009DB49E /* Menu_brandViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Menu_brandViewController.swift; sourceTree = "<group>"; };
 		BB05FCF728DEC50F009DB49E /* Menu_servViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Menu_servViewController.swift; sourceTree = "<group>"; };
 		BB05FCF928DF1F99009DB49E /* Menu2.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Menu2.storyboard; sourceTree = "<group>"; };
+		BB05FCFB28DF7275009DB49E /* TalkViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TalkViewController.swift; sourceTree = "<group>"; };
 		BB75CFECE75988A78C038DBE /* Pods_bunjang.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_bunjang.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BB8E928628DBE7CC00D38A42 /* SetNickname.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SetNickname.storyboard; sourceTree = "<group>"; };
 		BB8E928928DBFA9800D38A42 /* request.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = request.swift; sourceTree = "<group>"; };
@@ -268,6 +270,7 @@
 				BB8E928F28DC5E6700D38A42 /* SearchViewController.swift */,
 				BB05FCED28DD9B4C009DB49E /* AddViewController.swift */,
 				BBCDB59928D6F3C800CB766D /* AddDetailViewController.swift */,
+				BB05FCFB28DF7275009DB49E /* TalkViewController.swift */,
 				BB05FCEB28DD81EC009DB49E /* MyViewController.swift */,
 				BB8E929128DC6ACA00D38A42 /* SegmentedControl.swift */,
 			);
@@ -538,6 +541,7 @@
 				BB8E928E28DBFDA600D38A42 /* SetNicknameViewController.swift in Sources */,
 				BB05FCF828DEC50F009DB49E /* Menu_servViewController.swift in Sources */,
 				BB8E928A28DBFA9800D38A42 /* request.swift in Sources */,
+				BB05FCFC28DF7275009DB49E /* TalkViewController.swift in Sources */,
 				BB05FCEC28DD81EC009DB49E /* MyViewController.swift in Sources */,
 				BB05FCEE28DD9B4C009DB49E /* AddViewController.swift in Sources */,
 				BBCDB59A28D6F3C800CB766D /* AddDetailViewController.swift in Sources */,

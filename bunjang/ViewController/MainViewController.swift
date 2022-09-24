@@ -32,22 +32,13 @@ extension MainViewController : UITabBarControllerDelegate{
 
     func tabBarController(_ tabBarController: UITabBarController, shouldSelect viewController: UIViewController) -> Bool {
 
-        if viewController is SearchViewController{
-       
-                  let add : UIStoryboard = UIStoryboard(name: "AddDetail", bundle: nil)
-                  let addVC = add.instantiateViewController(withIdentifier: "AddDetailViewController") as! AddDetailViewController
-      //            addVC.modalPresentationStyle = .fullScreen
-                  self.present(addVC, animated: true, completion: nil)
-
-                  return false
-              }
-              
+     
 
         if viewController is AddViewController{
 //        if tabBarController.selectedIndex == 1{
             let add : UIStoryboard = UIStoryboard(name: "AddDetail", bundle: nil)
             let addVC = add.instantiateViewController(withIdentifier: "AddDetailViewController") as! AddDetailViewController
-//            addVC.modalPresentationStyle = .fullScreen
+            addVC.modalPresentationStyle = .fullScreen
             self.present(addVC, animated: true, completion: nil)
 
             return false

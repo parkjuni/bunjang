@@ -13,30 +13,6 @@ import UIKit
 class HomeViewController: UIViewController,UIScrollViewDelegate {
     
 
-
-    @IBOutlet weak var navi2B: UIButton!
-    @IBOutlet weak var navi3B: UIButton!
-    
-    
-//    let firstButtonImage = UIImage(systemName: "magnifyingglass")!
-//    let firstButton = UIButton(frame: CGRect(x: 0, y: 0, width: 10, height: 10))
-//
-//    firstButton.tintColor = .black
-//    firstButton.setImage(firstButtonImage, for: .normal)
-//
-//    let secondButtonImage = UIImage(systemName: "bell")!
-//    let secondButton = UIButton(frame: CGRect(x: 0, y: 0, width: 10, height: 10))
-//
-//    secondButton.tintColor = .black
-//    secondButton.setImage(secondButtonImage, for: .normal)
-//
-//
-//    let firstBarButton = UIBarButtonItem(customView: firstButton)
-//    let secondBarButton = UIBarButtonItem(customView: secondButton)
-//
-//    self.navigationItem.rightBarButtonItems = [firstBarButton, secondBarButton]
-
-    
     let menuList = ["찜","에르메스","최근본상품","여성가방","내피드","스니커즈","내폰시세","스타굿즈","우리동네","캠핑","친구초대","골프","전체메뉴","피규어/인형"]
     
     let menuImg = ["menu_heart","menu_herm","menu_his","menu_bag","menu_feed","menu_sne","menu_phone","menu_goods","menu_loca","menu_camp","menu_friend","menu_golf","menu_whole","menu_doll"]
@@ -47,26 +23,24 @@ class HomeViewController: UIViewController,UIScrollViewDelegate {
     
     @IBOutlet weak var Scroll_image: UIScrollView!
     
-    var images = ["IMG_9686","IMG_9688"]
+    var images = ["IMG_1","IMG_2","IMG_3","IMG_4","IMG_5","IMG_6"]
     var imageViews = [UIImageView]()
     
     private func addContentScrollView() {
            for i in 0..<images.count {
                let imageView = UIImageView()
-               let xPos = Scroll_image.frame.width * CGFloat(i)
-               imageView.frame = CGRect(x: xPos, y: 0, width: Scroll_image.bounds.width, height: Scroll_image.bounds.height)
                imageView.image = UIImage(named: images[i])
-               
+               imageView.contentMode = .scaleToFill
+               let xPos = self.view.frame.width * CGFloat(i)
+               imageView.frame = CGRect(x: xPos, y: 0, width: self.view.bounds.width, height: Scroll_image.bounds.height)
+
                
                Scroll_image.addSubview(imageView)
                Scroll_image.contentSize.width = imageView.frame.width * CGFloat(i + 1)
            }
        }
     
-    func scrollViewDidScroll(_ scrollView: UIScrollView) {
-            let value = scrollView.contentOffset.x/scrollView.frame.size.width
-//            setPageControlSelectedPage(currentPage: Int(round(value)))
-        }
+   
     
     
     @IBOutlet weak var MenuCollectionView: UICollectionView!
