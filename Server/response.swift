@@ -7,8 +7,8 @@
 
 import Foundation
 
-/////////////////카카오 회원가입 response
-struct join_kakao : Decodable {
+/////////////////카카오 회원가입, 로그인
+struct Login_kakao : Decodable {
   
         var isSuccess: Bool?
         var code: Int?
@@ -22,5 +22,17 @@ struct join_kakao : Decodable {
     }
 
 
-/////////////////
+///////////////// 카카오 로그인
+//struct Login_kakao : Decodable {
+//
+//        var isSuccess: Bool?
+//        var code: Int?
+//        var message: String?
+//        var result: [Result]
+//    }
+
+//    struct Result: Decodable {
+//        var userId: Int?
+//        var jwt: String?
+//    }
 

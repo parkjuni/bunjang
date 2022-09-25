@@ -10,7 +10,7 @@ import KakaoSDKAuth
 import KakaoSDKUser
 
 let ud = UserDefaults.standard
-let base_url = "https://aquerytool.com/aquerymain/index/?rurl=f6e08760-8a69-46f0-8f4e-e8c41bfb9f4c"
+let base_url = "https://guriman.shop"
 
 var images = ["onboard1.jpg","onboard2.jpg","onboard3.jpg","onboard4.jpg"]
 
@@ -39,14 +39,6 @@ class OnboardingViewController: UIViewController  {
 
         let storyboard = UIStoryboard(name: "OtherLogin", bundle: nil)
         let vc = storyboard.instantiateViewController(withIdentifier: "OtherLoginViewController")
-        
-//        vc.view.backgroundColor = .gray
-//        if let sheet = vc.presentationController as? UISheetPresentationController{
-////            sheet.detents = [.medium()]
-//            sheet.preferredCornerRadius =
-//
-        
-//        }
         
         modalTransitionStyle = .coverVertical
         self.present(vc, animated: true)
@@ -106,13 +98,27 @@ class OnboardingViewController: UIViewController  {
             ud.set(accessToken, forKey: "token")
             print("access token : ", accessToken!)
             
+            kakaoLogin().Login(self)
+            
+            //response code 받아서 if == 1000 기존회원 로그인 - 홈뷰 전환
+            if ud.integer(forKey: "code") == 1000 {
+                let storyboard = UIStoryboard(name: "Main", bundle: nil)
+                let vc = storyboard.instantiateViewController(withIdentifier: "MainViewController")
+                vc.modalPresentationStyle = UIModalPresentationStyle.fullScreen
+                self.present(vc, animated: true, completion: nil)
+            }
+//
+            //else==2017  신규회원 set nick name 창으로 전환 - 가입
+            else{
+                print("로그인---------else code")
             let setNickname = UIStoryboard.init(name: "SetNickname", bundle: nil)
             let vc = setNickname.instantiateViewController(withIdentifier: "SetNicknameViewController") as! SetNicknameViewController
             vc.modalPresentationStyle = UIModalPresentationStyle.fullScreen
 
             self.present(vc, animated: true)
+            }
             
-            
+
             
                         
                 }

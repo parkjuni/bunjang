@@ -15,14 +15,22 @@ class SetNicknameViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var setNickText: UITextField!
     
     @IBOutlet weak var done_button: UIButton!
+    
     @IBAction func setNickButton(_ sender: Any) {
         ud.set(setNickText.text, forKey: "nickName")
         kakaoLogin().join(self)
         
+//        if ud.integer(forKey: "code") == 1000 {
+
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let vc = storyboard.instantiateViewController(withIdentifier: "MainViewController")
+        vc.modalPresentationStyle = UIModalPresentationStyle.fullScreen
          self.present(vc, animated: true, completion: nil)
+//        }
         
+//        else{
+//            print("회원가입 에러 ---------else code") }
+//
     }
     
     //화면터치시 키보드 내리기

@@ -58,37 +58,9 @@
                             <constraint firstItem="rpQ-np-btF" firstAttribute="top" secondItem="Mx4-44-t5r" secondAttribute="bottom" id="ydY-6h-KlM"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="uOe-Sy-2ru">
-                        <rightBarButtonItems>
-                            <barButtonItem style="plain" id="9lf-vK-xIV">
-                                <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" id="T1g-Tc-qdg">
-                                    <rect key="frame" x="302" y="5" width="92" height="34"/>
-                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                    <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                    <state key="normal" title="Button"/>
-                                    <buttonConfiguration key="configuration" style="plain" image="gearshape" catalog="system"/>
-                                    <connections>
-                                        <segue destination="6nc-b4-bvW" kind="show" id="k87-yh-ME0"/>
-                                    </connections>
-                                </button>
-                            </barButtonItem>
-                            <barButtonItem style="plain" id="lln-xM-Le5">
-                                <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" id="Dzr-0y-tJk">
-                                    <rect key="frame" x="202" y="5" width="92" height="34"/>
-                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                    <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                    <state key="normal" title="Button"/>
-                                    <buttonConfiguration key="configuration" style="plain" image="square.and.pencil" catalog="system"/>
-                                    <connections>
-                                        <segue destination="TXi-JF-3mL" kind="show" id="JeQ-MP-VuQ"/>
-                                    </connections>
-                                </button>
-                            </barButtonItem>
-                        </rightBarButtonItems>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" id="uOe-Sy-2ru"/>
                     <connections>
                         <outlet property="firstView" destination="rpQ-np-btF" id="s3X-yN-xVG"/>
-                        <outlet property="keyword" destination="Dzr-0y-tJk" id="XFb-wg-zT1"/>
                         <outlet property="secondView" destination="zp7-vs-s8S" id="NSv-Di-dUd"/>
                         <outlet property="segmentedControl" destination="Mx4-44-t5r" id="TQE-2C-T5i"/>
                     </connections>
@@ -236,13 +208,8 @@
             <point key="canvasLocation" x="1697" y="767"/>
         </scene>
     </scenes>
-    <inferredMetricsTieBreakers>
-        <segue reference="JeQ-MP-VuQ"/>
-    </inferredMetricsTieBreakers>
     <resources>
         <image name="doc.text" catalog="system" width="115" height="128"/>
-        <image name="gearshape" catalog="system" width="128" height="121"/>
-        <image name="square.and.pencil" catalog="system" width="128" height="115"/>
         <systemColor name="systemGray4Color">
             <color red="0.81960784313725488" green="0.81960784313725488" blue="0.83921568627450982" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>

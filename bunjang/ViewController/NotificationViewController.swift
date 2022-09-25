@@ -21,13 +21,13 @@ class NotificationViewController: UIViewController {
             firstView.alpha = 0
             secondView.alpha = 1
            
-             keyword.isHidden = false
+             keywordButton.isHidden = false
         }
         
         else {
              firstView.alpha = 1
              secondView.alpha = 0
-            keyword.isHidden = true
+            keywordButton.isHidden = true
 
           
 
@@ -40,7 +40,8 @@ class NotificationViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        keyword.isHidden = true
+        setNavigationBar()
+        keywordButton.isHidden = true
 
             self.navigationController?.navigationBar.topItem?.title = "알림"
 //        self.title = ""
@@ -67,6 +68,61 @@ class NotificationViewController: UIViewController {
                   }
     
     
-  
+    let keywordButtonImage = UIImage(systemName: "square.and.pencil")!
+           let keywordButton = UIButton(frame: CGRect(x: 0, y: 0, width: 20, height: 20))
+    
+    func setNavigationBar(){
+       
+        
+        let setButtonImage = UIImage(systemName: "gearshape")!
+        let setButton = UIButton(frame: CGRect(x: 0, y: 0, width: 10, height: 10))
+      
+               
+        keywordButton.tintColor = .black
+        keywordButton.setImage(keywordButtonImage, for: .normal)
+        
+        setButton.tintColor = .black
+        setButton.setImage(setButtonImage, for: .normal)
+      
+        let keywordBarButton = UIBarButtonItem(customView: keywordButton)
+
+        let setBarButton = UIBarButtonItem(customView:setButton)
+        
+     
+        self.navigationItem.rightBarButtonItems = [setBarButton,keywordBarButton]
+        
+        
+        var configuration = UIButton.Configuration.plain()
+        configuration.contentInsets = NSDirectionalEdgeInsets(top: 0, leading: 20, bottom: 0, trailing: 0)
+
+        setButton.configuration = configuration
+        keywordButton.configuration = configuration
+
+        setButton.addTarget(self, action: #selector(setbuttonAction), for: .touchUpInside)
+        keywordButton.addTarget(self, action: #selector(keywordbuttonAction), for: .touchUpInside)
+       
+
+        
+    }
+   
+    
+    @objc func keywordbuttonAction(sender: UIButton!) {
+
+        let storyboard = UIStoryboard(name: "Keyword_notification", bundle: nil)
+        let vc = storyboard.instantiateViewController(withIdentifier: "Keyword_notiViewController")
+
+         self.show(vc, sender: self)
+        
+           }
+    @objc func setbuttonAction(sender: UIButton!) {
+
+        let storyboard = UIStoryboard(name: "Setting_notification", bundle: nil)
+        let vc = storyboard.instantiateViewController(withIdentifier: "Setting_notiViewController")
+
+         self.show(vc, sender: self)
+        
+           }
+   
+    
 
 }

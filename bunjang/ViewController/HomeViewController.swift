@@ -92,7 +92,7 @@ class HomeViewController: UIViewController,UIScrollViewDelegate {
         
         self.navigationItem.leftBarButtonItems = [menuBarButton]
 
-        self.navigationItem.rightBarButtonItems = [searchBarButton, notiBarButton]
+        self.navigationItem.rightBarButtonItems = [notiBarButton,searchBarButton]
         
         
         var configuration = UIButton.Configuration.plain()
