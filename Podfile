@@ -6,8 +6,8 @@ target 'bunjang' do
   use_frameworks!
 
 pod 'KakaoSDK'
-
-
+  pod 'SnapKit', '~> 5.6.0'
+pod 'Then'
 post_install do |installer|
   installer.pods_project.targets.each do |target|
       target.build_configurations.each do |config|

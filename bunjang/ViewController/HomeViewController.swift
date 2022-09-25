@@ -6,13 +6,21 @@
 //
 
 import UIKit
-
+import SnapKit
+import Then
 
 
 
 class HomeViewController: UIViewController,UIScrollViewDelegate {
+    @IBOutlet weak var scrollCollectView: UIView!
+    private let segmentedControl: UISegmentedControl = {
+        let segmentedControl = UnderlineSegmentedControl(items: ["추천상품", "브랜드", ])
+        segmentedControl.translatesAutoresizingMaskIntoConstraints = false
+        return segmentedControl
+      }()
+   
     
-
+    
     let menuList = ["찜","에르메스","최근본상품","여성가방","내피드","스니커즈","내폰시세","스타굿즈","우리동네","캠핑","친구초대","골프","전체메뉴","피규어/인형"]
     
     let menuImg = ["menu_heart","menu_herm","menu_his","menu_bag","menu_feed","menu_sne","menu_phone","menu_goods","menu_loca","menu_camp","menu_friend","menu_golf","menu_whole","menu_doll"]
@@ -44,6 +52,20 @@ class HomeViewController: UIViewController,UIScrollViewDelegate {
     
     
     @IBOutlet weak var MenuCollectionView: UICollectionView!
+    private let indicatorView = IndicatorView()
+    
+   
+    
+    override func viewDidAppear(_ animated: Bool) {
+        
+      super.viewDidAppear(animated)
+      let allWidth = self.MenuCollectionView.contentSize.width + self.MenuCollectionView.contentInset.left + self.MenuCollectionView.contentInset.right
+      let showingWidth = self.MenuCollectionView.bounds.width
+      self.indicatorView.widthRatio = showingWidth / allWidth
+      self.indicatorView.layoutIfNeeded()
+    }
+    
+    
     
     @IBOutlet weak var goodsCollectionView: UICollectionView!
     
@@ -57,6 +79,51 @@ class HomeViewController: UIViewController,UIScrollViewDelegate {
         Scroll_image.delegate = self
         addContentScrollView()
         setNavigationBar()
+//           self.view.addSubview(self.segmentedControl)
+        self.scrollCollectView.addSubview(self.segmentedControl)
+
+        NSLayoutConstraint.activate([
+              self.segmentedControl.leftAnchor.constraint(equalTo: self.view.leftAnchor),
+              self.segmentedControl.rightAnchor.constraint(equalTo: self.view.rightAnchor),
+              self.segmentedControl.topAnchor.constraint(equalTo: self.view.topAnchor, constant: 600),
+              self.segmentedControl.heightAnchor.constraint(equalToConstant: 50),
+            ])
+        self.segmentedControl.setTitleTextAttributes([NSAttributedString.Key.foregroundColor: UIColor.gray], for: .normal)
+           self.segmentedControl.setTitleTextAttributes(
+             [
+               NSAttributedString.Key.foregroundColor: UIColor.green,
+               .font: UIFont.systemFont(ofSize: 13, weight: .semibold)
+             ],
+             for: .selected
+           )
+//           self.segmentedControl.addTarget(self, action: #selector(changeValue(control:)), for: .valueChanged)
+           self.segmentedControl.selectedSegmentIndex = 0
+////           self.changeValue(control: self.segmentedControl)
+//
+        
+        
+        
+        
+        
+        self.view.addSubview(self.indicatorView)
+
+        self.indicatorView.snp.makeConstraints {
+          $0.top.equalTo(self.MenuCollectionView.snp.bottom).offset(4)
+          $0.left.right.equalTo(self.MenuCollectionView).inset(100)
+          $0.height.equalTo(4)
+        }
+        
+        
+        
+        self.segmentedControl.setTitleTextAttributes([NSAttributedString.Key.foregroundColor: UIColor.gray], for: .normal)
+           self.segmentedControl.setTitleTextAttributes(
+             [
+               NSAttributedString.Key.foregroundColor: UIColor.black,
+               .font: UIFont.systemFont(ofSize: 13, weight: .semibold)
+             ],
+             for: .selected
+           )
+           self.segmentedControl.selectedSegmentIndex = 0
         
     }
     
@@ -189,6 +256,7 @@ extension HomeViewController: UICollectionViewDataSource,
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         if collectionView == MenuCollectionView {
 
+            
         return 14
         }
         else {return 10}
@@ -267,4 +335,71 @@ extension HomeViewController: UICollectionViewDataSource,
          }
     
     
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+//        if collectionView == MenuCollectionView {
+
+       let scroll = scrollView.contentOffset.x + scrollView.contentInset.left
+       let width = scrollView.contentSize.width + scrollView.contentInset.left + scrollView.contentInset.right
+       let scrollRatio = scroll / width
+       
+            self.indicatorView.leftOffsetRatio = scrollRatio
+        
+    }
+     
+    
+}
+
+
+// 스크롤바 커스텀
+final class IndicatorView: UIView {
+  // MARK: UI
+  private let trackView = UIView().then {
+    $0.backgroundColor = .lightGray.withAlphaComponent(0.3)
+  }
+  private let trackTintView = UIView().then {
+    $0.backgroundColor = .gray
+  }
+  
+  // MARK: Properties
+  var widthRatio: Double? {
+    didSet {
+      guard let widthRatio = self.widthRatio else { return }
+      self.trackTintView.snp.remakeConstraints {
+        $0.top.bottom.equalToSuperview()
+        $0.width.equalToSuperview().multipliedBy(widthRatio)
+        $0.left.greaterThanOrEqualToSuperview()
+        $0.right.lessThanOrEqualToSuperview()
+        self.leftInsetConstraint = $0.left.equalToSuperview().priority(999).constraint
+      }
+    }
+  }
+  var leftOffsetRatio: Double? {
+    didSet {
+      guard let leftOffsetRatio = self.leftOffsetRatio else { return }
+      self.leftInsetConstraint?.update(inset: leftOffsetRatio * self.bounds.width)
+    }
+  }
+  private var leftInsetConstraint: Constraint?
+  
+  // MARK: Initilize
+  required init?(coder: NSCoder) {
+    fatalError()
+  }
+  override init(frame: CGRect) {
+    super.init(frame: frame)
+    
+    self.addSubview(self.trackView)
+    self.trackView.addSubview(self.trackTintView)
+    
+    self.trackView.snp.makeConstraints {
+      $0.edges.equalToSuperview()
+    }
+    self.trackTintView.snp.makeConstraints {
+      $0.top.bottom.equalToSuperview()
+      $0.width.equalToSuperview().multipliedBy(1.0/5.0)
+      $0.left.greaterThanOrEqualToSuperview()
+      $0.right.lessThanOrEqualToSuperview()
+      self.leftInsetConstraint = $0.left.equalToSuperview().priority(999).constraint
+    }
+  }
 }

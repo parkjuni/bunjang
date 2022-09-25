@@ -317,6 +317,8 @@
 			dependencies = (
 			);
 			name = bunjang;
+			packageProductDependencies = (
+			);
 			productName = bunjang;
 			productReference = BBCDB54C28D6D4E500CB766D /* bunjang.app */;
 			productType = "com.apple.product-type.application";
@@ -391,6 +393,8 @@
 				Base,
 			);
 			mainGroup = BBCDB54328D6D4E500CB766D;
+			packageReferences = (
+			);
 			productRefGroup = BBCDB54D28D6D4E500CB766D /* Products */;
 			projectDirPath = "";
 			projectRoot = "";

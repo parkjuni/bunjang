@@ -8,6 +8,7 @@
 import UIKit
 import KakaoSDKAuth
 import KakaoSDKUser
+import KakaoSDKCommon
 
 let ud = UserDefaults.standard
 let base_url = "https://guriman.shop"
@@ -52,123 +53,155 @@ class OnboardingViewController: UIViewController  {
     //kakao login
     @IBAction func Login_kakao(_ sender: Any) {
         
-        //카톡 설치 됐을 시 간편로그인
-        if (UserApi.isKakaoTalkLoginAvailable()) {
-            UserApi.shared.loginWithKakaoTalk {(oauthToken, error) in
+//        토큰 존재 여부 확인하기
+        if (AuthApi.hasToken()) {
+            UserApi.shared.accessTokenInfo { (_, error) in
                 if let error = error {
-                    print(error)
+                    if let sdkError = error as? SdkError, sdkError.isInvalidTokenError() == true  {
+                        //로그인 필요
+                    }
+                    else {
+                        //기타 에러
+                    }
                 }
                 else {
-                    print("loginWithKakaoTalk() success.")
+                    //토큰 유효성 체크 성공(필요 시 토큰 갱신됨)
+                    print("===========================토큰 있음")
+//                    print("access token : ", oauthToken?.accessToken)
+                    print("access token : ", ud.string(forKey: "token"))
+                    print("refresh token : ", ud.string(forKey: "refreshtoken"))
 
-                    //do something
-                    _ = oauthToken
+                    kakaoLogin().Login(self)
+
+                    //메인뷰 전환
+
                 }
             }
         }
         
-        
-      //안됐을 시 브라우저 로그인
+        //토큰 없음 - 회원가입
         else {
-        UserApi.shared.loginWithKakaoAccount {(oauthToken, error) in
+            //로그인 필요
+            //카톡 설치 됐을 시 간편로그인
+            if (UserApi.isKakaoTalkLoginAvailable()) {
+                UserApi.shared.loginWithKakaoTalk {(oauthToken, error) in
                     if let error = error {
                         print(error)
                     }
                     else {
-                        print("loginWithKakaoAccount() success.")
-                        
+                        print("loginWithKakaoTalk() success.")
+
                         //do something
                         _ = oauthToken
-//                        // 어세스토큰
-//                        let accessToken = oauthToken?.accessToken
-//                        ud.set(accessToken, forKey: "token")
-//
-//                        let setNickname = UIStoryboard.init(name: "SetNickname", bundle: nil)
-//                        let vc = setNickname.instantiateViewController(withIdentifier: "SetNicknameViewController")
-//                        self.present(vc, animated: true, completion: nil)
-//
                         
-                        
-                        //카카오 로그인을 통해 사용자 토큰을 발급 받은 후 사용자 관리 API 호출
-//                        self.setUserInfo()
+                        let accessToken = oauthToken?.accessToken
+                        let refreshToken = oauthToken?.refreshToken
+                        ud.set(accessToken, forKey: "token")
+                        ud.set(refreshToken, forKey: "refreshtoken")
+
+                        print("access token : ", accessToken!)
+                        print("refresh token : ", refreshToken!)
+
                     }
-            
-            
-            let accessToken = oauthToken?.accessToken
-            ud.set(accessToken, forKey: "token")
-            print("access token : ", accessToken!)
-            
-            kakaoLogin().Login(self)
+                }
+            }
+
+            //안됐을 시 브라우저 로그인
+
+            else {
+            UserApi.shared.loginWithKakaoAccount {(oauthToken, error) in
+                       if let error = error {
+                           print(error)
+                       }
+                       else {
+                           print("loginWithKakaoAccount() success.")
+                           
+                           //do something
+                           _ = oauthToken
+
+                           // 어세스토큰
+                           let accessToken = oauthToken?.accessToken
+                           let refreshToken = oauthToken?.refreshToken
+                           ud.set(accessToken, forKey: "token")
+                           ud.set(refreshToken, forKey: "refreshtoken")
+
+                           print("access token : ", accessToken!)
+                           print("refresh token : ", refreshToken!)
+                           
+                           // 닉네임 설정창 - 회원가입
+                            let setNickname = UIStoryboard.init(name: "SetNickname", bundle: nil)
+                            let vc = setNickname.instantiateViewController(withIdentifier: "SetNicknameViewController")
+                            vc.modalPresentationStyle = UIModalPresentationStyle.fullScreen
+
+                            self.present(vc, animated: true, completion: nil)
+    
+                       
+                       }}
+
+
+
+        }
+    
+       
+//        else {
+//        UserApi.shared.loginWithKakaoAccount {(oauthToken, error) in
+//                    if let error = error {
+//                        print(error)
+//                    }
+//                    else {
+//                        print("loginWithKakaoAccount() success.")
+//
+//                        //do something
+//                        _ = oauthToken
+////                        // 어세스토큰
+////                        let accessToken = oauthToken?.accessToken
+////                        ud.set(accessToken, forKey: "token")
+////
+////                        let setNickname = UIStoryboard.init(name: "SetNickname", bundle: nil)
+////                        let vc = setNickname.instantiateViewController(withIdentifier: "SetNicknameViewController")
+////                        self.present(vc, animated: true, completion: nil)
+////
+//
+//
+//                        //카카오 로그인을 통해 사용자 토큰을 발급 받은 후 사용자 관리 API 호출
+////                        self.setUserInfo()
+//                    }
+//
+//
+//            let accessToken = oauthToken?.accessToken
+//            let refreshToken = oauthToken?.refreshToken
+//            ud.set(accessToken, forKey: "token")
+//            print("access token : ", accessToken!)
+//            print("refresh token : ", refreshToken!)
+
+//            kakaoLogin().Login(self)
             
             //response code 받아서 if == 1000 기존회원 로그인 - 홈뷰 전환
-            if ud.integer(forKey: "code") == 1000 {
-                let storyboard = UIStoryboard(name: "Main", bundle: nil)
-                let vc = storyboard.instantiateViewController(withIdentifier: "MainViewController")
-                vc.modalPresentationStyle = UIModalPresentationStyle.fullScreen
-                self.present(vc, animated: true, completion: nil)
-            }
-//
+//            if ud.integer(forKey: "code") == 1000 {
+//                let storyboard = UIStoryboard(name: "Main", bundle: nil)
+//                let vc = storyboard.instantiateViewController(withIdentifier: "MainViewController")
+//                vc.modalPresentationStyle = UIModalPresentationStyle.fullScreen
+//                self.present(vc, animated: true, completion: nil)
+//            }
+////
             //else==2017  신규회원 set nick name 창으로 전환 - 가입
-            else{
-                print("로그인---------else code")
-            let setNickname = UIStoryboard.init(name: "SetNickname", bundle: nil)
-            let vc = setNickname.instantiateViewController(withIdentifier: "SetNicknameViewController") as! SetNicknameViewController
-            vc.modalPresentationStyle = UIModalPresentationStyle.fullScreen
-
-            self.present(vc, animated: true)
-            }
+//            else{
+//                print("로그인---------else code")
+//            let setNickname = UIStoryboard.init(name: "SetNickname", bundle: nil)
+//            let vc = setNickname.instantiateViewController(withIdentifier: "SetNicknameViewController") as! SetNicknameViewController
+//            vc.modalPresentationStyle = UIModalPresentationStyle.fullScreen
+//
+//            self.present(vc, animated: true)
+//            }
             
 
             
                         
-                }
+//                }
         }
     }
 //    
-//    func setUserInfo() {
-//            UserApi.shared.me() {(user, error) in
-//                if let error = error {
-//                    print(error)
-//                }
-//                else {
-//                    print("me() success.")
-//                    //do something
-//                    _ = user
-//                    self.infoLabel.text = user?.kakaoAccount?.profile?.nickname
-//                    
-//                    if let url = user?.kakaoAccount?.profile?.profileImageUrl,
-//                        let data = try? Data(contentsOf: url) {
-//                        self.profileImageView.image = UIImage(data: data)
-//                    }
-//                }
-//            }
-//    }
-//
-//    토큰 존재 여부 확인하기
-//   앱 실행 시 사용자가 앞서 로그인을 통해 발급 받은 토큰이 있는지 확인하려면 AuthApi의 hasToken() API를 호출합니다. 이 API는 기존에 발급 받은 액세스 토큰 또는 리프레시 토큰의 존재 여부를 Boolean 값으로 알려줍니다. 단, hasToken()의 결과가 true라도 현재 사용자가 로그인 상태임을 보장하지 않습니다.
-//    if (AuthApi.hasToken()) {
-//        UserApi.shared.accessTokenInfo { (_, error) in
-//            if let error = error {
-//                if let sdkError = error as? SdkError, sdkError.isInvalidTokenError() == true  {
-//                    //로그인 필요
-//                }
-//                else {
-//                    //기타 에러
-//                }
-//            }
-//            else {
-//                //토큰 유효성 체크 성공(필요 시 토큰 갱신됨)
-//            }
-//        }
-//    }
-//    else {
-//        //로그인 필요
-//    }
-    
-    
-    
-    
-    
+
     
     
     
@@ -248,6 +281,4 @@ class OnboardingViewController: UIViewController  {
     
 
 }
-
-
 

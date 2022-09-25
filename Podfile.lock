@@ -35,9 +35,13 @@ PODS:
     - KakaoSDKCommon/Common (= 2.11.2)
   - KakaoSDKUser (2.11.2):
     - KakaoSDKAuth (= 2.11.2)
+  - SnapKit (5.6.0)
+  - Then (3.0.0)
 
 DEPENDENCIES:
   - KakaoSDK
+  - SnapKit (~> 5.6.0)
+  - Then
 
 SPEC REPOS:
   trunk:
@@ -52,6 +56,8 @@ SPEC REPOS:
     - KakaoSDKTalk
     - KakaoSDKTemplate
     - KakaoSDKUser
+    - SnapKit
+    - Then
 
 SPEC CHECKSUMS:
   Alamofire: d368e1ff8a298e6dde360e35a3e68e6c610e7204
@@ -65,7 +71,9 @@ SPEC CHECKSUMS:
   KakaoSDKTalk: d2f935783388f200f97b6be6a0edb17321b8da6e
   KakaoSDKTemplate: 19ce588aa1899731978c5358b409fd5e607ee457
   KakaoSDKUser: bf7b02e23257199995cdd03d59feb716416d14d6
+  SnapKit: e01d52ebb8ddbc333eefe2132acf85c8227d9c25
+  Then: 844265ae87834bbe1147d91d5d41a404da2ec27d
 
-PODFILE CHECKSUM: 051823238660276d8a7303a1ce85ac0a378a34ce
+PODFILE CHECKSUM: 08c97155597bfa0522741502909846ef16757fe5
 
 COCOAPODS: 1.11.3
