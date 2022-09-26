@@ -10,7 +10,7 @@ import Alamofire
 
 class kakaoLogin{
     
-    
+
     //기존회원 카카오로 로그인
     func Login(_ viewController : OnboardingViewController){
         
@@ -33,8 +33,8 @@ class kakaoLogin{
                         //code 저장
                         print("post 성공")
                         ud.set(response.code, forKey: "code")
-                        ud.set(response.result[0].userID, forKey: "userId")
-                        ud.set(response.result[0].jwt, forKey: "jwt")
+//                        ud.set(response.result[0].userID, forKey: "userId")
+//                        ud.set(response.result[0].jwt, forKey: "jwt")
                     }
 //                    else{
 //
@@ -71,8 +71,9 @@ class kakaoLogin{
                     //code 저장
                     print("post 성공")
                     ud.set(response.code, forKey: "code")
-                    ud.set(response.result[0].userID, forKey: "userId")
-                    ud.set(response.result[0].jwt, forKey: "jwt")
+//                    ud.set(response.result[0].userID, forKey: "userId")
+//                    ud.set
+//                    (response.result[0].jwt, forKey: "jwt")
                 }
                 print("post 성공")
 //                viewController.didSuccess_ovalue(response)

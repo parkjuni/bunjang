@@ -43,6 +43,13 @@ extension MainViewController : UITabBarControllerDelegate{
 
             return false
             }
+        else if viewController is SearchViewController{
+            let search : UIStoryboard = UIStoryboard(name: "Search", bundle: nil)
+            let searchVC = search.instantiateViewController(withIdentifier: "SearchViewController") as! SearchViewController
+//            self.navigationController?.pushViewController(searchVC, animated: true)
+            self.show(searchVC, sender: (Any).self)
+            
+        }
         
     
         

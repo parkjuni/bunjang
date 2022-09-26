@@ -16,26 +16,13 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="Mx4-44-t5r">
-                                <rect key="frame" x="0.0" y="107" width="414" height="32"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <segments>
-                                    <segment title="새소식"/>
-                                    <segment title="키워드 알림"/>
-                                </segments>
-                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <color key="selectedSegmentTintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <connections>
-                                    <action selector="switchViews:" destination="Y6W-OH-hqX" eventType="valueChanged" id="mKa-kw-ptV"/>
-                                </connections>
-                            </segmentedControl>
-                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zp7-vs-s8S">
+                            <containerView opaque="NO" contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="zp7-vs-s8S">
                                 <rect key="frame" x="0.0" y="138" width="414" height="758"/>
                                 <connections>
                                     <segue destination="Sya-ZH-im0" kind="embed" id="qev-vH-olS"/>
                                 </connections>
                             </containerView>
-                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rpQ-np-btF">
+                            <containerView opaque="NO" contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="rpQ-np-btF">
                                 <rect key="frame" x="0.0" y="138" width="414" height="758"/>
                                 <connections>
                                     <segue destination="PdQ-lz-AQi" kind="embed" id="Zp7-zT-lz8"/>
@@ -49,20 +36,14 @@
                             <constraint firstAttribute="bottom" secondItem="rpQ-np-btF" secondAttribute="bottom" id="Dok-vg-qkL"/>
                             <constraint firstItem="rpQ-np-btF" firstAttribute="trailing" secondItem="vDu-zF-Fre" secondAttribute="trailing" id="RIb-83-WeI"/>
                             <constraint firstItem="zp7-vs-s8S" firstAttribute="trailing" secondItem="vDu-zF-Fre" secondAttribute="trailing" id="TGe-iq-Ltq"/>
-                            <constraint firstItem="Mx4-44-t5r" firstAttribute="leading" secondItem="5EZ-qb-Rvc" secondAttribute="leading" id="Y53-XD-SGx"/>
-                            <constraint firstItem="zp7-vs-s8S" firstAttribute="top" secondItem="Mx4-44-t5r" secondAttribute="bottom" id="cGH-K5-Mvc"/>
                             <constraint firstItem="zp7-vs-s8S" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="idG-TG-8zf"/>
                             <constraint firstAttribute="bottom" secondItem="zp7-vs-s8S" secondAttribute="bottom" id="q1a-69-M7G"/>
-                            <constraint firstItem="Mx4-44-t5r" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" constant="19" id="sNh-1f-ybS"/>
-                            <constraint firstItem="Mx4-44-t5r" firstAttribute="width" secondItem="vDu-zF-Fre" secondAttribute="width" id="vGa-2v-vBj"/>
-                            <constraint firstItem="rpQ-np-btF" firstAttribute="top" secondItem="Mx4-44-t5r" secondAttribute="bottom" id="ydY-6h-KlM"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="uOe-Sy-2ru"/>
                     <connections>
-                        <outlet property="firstView" destination="rpQ-np-btF" id="s3X-yN-xVG"/>
-                        <outlet property="secondView" destination="zp7-vs-s8S" id="NSv-Di-dUd"/>
-                        <outlet property="segmentedControl" destination="Mx4-44-t5r" id="TQE-2C-T5i"/>
+                        <outlet property="firstView" destination="rpQ-np-btF" id="9E3-yI-nsK"/>
+                        <outlet property="secondView" destination="zp7-vs-s8S" id="WuW-wS-Ghj"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -116,13 +97,13 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="알림이 없습니다." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jBw-Db-E4P">
-                                <rect key="frame" x="106" y="461" width="202" height="17"/>
+                                <rect key="frame" x="106" y="424" width="202" height="17"/>
                                 <fontDescription key="fontDescription" type="system" weight="medium" pointSize="14"/>
                                 <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="doc.text" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="oNK-x5-MzO">
-                                <rect key="frame" x="170" y="379" width="74" height="74"/>
+                                <rect key="frame" x="170" y="332" width="74" height="74"/>
                                 <color key="tintColor" systemColor="systemGray4Color"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="74" id="8eS-1P-XHP"/>
@@ -135,17 +116,17 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="oNK-x5-MzO" firstAttribute="centerX" secondItem="6YY-2d-XfY" secondAttribute="centerX" id="0g7-X7-viC"/>
-                            <constraint firstAttribute="bottom" secondItem="jBw-Db-E4P" secondAttribute="bottom" constant="280" id="2u9-XN-HAh"/>
+                            <constraint firstAttribute="bottom" secondItem="jBw-Db-E4P" secondAttribute="bottom" constant="317" id="2u9-XN-HAh"/>
                             <constraint firstItem="jBw-Db-E4P" firstAttribute="centerX" secondItem="6YY-2d-XfY" secondAttribute="centerX" id="7IZ-DS-VK7"/>
                             <constraint firstAttribute="trailingMargin" secondItem="jBw-Db-E4P" secondAttribute="trailing" constant="86" id="H53-vU-ha5"/>
                             <constraint firstItem="jBw-Db-E4P" firstAttribute="leading" secondItem="6YY-2d-XfY" secondAttribute="leadingMargin" constant="86" id="fF1-9B-WHA"/>
-                            <constraint firstItem="jBw-Db-E4P" firstAttribute="top" secondItem="oNK-x5-MzO" secondAttribute="bottom" constant="8" id="n5o-mJ-GE9"/>
+                            <constraint firstItem="jBw-Db-E4P" firstAttribute="top" secondItem="oNK-x5-MzO" secondAttribute="bottom" constant="18" id="n5o-mJ-GE9"/>
                         </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="A6v-UV-uec" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="828.98550724637687" y="767.41071428571422"/>
+            <point key="canvasLocation" x="857" y="767"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="lTA-h1-FH0">
@@ -156,7 +137,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mx7-oK-RNf">
-                                <rect key="frame" x="95" y="431.5" width="224" height="50.5"/>
+                                <rect key="frame" x="95" y="403" width="224" height="50.5"/>
                                 <string key="text">키워드 알림이 없습니다.
 키워드를 등록하고 알림을 받아보세요.</string>
                                 <fontDescription key="fontDescription" type="system" weight="medium" pointSize="14"/>
@@ -164,7 +145,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="doc.text" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="Qib-aH-i3K">
-                                <rect key="frame" x="170" y="349.5" width="74" height="74"/>
+                                <rect key="frame" x="170" y="313" width="74" height="74"/>
                                 <color key="tintColor" systemColor="systemGray4Color"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="74" id="DPw-Mo-ttj"/>
@@ -172,7 +153,7 @@
                                 </constraints>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Gjz-Yw-Nur">
-                                <rect key="frame" x="134" y="502" width="147" height="40"/>
+                                <rect key="frame" x="134" y="475" width="147" height="40"/>
                                 <color key="backgroundColor" red="0.91976243257522583" green="0.37456666116138398" blue="0.42708676724039218" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="147" id="fP5-Y2-xya"/>
@@ -194,9 +175,9 @@
                         <constraints>
                             <constraint firstAttribute="trailingMargin" secondItem="mx7-oK-RNf" secondAttribute="trailing" constant="75" id="0e9-bm-1ur"/>
                             <constraint firstItem="Qib-aH-i3K" firstAttribute="centerX" secondItem="nes-bT-bmn" secondAttribute="centerX" id="13P-dE-p9R"/>
-                            <constraint firstItem="mx7-oK-RNf" firstAttribute="top" secondItem="Qib-aH-i3K" secondAttribute="bottom" constant="8" symbolic="YES" id="JJF-PS-PaU"/>
-                            <constraint firstAttribute="bottom" secondItem="mx7-oK-RNf" secondAttribute="bottom" constant="276" id="JwZ-f3-6dv"/>
-                            <constraint firstItem="Gjz-Yw-Nur" firstAttribute="top" secondItem="mx7-oK-RNf" secondAttribute="bottom" constant="20" id="O9b-ZE-sjO"/>
+                            <constraint firstItem="mx7-oK-RNf" firstAttribute="top" secondItem="Qib-aH-i3K" secondAttribute="bottom" constant="16" id="JJF-PS-PaU"/>
+                            <constraint firstAttribute="bottom" secondItem="mx7-oK-RNf" secondAttribute="bottom" constant="304.5" id="JwZ-f3-6dv"/>
+                            <constraint firstItem="Gjz-Yw-Nur" firstAttribute="top" secondItem="mx7-oK-RNf" secondAttribute="bottom" constant="21.5" id="O9b-ZE-sjO"/>
                             <constraint firstItem="Gjz-Yw-Nur" firstAttribute="leading" secondItem="nes-bT-bmn" secondAttribute="leadingMargin" constant="114" id="Ost-5b-nJA"/>
                             <constraint firstItem="mx7-oK-RNf" firstAttribute="leading" secondItem="nes-bT-bmn" secondAttribute="leadingMargin" constant="75" id="T7Z-1w-Rnj"/>
                             <constraint firstAttribute="trailingMargin" secondItem="Gjz-Yw-Nur" secondAttribute="trailing" constant="113" id="xwB-zO-9Cp"/>
@@ -205,7 +186,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cpJ-gs-Owa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1697" y="767"/>
+            <point key="canvasLocation" x="1629" y="749"/>
         </scene>
     </scenes>
     <resources>

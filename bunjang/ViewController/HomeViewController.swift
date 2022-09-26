@@ -12,9 +12,13 @@ import Then
 
 
 class HomeViewController: UIViewController,UIScrollViewDelegate {
+    
+    @IBOutlet weak var secondView: UIView!
+    @IBOutlet weak var firstView: UIView!
     @IBOutlet weak var scrollCollectView: UIView!
+    
     private let segmentedControl: UISegmentedControl = {
-        let segmentedControl = UnderlineSegmentedControl(items: ["추천상품", "브랜드", ])
+        let segmentedControl = UnderlineSegmentedControl(items: ["추천상품", "브랜드" ])
         segmentedControl.translatesAutoresizingMaskIntoConstraints = false
         return segmentedControl
       }()
@@ -73,37 +77,32 @@ class HomeViewController: UIViewController,UIScrollViewDelegate {
     
     
     
+    @IBOutlet weak var stackView: UIStackView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         Scroll_image.delegate = self
         addContentScrollView()
         setNavigationBar()
-//           self.view.addSubview(self.segmentedControl)
+//        scrollCollectView.addSubview(self.segmentedControl)
+      
+//        self.view.addSubview(self.segmentedControl)
+        
         self.scrollCollectView.addSubview(self.segmentedControl)
-
+ self.stackView.insertArrangedSubview(self.scrollCollectView, at: 3)
+//        self.view.addSubview(stackView)
+        
         NSLayoutConstraint.activate([
-              self.segmentedControl.leftAnchor.constraint(equalTo: self.view.leftAnchor),
-              self.segmentedControl.rightAnchor.constraint(equalTo: self.view.rightAnchor),
-              self.segmentedControl.topAnchor.constraint(equalTo: self.view.topAnchor, constant: 600),
-              self.segmentedControl.heightAnchor.constraint(equalToConstant: 50),
+              self.segmentedControl.leftAnchor.constraint(equalTo: self.scrollCollectView.leftAnchor),
+              self.segmentedControl.rightAnchor.constraint(equalTo: self.scrollCollectView.rightAnchor),
+              self.segmentedControl.topAnchor.constraint(equalTo: self.scrollCollectView.topAnchor, constant: 5),
+              self.segmentedControl.heightAnchor.constraint(equalToConstant: 40),
             ])
-        self.segmentedControl.setTitleTextAttributes([NSAttributedString.Key.foregroundColor: UIColor.gray], for: .normal)
-           self.segmentedControl.setTitleTextAttributes(
-             [
-               NSAttributedString.Key.foregroundColor: UIColor.green,
-               .font: UIFont.systemFont(ofSize: 13, weight: .semibold)
-             ],
-             for: .selected
-           )
-//           self.segmentedControl.addTarget(self, action: #selector(changeValue(control:)), for: .valueChanged)
+       
+           self.segmentedControl.addTarget(self, action: #selector(changeValue(control:)), for: .valueChanged)
            self.segmentedControl.selectedSegmentIndex = 0
-////           self.changeValue(control: self.segmentedControl)
+           self.changeValue(control: self.segmentedControl)
 //
-        
-        
-        
-        
         
         self.view.addSubview(self.indicatorView)
 
@@ -115,14 +114,14 @@ class HomeViewController: UIViewController,UIScrollViewDelegate {
         
         
         
-        self.segmentedControl.setTitleTextAttributes([NSAttributedString.Key.foregroundColor: UIColor.gray], for: .normal)
-           self.segmentedControl.setTitleTextAttributes(
-             [
-               NSAttributedString.Key.foregroundColor: UIColor.black,
-               .font: UIFont.systemFont(ofSize: 13, weight: .semibold)
-             ],
-             for: .selected
-           )
+//        self.segmentedControl.setTitleTextAttributes([NSAttributedString.Key.foregroundColor: UIColor.gray], for: .normal)
+//           self.segmentedControl.setTitleTextAttributes(
+//             [
+//               NSAttributedString.Key.foregroundColor: UIColor.black,
+//               .font: UIFont.systemFont(ofSize: 13, weight: .semibold)
+//             ],
+//             for: .selected
+//           )
            self.segmentedControl.selectedSegmentIndex = 0
         
     }
@@ -211,7 +210,23 @@ class HomeViewController: UIViewController,UIScrollViewDelegate {
            }
     
     
+    @objc private func changeValue(control: UISegmentedControl) {
+        if control.selectedSegmentIndex == 1 {
+           firstView.alpha = 0
+           secondView.alpha = 1
+          
+       }
+       
+       else {
+            firstView.alpha = 1
+            secondView.alpha = 0
+
+       }
+        
+    }
     
+    
+
 
 
 
@@ -334,20 +349,18 @@ extension HomeViewController: UICollectionViewDataSource,
              return sectionInsets.left
          }
     
-    
-    func scrollViewDidScroll(_ scrollView: UIScrollView) {
-//        if collectionView == MenuCollectionView {
-
-       let scroll = scrollView.contentOffset.x + scrollView.contentInset.left
-       let width = scrollView.contentSize.width + scrollView.contentInset.left + scrollView.contentInset.right
-       let scrollRatio = scroll / width
+        func scrollViewDidScroll(_ scrollView: UIScrollView) {
+            if scrollView == self.MenuCollectionView{
+            
+            let scroll = scrollView.contentOffset.x + scrollView.contentInset.left
+           let width = scrollView.contentSize.width + scrollView.contentInset.left + scrollView.contentInset.right
+           let scrollRatio = scroll / width
        
             self.indicatorView.leftOffsetRatio = scrollRatio
         
+            }
+        }
     }
-     
-    
-}
 
 
 // 스크롤바 커스텀

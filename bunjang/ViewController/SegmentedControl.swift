@@ -16,6 +16,16 @@ final class UnderlineSegmentedControl: UISegmentedControl {
     let frame = CGRect(x: xPosition, y: yPosition, width: width, height: height)
     let view = UIView(frame: frame)
     view.backgroundColor = .black
+      
+      self.setTitleTextAttributes([NSAttributedString.Key.foregroundColor: UIColor.gray, .font: UIFont.systemFont(ofSize: 17)], for: .normal)
+      self.setTitleTextAttributes(
+        [
+          NSAttributedString.Key.foregroundColor: UIColor.black,
+          .font: UIFont.systemFont(ofSize: 17, weight: .bold)
+        ],
+        for: .selected
+      )
+      
     self.addSubview(view)
     return view
   }()

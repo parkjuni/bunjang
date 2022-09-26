@@ -9,33 +9,31 @@ import UIKit
 
 class NotificationViewController: UIViewController {
 
-    @IBOutlet weak var segmentedControl : UISegmentedControl!
+    @IBOutlet weak var segmentedControl2 : UISegmentedControl!
     @IBOutlet weak var firstView: UIView!
     @IBOutlet weak var secondView: UIView!
   
     
+    
+    
+    private let segmentedControl: UISegmentedControl = {
+      let segmentedControl = UnderlineSegmentedControl(items: ["새소식", "키워드 알림"])
+      segmentedControl.translatesAutoresizingMaskIntoConstraints = false
+      return segmentedControl
+    }()
+    
+   
+    
+ 
+    
+    
     @IBOutlet weak var keyword: UIButton!
-    @IBAction func switchViews(_ sender: UISegmentedControl){
-      
-         if sender.selectedSegmentIndex == 1 {
-            firstView.alpha = 0
-            secondView.alpha = 1
-           
-             keywordButton.isHidden = false
-        }
-        
-        else {
-             firstView.alpha = 1
-             secondView.alpha = 0
-            keywordButton.isHidden = true
-
-          
-
-        }
-    
-    }
 
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.navigationItem.title = ""
+                  }
     
     
     override func viewDidLoad() {
@@ -46,31 +44,57 @@ class NotificationViewController: UIViewController {
             self.navigationController?.navigationBar.topItem?.title = "알림"
 //        self.title = ""
 
-        self.segmentedControl.setTitleTextAttributes([NSAttributedString.Key.foregroundColor: UIColor.gray,.font: UIFont.systemFont(ofSize: 17)], for: .normal)
+     
+//        self.segmentedControl.selectedSegmentIndex = 0
+//
+//
         
-        
-        
-        self.segmentedControl.setTitleTextAttributes(
-             [
-               NSAttributedString.Key.foregroundColor: UIColor.black,
-               .font: UIFont.systemFont(ofSize: 17, weight: .bold)
-             ],
-             for: .selected
-           )
-        self.segmentedControl.selectedSegmentIndex = 0
+          self.view.addSubview(self.segmentedControl)
+//          self.view.addSubview(self.pageViewController.view)
+          
+          NSLayoutConstraint.activate([
+            self.segmentedControl.leftAnchor.constraint(equalTo: self.view.leftAnchor),
+            self.segmentedControl.rightAnchor.constraint(equalTo: self.view.rightAnchor),
+            self.segmentedControl.topAnchor.constraint(equalTo: self.view.topAnchor, constant: 80),
+            self.segmentedControl.heightAnchor.constraint(equalToConstant: 50),
+          ])
 
-    }
+          self.segmentedControl.addTarget(self, action: #selector(changeValue(control:)), for: .valueChanged)
+          self.segmentedControl.selectedSegmentIndex = 0
+          self.changeValue(control: self.segmentedControl)
+        }
+        
+        @objc private func changeValue(control: UISegmentedControl) {
+          // 코드로 값을 변경하면 해당 메소드 호출 x
+//          self.currentPage = control.selectedSegmentIndex
+            if control.selectedSegmentIndex == 1 {
+               firstView.alpha = 0
+               secondView.alpha = 1
+              
+                keywordButton.isHidden = false
+           }
+           
+           else {
+                firstView.alpha = 1
+                secondView.alpha = 0
+               keywordButton.isHidden = true
+
+             
+
+           }
+            
+        }
+        
+        
     
     
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        self.navigationItem.title = ""
-                  }
+
     
     
     let keywordButtonImage = UIImage(systemName: "square.and.pencil")!
            let keywordButton = UIButton(frame: CGRect(x: 0, y: 0, width: 20, height: 20))
-    
+
+
     func setNavigationBar(){
        
         
@@ -105,6 +129,7 @@ class NotificationViewController: UIViewController {
         
     }
    
+
     
     @objc func keywordbuttonAction(sender: UIButton!) {
 
@@ -123,6 +148,6 @@ class NotificationViewController: UIViewController {
         
            }
    
-    
-
 }
+
+

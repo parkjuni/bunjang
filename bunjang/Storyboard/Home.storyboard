@@ -103,38 +103,32 @@
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Z0G-lN-wbM">
                                                 <rect key="frame" x="0.0" y="566" width="390" height="345.66666666666674"/>
                                                 <subviews>
+                                                    <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GA5-v8-nV2">
+                                                        <rect key="frame" x="0.0" y="51" width="390" height="500"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="500" id="4wu-yz-wl8"/>
+                                                        </constraints>
+                                                        <connections>
+                                                            <segue destination="Z17-l6-ge8" kind="embed" id="7WF-N2-g8D"/>
+                                                        </connections>
+                                                    </containerView>
                                                     <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4nK-qt-dTV">
                                                         <rect key="frame" x="0.0" y="51" width="390" height="294.66666666666669"/>
                                                         <connections>
                                                             <segue destination="WvJ-ZZ-B8b" kind="embed" id="2Iq-zH-PsU"/>
                                                         </connections>
                                                     </containerView>
-                                                    <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GA5-v8-nV2">
-                                                        <rect key="frame" x="0.0" y="51" width="390" height="294.66666666666669"/>
-                                                        <connections>
-                                                            <segue destination="Z17-l6-ge8" kind="embed" id="7WF-N2-g8D"/>
-                                                        </connections>
-                                                    </containerView>
-                                                    <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="Xqw-Li-oIM">
-                                                        <rect key="frame" x="21" y="20" width="127" height="32"/>
-                                                        <segments>
-                                                            <segment title="추천상품"/>
-                                                            <segment title="브랜드"/>
-                                                        </segments>
-                                                    </segmentedControl>
                                                 </subviews>
-                                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
                                                     <constraint firstItem="GA5-v8-nV2" firstAttribute="leading" secondItem="Z0G-lN-wbM" secondAttribute="leading" id="4ka-jq-BSY"/>
-                                                    <constraint firstItem="4nK-qt-dTV" firstAttribute="top" secondItem="Xqw-Li-oIM" secondAttribute="bottom" id="Flw-fu-U18"/>
                                                     <constraint firstAttribute="bottom" secondItem="4nK-qt-dTV" secondAttribute="bottom" id="MOc-jC-FJj"/>
+                                                    <constraint firstItem="GA5-v8-nV2" firstAttribute="top" secondItem="Z0G-lN-wbM" secondAttribute="top" constant="51" id="cZH-6T-mKf"/>
                                                     <constraint firstAttribute="bottom" secondItem="GA5-v8-nV2" secondAttribute="bottom" id="chi-Jr-ncy"/>
-                                                    <constraint firstItem="GA5-v8-nV2" firstAttribute="top" secondItem="Xqw-Li-oIM" secondAttribute="bottom" id="hxI-NH-cZt"/>
+                                                    <constraint firstItem="4nK-qt-dTV" firstAttribute="top" secondItem="Z0G-lN-wbM" secondAttribute="top" constant="51" id="gak-db-smZ"/>
                                                     <constraint firstAttribute="trailing" secondItem="4nK-qt-dTV" secondAttribute="trailing" id="k9a-ct-Do6"/>
                                                     <constraint firstItem="4nK-qt-dTV" firstAttribute="leading" secondItem="Z0G-lN-wbM" secondAttribute="leading" id="oMF-Mc-a01"/>
-                                                    <constraint firstItem="Xqw-Li-oIM" firstAttribute="top" secondItem="Z0G-lN-wbM" secondAttribute="top" constant="20" id="oOd-Po-iit"/>
                                                     <constraint firstAttribute="trailing" secondItem="GA5-v8-nV2" secondAttribute="trailing" id="www-LE-RBI"/>
-                                                    <constraint firstItem="Xqw-Li-oIM" firstAttribute="leading" secondItem="Z0G-lN-wbM" secondAttribute="leading" constant="21" id="yml-pH-hKz"/>
                                                 </constraints>
                                             </view>
                                         </subviews>
@@ -167,7 +161,10 @@
                     <connections>
                         <outlet property="MenuCollectionView" destination="1I5-bp-twI" id="0X2-7K-os3"/>
                         <outlet property="Scroll_image" destination="GBt-vJ-bak" id="Xvk-zH-a1s"/>
+                        <outlet property="firstView" destination="4nK-qt-dTV" id="ami-8Z-tgO"/>
                         <outlet property="scrollCollectView" destination="Z0G-lN-wbM" id="q3H-Uh-xED"/>
+                        <outlet property="secondView" destination="GA5-v8-nV2" id="if0-Cu-poH"/>
+                        <outlet property="stackView" destination="d9k-ky-RRr" id="gQh-Df-4oC"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -213,35 +210,120 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fS6-cS-N8S" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="443" y="666"/>
+            <point key="canvasLocation" x="85" y="694"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="fJX-WU-kWr">
             <objects>
                 <viewController id="Z17-l6-ge8" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="yNb-1N-giG">
-                        <rect key="frame" x="0.0" y="0.0" width="390" height="294.66666666666669"/>
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="500"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bAx-VM-djb">
+                                <rect key="frame" x="25" y="20" width="53" height="35"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="35" id="PNu-VH-vQd"/>
+                                    <constraint firstAttribute="width" constant="53" id="eNB-Ag-j9d"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal" title="추가">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="18"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GKT-31-Uy8">
+                                <rect key="frame" x="86" y="20" width="53" height="35"/>
+                                <color key="backgroundColor" systemColor="systemGray4Color"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="35" id="NYV-Rn-Wng"/>
+                                    <constraint firstAttribute="width" constant="53" id="v9c-G8-IxU"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal" title="편집">
+                                    <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="18"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="브랜드를 팔로우하고  매일 새소식을 받아보세요" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Cxg-tY-ZBT">
+                                <rect key="frame" x="80.666666666666671" y="112" width="228.66666666666663" height="55"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="23"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="brand" translatesAutoresizingMaskIntoConstraints="NO" id="3XL-vb-6Nu">
+                                <rect key="frame" x="46" y="206" width="299" height="168"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AbM-Pw-owV">
+                                <rect key="frame" x="101" y="403" width="188" height="48"/>
+                                <color key="backgroundColor" red="0.70588237050000002" green="0.231372565" blue="0.18823529780000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="48" id="Mbw-Ke-nu4"/>
+                                    <constraint firstAttribute="width" constant="188" id="lF2-UV-Auh"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="16"/>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal" title="브랜드 보러가기">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="5"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="팔로우한 브랜드 소식을 피드에서 확인해보세요." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vmK-gq-qsS">
+                                <rect key="frame" x="64.333333333333343" y="181" width="261.66666666666663" height="17"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="6Pk-9k-fGF"/>
-                        <color key="backgroundColor" systemColor="systemGreenColor"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="AbM-Pw-owV" firstAttribute="top" secondItem="3XL-vb-6Nu" secondAttribute="bottom" constant="29" id="5cx-bK-fGD"/>
+                            <constraint firstItem="AbM-Pw-owV" firstAttribute="centerX" secondItem="yNb-1N-giG" secondAttribute="centerX" id="GfD-cd-9RS"/>
+                            <constraint firstItem="GKT-31-Uy8" firstAttribute="top" secondItem="yNb-1N-giG" secondAttribute="top" constant="20" id="JII-OD-g5M"/>
+                            <constraint firstItem="6Pk-9k-fGF" firstAttribute="trailing" secondItem="3XL-vb-6Nu" secondAttribute="trailing" constant="45" id="P9y-wM-fTk"/>
+                            <constraint firstItem="GKT-31-Uy8" firstAttribute="leading" secondItem="bAx-VM-djb" secondAttribute="trailing" constant="8" id="Qab-IP-XPF"/>
+                            <constraint firstItem="vmK-gq-qsS" firstAttribute="top" secondItem="Cxg-tY-ZBT" secondAttribute="bottom" constant="14" id="QfX-fh-4gi"/>
+                            <constraint firstItem="3XL-vb-6Nu" firstAttribute="leading" secondItem="6Pk-9k-fGF" secondAttribute="leading" constant="46" id="Y79-9z-Ol3"/>
+                            <constraint firstItem="bAx-VM-djb" firstAttribute="top" secondItem="yNb-1N-giG" secondAttribute="top" constant="20" id="YEb-eF-a53"/>
+                            <constraint firstItem="vmK-gq-qsS" firstAttribute="centerX" secondItem="yNb-1N-giG" secondAttribute="centerX" id="cqM-Oa-wIT"/>
+                            <constraint firstItem="Cxg-tY-ZBT" firstAttribute="centerX" secondItem="yNb-1N-giG" secondAttribute="centerX" id="eJK-35-wwQ"/>
+                            <constraint firstItem="bAx-VM-djb" firstAttribute="leading" secondItem="6Pk-9k-fGF" secondAttribute="leading" constant="25" id="hc8-NZ-GBP"/>
+                            <constraint firstItem="AbM-Pw-owV" firstAttribute="top" secondItem="vmK-gq-qsS" secondAttribute="bottom" constant="205" id="hmC-CW-XkQ"/>
+                            <constraint firstItem="3XL-vb-6Nu" firstAttribute="top" secondItem="vmK-gq-qsS" secondAttribute="bottom" constant="8" id="iTR-Et-8PG"/>
+                            <constraint firstItem="Cxg-tY-ZBT" firstAttribute="top" secondItem="GKT-31-Uy8" secondAttribute="bottom" constant="57" id="qR4-Pm-0nN"/>
+                        </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QhJ-wf-u44" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1198" y="666"/>
+            <point key="canvasLocation" x="1540" y="692.41706161137438"/>
         </scene>
     </scenes>
     <resources>
+        <image name="brand" width="750" height="344"/>
         <image name="house" catalog="system" width="128" height="106"/>
         <image name="menu_heart" width="85" height="85"/>
-        <systemColor name="systemBackgroundColor">
-            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
         <systemColor name="systemBrownColor">
             <color red="0.63529411764705879" green="0.51764705882352946" blue="0.36862745098039218" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
-        <systemColor name="systemGreenColor">
-            <color red="0.20392156862745098" green="0.7803921568627451" blue="0.34901960784313724" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        <systemColor name="systemGray4Color">
+            <color red="0.81960784313725488" green="0.81960784313725488" blue="0.83921568627450982" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

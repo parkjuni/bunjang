@@ -128,14 +128,6 @@
             </objects>
             <point key="canvasLocation" x="164" y="82"/>
         </scene>
-        <!--Storyboard Reference-->
-        <scene sceneID="l8d-4h-O7Z">
-            <objects>
-                <viewControllerPlaceholder storyboardIdentifier="SetNicknameViewController" id="S8V-r2-c5Y" sceneMemberID="viewController"/>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="fJV-7Z-Dye" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="893" y="-29"/>
-        </scene>
     </scenes>
     <resources>
         <image name="logo_apple" width="488" height="600"/>
