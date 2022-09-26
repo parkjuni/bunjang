@@ -104,6 +104,7 @@ class MytableViewCell : UITableViewCell {
     @IBOutlet weak var Label: UILabel!
     
     @IBOutlet weak var Switch: UISwitch!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         Switch.isOn = false

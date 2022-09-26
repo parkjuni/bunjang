@@ -14,7 +14,7 @@ let headers: HTTPHeaders = [
 ]
 
 class goods{
-
+    static let shared = goods()
     //브랜드 리스트 불러오기
     func Brands(_ viewController : Menu_brandViewController){
         
