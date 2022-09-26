@@ -9,6 +9,8 @@ import UIKit
 
 class Menu_cateViewController: UIViewController {
 
+    var cateDataList : [cateResult] = []
+
     
     
     let menu1 = ["스타굿즈","여성가방","피규어/인형","스니커즈","닌텐도/NDS/Will","카메라/DSLR","시계","인테리어","헬스/요가/필라테스","CD/DVD/LP","골프","자전거"]
@@ -35,7 +37,8 @@ class Menu_cateViewController: UIViewController {
         super.viewDidLoad()
         
 
-        
+        goods().Category(self)
+      
         
         let collectionViewLayout = collectionView.collectionViewLayout as? UICollectionViewFlowLayout
         collectionViewLayout?.sectionInset = sectionInsets
@@ -60,7 +63,9 @@ class Menu_cateViewController: UIViewController {
 
 extension Menu_cateViewController:UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout{
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        if (section == 0) { return 12}
+        if (section == 0) {
+            
+            return 12}
         else if (section == 1) { return 22}
         else { return 4}
 
@@ -69,7 +74,7 @@ extension Menu_cateViewController:UICollectionViewDelegate, UICollectionViewData
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "menucell", for: indexPath) as! menu_cateCollectionViewCell
-       
+    
         
         
         if(indexPath.section == 0){
@@ -172,4 +177,28 @@ class menu_cateHeader: UICollectionReusableView {
    
     }
     
+}
+
+
+//api setting 함수
+extension Menu_cateViewController{
+    
+    func didSuccess_category(_ response: category){
+        
+//        let brandName = response.result[0].brandName
+//        self.testlabel.text = brandName
+//
+        self.cateDataList = response.result
+        print("카테고리")
+        print(cateDataList.count)
+        print(cateDataList[0].categoryName)
+        print(cateDataList[2].categoryName)
+
+        self.collectionView.reloadData()
+
+//        self.brandTable.reloadData()
+                   
+               
+//
+    }
 }

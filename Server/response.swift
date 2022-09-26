@@ -49,11 +49,11 @@ struct brand: Decodable {
     let isSuccess: Bool
     let code: Int
     let message: String
-    let result: [result]
+    let result: [brandResult]
 }
 
 // MARK: - Result
-struct result: Decodable {
+struct brandResult: Decodable {
     let brandId: Int
     let brandName, brandEngName, imgUrl: String
     let counting: Int
@@ -62,3 +62,17 @@ struct result: Decodable {
 
 }
 
+//////카테고리  리스트
+struct category: Decodable {
+    let isSuccess: Bool
+    let code: Int
+    let message: String
+    let result: [cateResult]
+}
+
+// MARK: - Result
+struct cateResult: Decodable {
+    let categoryId: Int
+    let categoryName: String
+
+}

@@ -9,10 +9,9 @@ import UIKit
 
 class Menu_brandViewController: UIViewController {
 
-    @IBOutlet weak var testlabel: UILabel!
     @IBOutlet weak var brandTable: UITableView!
     
-    var brandDataList : [result] = []
+    var brandDataList : [brandResult] = []
     
 //    struct data{
 //        var label : String
@@ -23,7 +22,7 @@ class Menu_brandViewController: UIViewController {
         super.viewDidLoad()
 
         goods().Brands(self)
-        brandTable.delegate = self //error//
+        brandTable.delegate = self 
         brandTable.dataSource = self
         brandTable.rowHeight = 70
 
