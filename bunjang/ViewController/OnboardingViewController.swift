@@ -70,11 +70,18 @@ class OnboardingViewController: UIViewController  {
 //                    print("access token : ", oauthToken?.accessToken)
                     print("access token : ", ud.string(forKey: "token"))
                     print("refresh token : ", ud.string(forKey: "refreshtoken"))
-
-                    kakaoLogin().Login(self)
-
-                    //메인뷰 전환
-
+                    
+                    //카카오 자동 로그인
+                    kakaoLogin().auto_loin(self)
+                    if ud.integer(forKey: "logincode") == 1000 {
+                    //성공시 메인뷰 전환
+                    let storyboard = UIStoryboard(name: "Main", bundle: nil)
+                    let vc = storyboard.instantiateViewController(withIdentifier: "MainViewController")
+                     self.present(vc, animated: true, completion: nil)
+                    }
+                    else {
+                        print("자동로그인 실패")
+                    }
                 }
             }
         }
@@ -82,7 +89,7 @@ class OnboardingViewController: UIViewController  {
         //토큰 없음 - 회원가입
         else {
             //로그인 필요
-            //카톡 설치 됐을 시 간편로그인
+            //카톡 설치 됐을 시 간편로그인 - 시뮬레이터에서 동작 안함
             if (UserApi.isKakaoTalkLoginAvailable()) {
                 UserApi.shared.loginWithKakaoTalk {(oauthToken, error) in
                     if let error = error {
@@ -106,8 +113,8 @@ class OnboardingViewController: UIViewController  {
                 }
             }
 
+           
             //안됐을 시 브라우저 로그인
-
             else {
             UserApi.shared.loginWithKakaoAccount {(oauthToken, error) in
                        if let error = error {

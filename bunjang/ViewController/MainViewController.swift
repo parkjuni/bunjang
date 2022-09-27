@@ -8,20 +8,18 @@
 import UIKit
 
 class MainViewController: UITabBarController {
+    
+    private var previousTabIndex: Int = 0
 
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         self.delegate = self
-        
-//        if tabBarController!.selectedIndex == 1{
-//            let add : UIStoryboard = UIStoryboard(name: "AddDetail", bundle: nil)
-//            let addVC = add.instantiateViewController(withIdentifier: "AddDetailViewController") as! AddDetailViewController
-////            addVC.modalPresentationStyle = .fullScreen
-//            self.present(addVC, animated: true, completion: nil)
-//        }
+
         
     }
+    
+  
 
 
 
@@ -30,6 +28,10 @@ class MainViewController: UITabBarController {
 
 extension MainViewController : UITabBarControllerDelegate{
 
+   
+    
+    
+    
     func tabBarController(_ tabBarController: UITabBarController, shouldSelect viewController: UIViewController) -> Bool {
 
      
@@ -42,20 +44,52 @@ extension MainViewController : UITabBarControllerDelegate{
             self.present(addVC, animated: true, completion: nil)
 
             return false
+             }
+        
+        if viewController is seViewController{
+            print("navigation googo")
+            self.navigationController?.pushViewController(SearchViewController(), animated: true)
+
             }
-        else if viewController is SearchViewController{
-            let search : UIStoryboard = UIStoryboard(name: "Search", bundle: nil)
-            let searchVC = search.instantiateViewController(withIdentifier: "SearchViewController") as! SearchViewController
-//            self.navigationController?.pushViewController(searchVC, animated: true)
-            self.show(searchVC, sender: (Any).self)
             
-        }
-        
-    
-        
         return true
     
         }
 
+    
+    
+    override func tabBar(_ tabBar: UITabBar, didSelect item: UITabBarItem) {
+        
+        guard let items = tabBar.items else { return }
+        print("pre index1")
+
+        print(previousTabIndex)
+        
+        for (index, tabBarItem) in items.enumerated() where tabBarItem == item {
+        // viewController3의 index는 2입니다!
+            if index == 1 {
+            // 이전 인덱스로 화면 전환!
+        
+                self.selectedIndex = previousTabIndex
+//                tabBarController?.selectedIndex = previousTabIndex
+                print("selected index")
+                        print(selectedIndex)
+//               // search view push!
+//                guard let baseNavigationController = self as? UINavigationController else { return }
+//                      baseNavigationController.pushViewController(SearchViewController(), animated: true)
+                self.navigationController?.pushViewController(SearchViewController(), animated: true)
+            }
+            else {
+                       // 그 외의 화면들은 인덱스 업데이트!
+                           previousTabIndex = index
+                           print("pre index2")
+                           print(previousTabIndex)
+
+                       }
+                   }
+    
+
+    }
+    
     
 }

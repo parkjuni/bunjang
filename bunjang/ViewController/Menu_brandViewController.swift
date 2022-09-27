@@ -7,16 +7,12 @@
 
 import UIKit
 
+
 class Menu_brandViewController: UIViewController {
 
     @IBOutlet weak var brandTable: UITableView!
-    
     var brandDataList : [brandResult] = []
-    
-//    struct data{
-//        var label : String
-//        var swit : Bool
-//    }
+
     
     override func viewDidLoad() {
         super.viewDidLoad()

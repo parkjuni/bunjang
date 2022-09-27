@@ -21,8 +21,14 @@
 		BB05FCF828DEC50F009DB49E /* Menu_servViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB05FCF728DEC50F009DB49E /* Menu_servViewController.swift */; };
 		BB05FCFA28DF1F99009DB49E /* Menu2.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BB05FCF928DF1F99009DB49E /* Menu2.storyboard */; };
 		BB05FCFC28DF7275009DB49E /* TalkViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB05FCFB28DF7275009DB49E /* TalkViewController.swift */; };
+		BB07BCAC28E2B1A0001A5219 /* brandList.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BB07BCAB28E2B1A0001A5219 /* brandList.storyboard */; };
+		BB07BCAE28E2B1AC001A5219 /* brandListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB07BCAD28E2B1AC001A5219 /* brandListViewController.swift */; };
+		BB07BCB028E2B48B001A5219 /* goodsDetail.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BB07BCAF28E2B48B001A5219 /* goodsDetail.storyboard */; };
+		BB07BCB228E2B497001A5219 /* goodsDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB07BCB128E2B497001A5219 /* goodsDetailViewController.swift */; };
+		BB07BCB428E2B7B0001A5219 /* homeGoodsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB07BCB328E2B7B0001A5219 /* homeGoodsViewController.swift */; };
+		BB07BCB628E321E1001A5219 /* seViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB07BCB528E321E1001A5219 /* seViewController.swift */; };
 		BB8E928728DBE7CC00D38A42 /* SetNickname.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BB8E928628DBE7CC00D38A42 /* SetNickname.storyboard */; };
-		BB8E928A28DBFA9800D38A42 /* request.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB8E928928DBFA9800D38A42 /* request.swift */; };
+		BB8E928A28DBFA9800D38A42 /* loginrequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB8E928928DBFA9800D38A42 /* loginrequest.swift */; };
 		BB8E928C28DBFAA500D38A42 /* response.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB8E928B28DBFAA500D38A42 /* response.swift */; };
 		BB8E928E28DBFDA600D38A42 /* SetNicknameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB8E928D28DBFDA600D38A42 /* SetNicknameViewController.swift */; };
 		BB8E929028DC5E6700D38A42 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB8E928F28DC5E6700D38A42 /* SearchViewController.swift */; };
@@ -92,9 +98,15 @@
 		BB05FCF728DEC50F009DB49E /* Menu_servViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Menu_servViewController.swift; sourceTree = "<group>"; };
 		BB05FCF928DF1F99009DB49E /* Menu2.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Menu2.storyboard; sourceTree = "<group>"; };
 		BB05FCFB28DF7275009DB49E /* TalkViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TalkViewController.swift; sourceTree = "<group>"; };
+		BB07BCAB28E2B1A0001A5219 /* brandList.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = brandList.storyboard; sourceTree = "<group>"; };
+		BB07BCAD28E2B1AC001A5219 /* brandListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = brandListViewController.swift; sourceTree = "<group>"; };
+		BB07BCAF28E2B48B001A5219 /* goodsDetail.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = goodsDetail.storyboard; sourceTree = "<group>"; };
+		BB07BCB128E2B497001A5219 /* goodsDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = goodsDetailViewController.swift; sourceTree = "<group>"; };
+		BB07BCB328E2B7B0001A5219 /* homeGoodsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = homeGoodsViewController.swift; sourceTree = "<group>"; };
+		BB07BCB528E321E1001A5219 /* seViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = seViewController.swift; sourceTree = "<group>"; };
 		BB75CFECE75988A78C038DBE /* Pods_bunjang.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_bunjang.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BB8E928628DBE7CC00D38A42 /* SetNickname.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SetNickname.storyboard; sourceTree = "<group>"; };
-		BB8E928928DBFA9800D38A42 /* request.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = request.swift; sourceTree = "<group>"; };
+		BB8E928928DBFA9800D38A42 /* loginrequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = loginrequest.swift; sourceTree = "<group>"; };
 		BB8E928B28DBFAA500D38A42 /* response.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = response.swift; sourceTree = "<group>"; };
 		BB8E928D28DBFDA600D38A42 /* SetNicknameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetNicknameViewController.swift; sourceTree = "<group>"; };
 		BB8E928F28DC5E6700D38A42 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
@@ -176,7 +188,7 @@
 		BB8E928828DBFA8100D38A42 /* Server */ = {
 			isa = PBXGroup;
 			children = (
-				BB8E928928DBFA9800D38A42 /* request.swift */,
+				BB8E928928DBFA9800D38A42 /* loginrequest.swift */,
 				BB93C39428E1A06700CF8C41 /* goodsRequest.swift */,
 				BB8E928B28DBFAA500D38A42 /* response.swift */,
 			);
@@ -242,10 +254,12 @@
 			isa = PBXGroup;
 			children = (
 				BBCDB59B28D7F56000CB766D /* Onboarding.storyboard */,
-				BB05FCEF28DDBD07009DB49E /* OtherLogin.storyboard */,
 				BB8E928628DBE7CC00D38A42 /* SetNickname.storyboard */,
-				BBCDB58028D6D55400CB766D /* Home.storyboard */,
+				BB05FCEF28DDBD07009DB49E /* OtherLogin.storyboard */,
 				BBCDB55528D6D4E500CB766D /* Main.storyboard */,
+				BBCDB58028D6D55400CB766D /* Home.storyboard */,
+				BB07BCAF28E2B48B001A5219 /* goodsDetail.storyboard */,
+				BB07BCAB28E2B1A0001A5219 /* brandList.storyboard */,
 				BB05FCF928DF1F99009DB49E /* Menu2.storyboard */,
 				BBCDB58D28D6DD9200CB766D /* Notification.storyboard */,
 				BB8E929528DCB82100D38A42 /* Keyword_notification.storyboard */,
@@ -268,6 +282,9 @@
 				BB8E928D28DBFDA600D38A42 /* SetNicknameViewController.swift */,
 				BBCDB55328D6D4E500CB766D /* MainViewController.swift */,
 				BBCDB58F28D6DDA600CB766D /* HomeViewController.swift */,
+				BB07BCB328E2B7B0001A5219 /* homeGoodsViewController.swift */,
+				BB07BCB128E2B497001A5219 /* goodsDetailViewController.swift */,
+				BB07BCAD28E2B1AC001A5219 /* brandListViewController.swift */,
 				BBCDB59128D6DDC700CB766D /* MenuViewController.swift */,
 				BB05FCF328DEC4E6009DB49E /* Menu_cateViewController.swift */,
 				BB05FCF528DEC502009DB49E /* Menu_brandViewController.swift */,
@@ -280,6 +297,7 @@
 				BBCDB59928D6F3C800CB766D /* AddDetailViewController.swift */,
 				BB05FCFB28DF7275009DB49E /* TalkViewController.swift */,
 				BB05FCEB28DD81EC009DB49E /* MyViewController.swift */,
+				BB07BCB528E321E1001A5219 /* seViewController.swift */,
 				BB93C39828E1C0BA00CF8C41 /* My_SettingViewController.swift */,
 				BB8E929128DC6ACA00D38A42 /* SegmentedControl.swift */,
 			);
@@ -422,6 +440,7 @@
 			files = (
 				BBCDB59828D6F3A400CB766D /* AddDetail.storyboard in Resources */,
 				BBCDB55C28D6D4E700CB766D /* LaunchScreen.storyboard in Resources */,
+				BB07BCB028E2B48B001A5219 /* goodsDetail.storyboard in Resources */,
 				BBCDB55928D6D4E700CB766D /* Assets.xcassets in Resources */,
 				BBCDB59C28D7F56000CB766D /* Onboarding.storyboard in Resources */,
 				BB05FCFA28DF1F99009DB49E /* Menu2.storyboard in Resources */,
@@ -430,6 +449,7 @@
 				BB05FCF028DDBD07009DB49E /* OtherLogin.storyboard in Resources */,
 				BBCDB58128D6D55400CB766D /* Home.storyboard in Resources */,
 				BB8E929428DC6CD100D38A42 /* Setting_notification.storyboard in Resources */,
+				BB07BCAC28E2B1A0001A5219 /* brandList.storyboard in Resources */,
 				BBCDB58528D6D58200CB766D /* Add.storyboard in Resources */,
 				BB93C39728E1BFAC00CF8C41 /* My_Setting.storyboard in Resources */,
 				BBCDB58728D6D58A00CB766D /* Talk.storyboard in Resources */,
@@ -551,15 +571,19 @@
 				BB05FCEA28DD6B92009DB49E /* Setting_notiViewController.swift in Sources */,
 				BBCDB59228D6DDC700CB766D /* MenuViewController.swift in Sources */,
 				BB05FCF628DEC502009DB49E /* Menu_brandViewController.swift in Sources */,
+				BB07BCB428E2B7B0001A5219 /* homeGoodsViewController.swift in Sources */,
 				BB8E929228DC6ACA00D38A42 /* SegmentedControl.swift in Sources */,
 				BB8E928E28DBFDA600D38A42 /* SetNicknameViewController.swift in Sources */,
 				BB05FCF828DEC50F009DB49E /* Menu_servViewController.swift in Sources */,
-				BB8E928A28DBFA9800D38A42 /* request.swift in Sources */,
+				BB07BCAE28E2B1AC001A5219 /* brandListViewController.swift in Sources */,
+				BB07BCB228E2B497001A5219 /* goodsDetailViewController.swift in Sources */,
+				BB8E928A28DBFA9800D38A42 /* loginrequest.swift in Sources */,
 				BB05FCFC28DF7275009DB49E /* TalkViewController.swift in Sources */,
 				BB05FCEC28DD81EC009DB49E /* MyViewController.swift in Sources */,
 				BB05FCEE28DD9B4C009DB49E /* AddViewController.swift in Sources */,
 				BBCDB59A28D6F3C800CB766D /* AddDetailViewController.swift in Sources */,
 				BB05FCF228DDBD19009DB49E /* OtherLoginViewController.swift in Sources */,
+				BB07BCB628E321E1001A5219 /* seViewController.swift in Sources */,
 				BBCDB59428D6DDD400CB766D /* NotificationViewController.swift in Sources */,
 				BB05FCE828DD633D009DB49E /* Keyword_notiViewController.swift in Sources */,
 				BBCDB55028D6D4E500CB766D /* AppDelegate.swift in Sources */,

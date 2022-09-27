@@ -19,7 +19,7 @@ class Menu_cateViewController: UIViewController {
 
     
     
-    let img1 = ["menu_goods","menu_bag","menu_doll","menu_doll","menu_sne","menu_doll","menu_doll","menu_doll","menu_doll","menu_doll","menu_golf","menu_doll"]
+    let img1 = ["menu_sne","menu_bag","menu_star","menu_doll","menu_sne","menu_doll","menu_doll","menu_doll","menu_doll","menu_doll","menu_golf","menu_doll","menu_sne","menu_bag","menu_star","menu_doll","menu_sne","menu_doll","menu_doll","menu_doll","menu_doll","menu_doll","menu_golf","menu_doll","menu_doll","menu_doll","menu_doll","menu_doll","menu_golf"]
     let img2 = ["menu_doll","menu_doll","menu_bag","menu_doll","menu_doll","menu_doll","menu_doll","menu_doll","menu_goods","menu_doll","menu_doll","menu_doll","menu_doll","menu_doll","menu_doll","menu_doll","menu_doll","menu_doll","menu_doll","menu_doll","menu_doll","menu_doll"]
     let img3 = ["menu_doll","menu_doll","menu_doll","menu_doll"]
 
@@ -39,7 +39,9 @@ class Menu_cateViewController: UIViewController {
 
         goods().Category(self)
       
-        
+        collectionView.delegate = self
+        collectionView.dataSource = self
+       
         let collectionViewLayout = collectionView.collectionViewLayout as? UICollectionViewFlowLayout
         collectionViewLayout?.sectionInset = sectionInsets
         collectionViewLayout?.invalidateLayout()
@@ -65,8 +67,10 @@ extension Menu_cateViewController:UICollectionViewDelegate, UICollectionViewData
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         if (section == 0) {
             
-            return 12}
-        else if (section == 1) { return 22}
+            return cateDataList.count
+            
+        }
+        else if (section == 1) { return 17}
         else { return 4}
 
     }
@@ -75,17 +79,14 @@ extension Menu_cateViewController:UICollectionViewDelegate, UICollectionViewData
         
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "menucell", for: indexPath) as! menu_cateCollectionViewCell
     
-        
-        
-        if(indexPath.section == 0){
-        cell.labe.text = menu1[indexPath.row]
+            if(indexPath.section == 0){
+            cell.labe.text = cateDataList[indexPath.row].categoryName
             cell.img.image = UIImage(named: img1[indexPath.row])
-
-        
+            
         }
         
         else if(indexPath.section == 1){
-        cell.labe.text = menu2[indexPath.row]
+            cell.labe.text = menu2[indexPath.row]
             cell.img.image = UIImage(named: img2[indexPath.row])
 
         

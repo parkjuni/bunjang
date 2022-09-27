@@ -248,20 +248,7 @@ class menuCollectionViewCell: UICollectionViewCell {
 }
 
 
-class goodsCollectionViewCell: UICollectionViewCell {
 
-   
-    @IBOutlet weak var goods_img: UIImageView!
-    @IBOutlet weak var goods_price: UILabel!
-    
-
-    override func awakeFromNib(){
-        super.awakeFromNib()
-        
-   
-    }
-    
-}
 
 
 extension HomeViewController: UICollectionViewDataSource,
@@ -269,16 +256,13 @@ extension HomeViewController: UICollectionViewDataSource,
     
 
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        if collectionView == MenuCollectionView {
 
             
         return 14
-        }
-        else {return 10}
+       
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        if collectionView == MenuCollectionView {
 
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as! menuCollectionViewCell
         
@@ -288,18 +272,8 @@ extension HomeViewController: UICollectionViewDataSource,
         
             return cell
         
-    }
-        
-        else {
-            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell_goods", for: indexPath) as! goodsCollectionViewCell
-//            
-//            cell.menuCell_label.text = menuList[indexPath.row]
-//            cell.menuCell_img.image = UIImage(named: menuImg[indexPath.row])
 
-            
-                return cell
-            
-        }
+        
        
         
     }
@@ -307,7 +281,6 @@ extension HomeViewController: UICollectionViewDataSource,
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         
-        if collectionView == MenuCollectionView {
              let width = collectionView.frame.width
              let height = collectionView.frame.height
              let itemsPerRow: CGFloat = 7
@@ -318,22 +291,6 @@ extension HomeViewController: UICollectionViewDataSource,
              let cellHeight = (height-heightPadding) / itemsPerColumn
              
              return CGSize(width: cellWidth, height: cellHeight)
-            
-        }
-        
-       else {
-             let width = collectionView.frame.width
-             let height = collectionView.frame.height
-             let itemsPerRow: CGFloat = 2
-             let widthPadding = sectionInsets.left * (itemsPerRow + 1)
-             let itemsPerColumn: CGFloat = 5
-             let heightPadding = sectionInsets.top * (itemsPerColumn + 1)
-             let cellWidth = (width-widthPadding) / 2
-             let cellHeight = (height-heightPadding) / itemsPerColumn
-             
-             return CGSize(width: cellWidth, height: 300)
-            
-        }
         
         
         }
