@@ -74,11 +74,7 @@ class SearchViewController: UIViewController {
     
     @objc func gohomeButtonAction(sender: UIButton!) {
 
-        let storyboard = UIStoryboard(name: "Menu2", bundle: nil)
-        let vc = storyboard.instantiateViewController(withIdentifier: "MenuViewController")
-        vc.modalPresentationStyle = .fullScreen
-
-         self.present(vc, animated: true, completion: nil)
+        self.navigationController?.popToRootViewController(animated: true)
         
            }
     

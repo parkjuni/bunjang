@@ -15,6 +15,21 @@ class MyViewController: UIViewController {
     @IBOutlet weak var bankAcB: UIButton!
     @IBOutlet weak var pointB: UIButton!
    
+    //api
+    @IBOutlet weak var nickName: UILabel!
+    @IBOutlet weak var content: UILabel!
+    @IBOutlet weak var created: UIButton!
+    @IBOutlet weak var follower: UIButton!
+    @IBOutlet weak var star: UIButton!
+    @IBOutlet weak var follwing: UIButton!
+    
+    
+    //segue view
+    
+    @IBOutlet weak var firstView: UIView!
+    @IBOutlet weak var secondView: UIView!
+    @IBOutlet weak var thirdView: UIView!
+    
     
     private let segmentedControl: UISegmentedControl = {
         let segmentedControl = UnderlineSegmentedControl(items: ["판매상품", "상점후기", "찜목록" ])
@@ -25,7 +40,8 @@ class MyViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        
+        userRequest().users(self
+        )
         setNavigationBar()
         bankAcB.layer.borderWidth = 1
         bankAcB.layer.borderColor = UIColor.systemGray4.cgColor
@@ -46,29 +62,38 @@ class MyViewController: UIViewController {
               self.segmentedControl.heightAnchor.constraint(equalToConstant: 40),
             ])
        
-//           self.segmentedControl.addTarget(self, action: #selector(changeValue(control:)), for: .valueChanged)
+           self.segmentedControl.addTarget(self, action: #selector(changeValue(control:)), for: .valueChanged)
            self.segmentedControl.selectedSegmentIndex = 0
-//           self.changeValue(control: self.segmentedControl)
+         
+        self.changeValue(control: self.segmentedControl)
 //
         
 
     }
     
+    @objc private func changeValue(control: UISegmentedControl) {
+      // 코드로 값을 변경하면 해당 메소드 호출 x
+//          self.currentPage = control.selectedSegmentIndex
+        if control.selectedSegmentIndex == 1 {
+           firstView.alpha = 0
+           secondView.alpha = 1
+           thirdView.alpha = 0
+       }
+       else if control.selectedSegmentIndex == 2{
+           firstView.alpha = 0
+           secondView.alpha = 0
+           thirdView.alpha = 1
+           
+       }
+       else {
+            firstView.alpha = 1
+            secondView.alpha = 0
+            thirdView.alpha = 0
+       }
     
-//    @objc private func changeValue(control: UISegmentedControl) {
-//        if control.selectedSegmentIndex == 1 {
-//           firstView.alpha = 0
-//           secondView.alpha = 1
-//
-//       }
-//
-//       else {
-//            firstView.alpha = 1
-//            secondView.alpha = 0
-//
-//       }
-//
-//    }
+        
+  }
+  
 //
     func setNavigationBar(){
         let notiButtonImage = UIImage(systemName: "bell")!
@@ -148,5 +173,21 @@ class MyViewController: UIViewController {
 }
 
 
+
+
+//api setting 함수
+extension MyViewController{
+
+    func didSuccess_users(_ response: Users){
+
+//        let brandName = response.result[0].brandName
+//        self.testlabel.text = brandName
+//
+//        self.brandDataList = response.result
+        self.nickName.text = response.result[0].nickName
+
+//
+    }
+}
 
 

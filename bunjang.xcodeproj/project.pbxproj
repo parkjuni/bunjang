@@ -27,6 +27,7 @@
 		BB07BCB228E2B497001A5219 /* goodsDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB07BCB128E2B497001A5219 /* goodsDetailViewController.swift */; };
 		BB07BCB428E2B7B0001A5219 /* homeGoodsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB07BCB328E2B7B0001A5219 /* homeGoodsViewController.swift */; };
 		BB07BCB628E321E1001A5219 /* seViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB07BCB528E321E1001A5219 /* seViewController.swift */; };
+		BB07BCB828E37DE3001A5219 /* userRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB07BCB728E37DE3001A5219 /* userRequest.swift */; };
 		BB8E928728DBE7CC00D38A42 /* SetNickname.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BB8E928628DBE7CC00D38A42 /* SetNickname.storyboard */; };
 		BB8E928A28DBFA9800D38A42 /* loginrequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB8E928928DBFA9800D38A42 /* loginrequest.swift */; };
 		BB8E928C28DBFAA500D38A42 /* response.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB8E928B28DBFAA500D38A42 /* response.swift */; };
@@ -104,6 +105,7 @@
 		BB07BCB128E2B497001A5219 /* goodsDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = goodsDetailViewController.swift; sourceTree = "<group>"; };
 		BB07BCB328E2B7B0001A5219 /* homeGoodsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = homeGoodsViewController.swift; sourceTree = "<group>"; };
 		BB07BCB528E321E1001A5219 /* seViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = seViewController.swift; sourceTree = "<group>"; };
+		BB07BCB728E37DE3001A5219 /* userRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = userRequest.swift; sourceTree = "<group>"; };
 		BB75CFECE75988A78C038DBE /* Pods_bunjang.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_bunjang.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BB8E928628DBE7CC00D38A42 /* SetNickname.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SetNickname.storyboard; sourceTree = "<group>"; };
 		BB8E928928DBFA9800D38A42 /* loginrequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = loginrequest.swift; sourceTree = "<group>"; };
@@ -190,6 +192,7 @@
 			children = (
 				BB8E928928DBFA9800D38A42 /* loginrequest.swift */,
 				BB93C39428E1A06700CF8C41 /* goodsRequest.swift */,
+				BB07BCB728E37DE3001A5219 /* userRequest.swift */,
 				BB8E928B28DBFAA500D38A42 /* response.swift */,
 			);
 			path = Server;
@@ -593,6 +596,7 @@
 				BB93C39928E1C0BA00CF8C41 /* My_SettingViewController.swift in Sources */,
 				BBCDB59E28D7F5F600CB766D /* OnboardingViewController.swift in Sources */,
 				BB8E928C28DBFAA500D38A42 /* response.swift in Sources */,
+				BB07BCB828E37DE3001A5219 /* userRequest.swift in Sources */,
 				BBCDB59028D6DDA600CB766D /* HomeViewController.swift in Sources */,
 				BB05FCF428DEC4E6009DB49E /* Menu_cateViewController.swift in Sources */,
 			);

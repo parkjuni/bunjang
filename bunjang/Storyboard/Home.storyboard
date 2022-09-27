@@ -21,7 +21,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="390" height="761"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="7" translatesAutoresizingMaskIntoConstraints="NO" id="d9k-ky-RRr">
-                                        <rect key="frame" x="0.0" y="0.0" width="390" height="911.66666666666663"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="390" height="1688"/>
                                         <subviews>
                                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GBt-vJ-bak">
                                                 <rect key="frame" x="0.0" y="0.0" width="390" height="309"/>
@@ -101,21 +101,21 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Z0G-lN-wbM">
-                                                <rect key="frame" x="0.0" y="566" width="390" height="345.66666666666674"/>
+                                                <rect key="frame" x="0.0" y="566" width="390" height="1122"/>
                                                 <subviews>
                                                     <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GA5-v8-nV2">
-                                                        <rect key="frame" x="0.0" y="51" width="390" height="717"/>
+                                                        <rect key="frame" x="0.0" y="51" width="390" height="927"/>
                                                         <constraints>
-                                                            <constraint firstAttribute="height" constant="717" id="HOd-4j-xRK"/>
+                                                            <constraint firstAttribute="height" constant="927" id="HOd-4j-xRK"/>
                                                         </constraints>
                                                         <connections>
                                                             <segue destination="Z17-l6-ge8" kind="embed" id="7WF-N2-g8D"/>
                                                         </connections>
                                                     </containerView>
                                                     <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4nK-qt-dTV">
-                                                        <rect key="frame" x="0.0" y="51" width="390" height="380"/>
+                                                        <rect key="frame" x="0.0" y="51" width="390" height="1040"/>
                                                         <constraints>
-                                                            <constraint firstAttribute="height" constant="380" id="Y2n-Fk-cjS"/>
+                                                            <constraint firstAttribute="height" constant="1040" id="Y2n-Fk-cjS"/>
                                                         </constraints>
                                                         <connections>
                                                             <segue destination="WvJ-ZZ-B8b" kind="embed" id="2Iq-zH-PsU"/>
@@ -155,7 +155,7 @@
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="d9k-ky-RRr" firstAttribute="height" secondItem="5EZ-qb-Rvc" secondAttribute="height" multiplier="1.08036" id="Mkl-Z8-FH3"/>
+                            <constraint firstItem="d9k-ky-RRr" firstAttribute="height" secondItem="5EZ-qb-Rvc" secondAttribute="height" multiplier="2" id="Mkl-Z8-FH3"/>
                             <constraint firstItem="pPa-jh-rlI" firstAttribute="top" secondItem="5EZ-qb-Rvc" secondAttribute="top" id="MzT-bm-jCJ"/>
                             <constraint firstItem="pPa-jh-rlI" firstAttribute="bottom" secondItem="vDu-zF-Fre" secondAttribute="bottom" id="Sgl-Th-pjf"/>
                             <constraint firstItem="pPa-jh-rlI" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="b3X-cG-gxV"/>
@@ -209,11 +209,11 @@
             <objects>
                 <viewController id="WvJ-ZZ-B8b" customClass="homeGoodsViewController" customModule="bunjang" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="bSP-jS-5mQ">
-                        <rect key="frame" x="0.0" y="0.0" width="390" height="380"/>
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="1040"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="1sb-vA-VdL">
-                                <rect key="frame" x="0.0" y="0.0" width="390" height="380"/>
+                                <rect key="frame" x="0.0" y="0.0" width="390" height="1006"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="X1U-nn-QtU">
                                     <size key="itemSize" width="172" height="290"/>
@@ -302,7 +302,7 @@
             <objects>
                 <viewController id="Z17-l6-ge8" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="yNb-1N-giG">
-                        <rect key="frame" x="0.0" y="0.0" width="390" height="717"/>
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="927"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bAx-VM-djb">

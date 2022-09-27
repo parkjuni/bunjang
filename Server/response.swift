@@ -99,3 +99,25 @@ struct GoodsImgList: Decodable {
     let imgUrl: String
 }
 
+//////user 정보
+
+struct Users: Decodable {
+    let isSuccess: Bool!
+    let code: Int!
+    let message: String!
+    let result: [UserResult]
+}
+
+struct UserResult: Decodable {
+    let nickName: String!
+    let content: String!
+    let star: Float!
+    let transaction: Int!
+    let follower: Int!
+    let following: Int!
+    let gapCreatedAt: Int!
+    
+
+
+}
+
