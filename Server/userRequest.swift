@@ -14,7 +14,7 @@ import Alamofire
 
 class userRequest{
 
-    //메뉴 - 브랜드 리스트
+    //마이 뷰 - 유저 정보 
     func users(_ viewController : MyViewController){
         
                

@@ -227,12 +227,6 @@
                                                     <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bUr-XY-5WL">
-                                                    <rect key="frame" x="334" y="18" width="67" height="31"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <state key="normal" title="Button"/>
-                                                    <buttonConfiguration key="configuration" style="plain" title="Button"/>
-                                                </button>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0h0-hZ-vix">
                                                     <rect key="frame" x="97" y="13" width="128" height="21"/>
                                                     <constraints>
@@ -242,10 +236,30 @@
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BnL-nI-6an">
+                                                    <rect key="frame" x="333" y="15" width="61" height="37"/>
+                                                    <color key="backgroundColor" red="1" green="0.89808062700000002" blue="0.90252971530000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="37" id="eI1-MM-xKH"/>
+                                                        <constraint firstAttribute="width" constant="61" id="f1M-Df-JII"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                                    <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                    <state key="normal" title="팔로우">
+                                                        <color key="titleColor" red="0.93765991559999995" green="0.28773242980000002" blue="0.32546755300000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                    </state>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                            <integer key="value" value="5"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                    </userDefinedRuntimeAttributes>
+                                                </button>
                                             </subviews>
                                             <constraints>
+                                                <constraint firstItem="BnL-nI-6an" firstAttribute="trailing" secondItem="Wcm-AR-vEL" secondAttribute="trailingMargin" id="81t-Ht-o6y"/>
                                                 <constraint firstItem="0h0-hZ-vix" firstAttribute="centerX" secondItem="FkI-4C-ffA" secondAttribute="centerX" constant="-3" id="C6j-Az-eAU"/>
                                                 <constraint firstItem="0h0-hZ-vix" firstAttribute="leading" secondItem="1Kb-2h-1oT" secondAttribute="trailing" constant="8" id="DmJ-h7-3wx"/>
+                                                <constraint firstItem="BnL-nI-6an" firstAttribute="centerY" secondItem="1Kb-2h-1oT" secondAttribute="centerY" id="Jxw-Gw-YAd"/>
                                                 <constraint firstItem="FkI-4C-ffA" firstAttribute="top" secondItem="0h0-hZ-vix" secondAttribute="bottom" constant="8" id="LsT-00-OUo"/>
                                                 <constraint firstItem="0h0-hZ-vix" firstAttribute="leading" secondItem="Wcm-AR-vEL" secondAttribute="leading" constant="97" id="ORx-gT-8gY"/>
                                                 <constraint firstItem="0h0-hZ-vix" firstAttribute="top" secondItem="1Kb-2h-1oT" secondAttribute="top" constant="2" id="Urc-qU-Go7"/>
@@ -259,7 +273,6 @@
                                             <outlet property="brandEngName" destination="FkI-4C-ffA" id="cr8-LO-pxD"/>
                                             <outlet property="brandImg" destination="1Kb-2h-1oT" id="0LQ-f3-Oul"/>
                                             <outlet property="brandName" destination="0h0-hZ-vix" id="xkI-Xv-AoT"/>
-                                            <outlet property="follow" destination="bUr-XY-5WL" id="cRR-kH-Exh"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>

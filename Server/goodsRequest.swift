@@ -104,8 +104,57 @@ class goods{
         
         }
     
+    // 브랜드 디테일
+    func brandDetail(_ viewController : goodsDetailViewController){  /// 뷰 추가 후 수정하기
+
+        let brandId :String = String(ud.integer(forKey: "brandId"))
+
+            AF.request(base_url + "/goods/brand/" + brandId,
+                       method: .get,
+                       headers: headers)
+            .responseDecodable(of: brand_Detail.self) { response in
+                
+                      switch response.result {
+                      case.success(let response):
+                          print("성공")
+                          /// 뷰 추가 후 수정하기
+//                          viewController.didSuccess_goodsDe(response)
+                      case.failure(let error):
+                          print("브랜드 디테일 오류 \(error.localizedDescription)")
+                      }
+                      
+                  }
+        
+        }
     
-    //검색 - 브랜드 리스트
+    
+    
+    
+    // 카테고리 디테일
+    func cateDetail(_ viewController : goodsDetailViewController){   /// 뷰 추가 후 수정하기
+
+        let categoryId :String = String(ud.integer(forKey: "categoryId"))
+
+            AF.request(base_url + "/goods/brand/" + categoryId,
+                       method: .get,
+                       headers: headers)
+            .responseDecodable(of: category_Detail.self) { response in
+                
+                      switch response.result {
+                      case.success(let response):
+                          print("성공")
+                          /// 뷰 추가 후 수정하기 
+//                          viewController.didSuccess_goodsDe(response)
+                      case.failure(let error):
+                          print("카테고리 디테일 오류 \(error.localizedDescription)")
+                      }
+                      
+                  }
+        
+        }
+    
+    
+    //검색뷰 - 추천 브랜드 리스트
     func recoBrands(_ viewController : SearchViewController){
         
                
@@ -128,7 +177,10 @@ class goods{
         }
     
     
-    //검색 - 카테고리 리스트
+    
+    
+    
+    //검색뷰 - 인기 카테고리 리스트
     func popuCategory(_ viewController : SearchViewController){
         
                
@@ -148,6 +200,8 @@ class goods{
                   }
         
         }
+    
+    
     
     
     

@@ -48,6 +48,28 @@ struct brandResult: Decodable {
 
 }
 
+
+//////브랜드 디테일
+struct brand_Detail: Decodable {
+    let isSuccess: Bool
+    let code: Int
+    let message: String
+    let result: [brandDeResult]
+}
+struct brandDeResult: Decodable {
+    let goodsId: Int
+    let title: String
+    let price: Int
+    let likes: Int
+    let canBungaePay: String
+    let imgUrl: String
+    let isLike: String
+    let status: String
+
+
+}
+
+
 //////카테고리  리스트
 struct category: Decodable {
     let isSuccess: Bool
@@ -56,10 +78,31 @@ struct category: Decodable {
     let result: [cateResult]
 }
 struct cateResult: Decodable {
-    let categoryId: Int
-    let categoryName: String
+        let categoryId : Int
+        let categoryName : String
 
 }
+
+//////카테고리  디테일
+struct category_Detail: Decodable {
+    let isSuccess: Bool
+    let code: Int
+    let message: String
+    let result: [cateDeResult]
+}
+struct cateDeResult: Decodable {
+    let goodsId: Int
+    let title: String
+    let price: Int
+    let likes: Int
+    let canBungaePay: String
+    let imgUrl: String
+    let isLike: String
+    let status: String
+
+}
+
+
 
 
 //////홈화면 상품리스트
