@@ -30,10 +30,10 @@
             filePath = "bunjang/ViewController/HomeViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "25"
-            endingLineNumber = "25"
-            landmarkName = "HomeViewController"
-            landmarkType = "3">
+            startingLineNumber = "26"
+            endingLineNumber = "26"
+            landmarkName = "segmentedControl"
+            landmarkType = "24">
             <Locations>
                <Location
                   uuid = "A6B7C658-A554-44C1-A86C-00546125E0D5 - a362e97c858b74e"
@@ -78,8 +78,8 @@
             filePath = "bunjang/ViewController/HomeViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "315"
-            endingLineNumber = "315"
+            startingLineNumber = "316"
+            endingLineNumber = "316"
             landmarkName = "scrollViewDidScroll(_:)"
             landmarkType = "7">
          </BreakpointContent>

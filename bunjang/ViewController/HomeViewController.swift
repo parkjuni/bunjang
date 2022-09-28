@@ -12,6 +12,7 @@ import Then
 
 
 class HomeViewController: UIViewController,UIScrollViewDelegate {
+    var bounds = UIScreen.main.bounds.width
     
     @IBOutlet weak var secondView: UIView!
     @IBOutlet weak var firstView: UIView!
@@ -65,7 +66,7 @@ class HomeViewController: UIViewController,UIScrollViewDelegate {
       super.viewDidAppear(animated)
       let allWidth = self.MenuCollectionView.contentSize.width + self.MenuCollectionView.contentInset.left + self.MenuCollectionView.contentInset.right
       let showingWidth = self.MenuCollectionView.bounds.width
-      self.indicatorView.widthRatio = showingWidth / allWidth
+        self.indicatorView.widthRatio = showingWidth / allWidth
       self.indicatorView.layoutIfNeeded()
     }
     
@@ -108,7 +109,7 @@ class HomeViewController: UIViewController,UIScrollViewDelegate {
 
         self.indicatorView.snp.makeConstraints {
           $0.top.equalTo(self.MenuCollectionView.snp.bottom).offset(4)
-          $0.left.right.equalTo(self.MenuCollectionView).inset(100)
+            $0.left.right.equalTo(self.MenuCollectionView).inset(bounds*0.43)
           $0.height.equalTo(4)
         }
         
@@ -336,7 +337,7 @@ final class IndicatorView: UIView {
       guard let widthRatio = self.widthRatio else { return }
       self.trackTintView.snp.remakeConstraints {
         $0.top.bottom.equalToSuperview()
-        $0.width.equalToSuperview().multipliedBy(widthRatio)
+          $0.width.equalToSuperview().multipliedBy(widthRatio)
         $0.left.greaterThanOrEqualToSuperview()
         $0.right.lessThanOrEqualToSuperview()
         self.leftInsetConstraint = $0.left.equalToSuperview().priority(999).constraint
