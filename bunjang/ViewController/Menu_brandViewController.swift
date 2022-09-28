@@ -16,7 +16,6 @@ class Menu_brandViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
         goods().Brands(self)
         brandTable.delegate = self 
         brandTable.dataSource = self
@@ -24,7 +23,9 @@ class Menu_brandViewController: UIViewController {
 
         // Do any additional setup after loading the view.
     }
+   
     
+      
 }
 
 
@@ -44,7 +45,20 @@ extension Menu_brandViewController: UITableViewDelegate, UITableViewDataSource {
         
         cell.brandName.text = brandDataList[indexPath.row].brandName
         cell.brandEngName.text = brandDataList[indexPath.row].brandEngName + " · "+String(brandDataList[indexPath.row].counting)+"개"
+        
+        
+//        let url = URL(string:brandDataList[indexPath.row].imgUrl)
+//        let url = URL(string: "http://guriman.shop/brand/lui-vuitton.png")
+//            let data = try! Data(contentsOf: url!)
+//        cell.brandImg.image = UIImage(data: data)
 
+        
+        let url = URL(string:brandDataList[indexPath.row].imgUrl)
+        let data = try! Data(contentsOf: url!)
+        cell.brandImg.image = UIImage(data: data)
+
+        
+        
         return cell
 
     }

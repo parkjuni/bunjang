@@ -54,7 +54,8 @@ class MyViewController: UIViewController {
         
         self.segmentedView.addSubview(self.segmentedControl)
  self.stackView.insertArrangedSubview(self.segmentedView, at: 3)
-        
+//        self.segmentedControl.frame = CGRect(x : 0, y:0, width:100, height:50);
+
         NSLayoutConstraint.activate([
               self.segmentedControl.leftAnchor.constraint(equalTo: self.segmentedView.leftAnchor),
               self.segmentedControl.rightAnchor.constraint(equalTo: self.segmentedView.rightAnchor),
@@ -64,7 +65,7 @@ class MyViewController: UIViewController {
        
            self.segmentedControl.addTarget(self, action: #selector(changeValue(control:)), for: .valueChanged)
            self.segmentedControl.selectedSegmentIndex = 0
-         
+//        self.segmentedControl.frame = CGRectMake(35, 200, 250, 50);
         self.changeValue(control: self.segmentedControl)
 //
         

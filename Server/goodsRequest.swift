@@ -9,13 +9,10 @@ import Foundation
 import Alamofire
 
 //jwt토큰 값 카카오 로그인 후 user default로 받아서 추가하기
-//let jwt = String(ud.string(forKey: "jwt")!)
 let headers: HTTPHeaders = [
-    "X-ACCESS-TOKEN": "eyJ0eXBlIjoiand0IiwiYWxnIjoiSFMyNTYifQ.eyJ1c2VySWR4Ijo2LCJpYXQiOjE2NjQxODIyNjAsImV4cCI6MTY2NTY1MzQ4OX0.LaMlzDJcrr72DSz1GfV58rj7EvRsccUy90maACyjwjI"
-
-//    "X-ACCESS-TOKEN": jwt
-    
+    "X-ACCESS-TOKEN": String(ud.string(forKey: "jwt")!)
 ]
+
 
 class goods{
 
@@ -98,6 +95,7 @@ class goods{
                           viewController.didSuccess_goodsDe(response)
                       case.failure(let error):
                           print("굿즈디테일 오류 \(error.localizedDescription)")
+                          print(base_url + "/goods/detail/" + goodsId)
                       }
                       
                   }
@@ -202,7 +200,27 @@ class goods{
         }
     
     
-    
+    // 브랜드 리스트
+    func Brands_list(_ viewController : brandListViewController){
+        
+               
+            AF.request(base_url + "/goods/brand-list",
+                       method: .get,
+                       headers: headers)
+            .responseDecodable(of: brand.self) { response in
+                
+                      switch response.result {
+                      case.success(let response):
+                          
+                          print("성공")
+                          viewController.didSuccess_brandList(response)
+                      case.failure(let error):
+                          print("오류 \(error.localizedDescription)")
+                      }
+                      
+                  }
+        
+        }
     
     
 }

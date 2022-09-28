@@ -12,12 +12,17 @@ import KakaoSDKCommon
 
 let ud = UserDefaults.standard
 let base_url = "https://guriman.shop"
+let jwt = "eyJ0eXBlIjoiand0IiwiYWxnIjoiSFMyNTYifQ.eyJ1c2VySWR4Ijo2LCJpYXQiOjE2NjQxODIyNjAsImV4cCI6MTY2NTY1MzQ4OX0.LaMlzDJcrr72DSz1GfV58rj7EvRsccUy90maACyjwjI"
+
+
+
+let userId = 6
 
 var images = ["onboard1.jpg","onboard2.jpg","onboard3.jpg","onboard4.jpg"]
 
 
 class OnboardingViewController: UIViewController  {
-
+    
     //IBOutlet
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var pageControl: UIPageControl!
@@ -53,158 +58,65 @@ class OnboardingViewController: UIViewController  {
     //kakao login
     @IBAction func Login_kakao(_ sender: Any) {
         
-//        토큰 존재 여부 확인하기
-        if (AuthApi.hasToken()) {
-            UserApi.shared.accessTokenInfo { (_, error) in
-                if let error = error {
-                    if let sdkError = error as? SdkError, sdkError.isInvalidTokenError() == true  {
-                        //로그인 필요
-                    }
-                    else {
-                        //기타 에러
-                    }
-                }
-                else {
-                    //토큰 유효성 체크 성공(필요 시 토큰 갱신됨)
-                    print("===========================토큰 있음")
-//                    print("access token : ", oauthToken?.accessToken)
-                    print("access token : ", ud.string(forKey: "token"))
-                    print("refresh token : ", ud.string(forKey: "refreshtoken"))
-                    
-                    //카카오 자동 로그인
-                    kakaoLogin().auto_loin(self)
-                    if ud.integer(forKey: "logincode") == 1000 {
-                    //성공시 메인뷰 전환
-                    let storyboard = UIStoryboard(name: "Main", bundle: nil)
-                    let vc = storyboard.instantiateViewController(withIdentifier: "MainViewController")
-                     self.present(vc, animated: true, completion: nil)
-                    }
-                    else {
-                        print("자동로그인 실패")
-                    }
-                }
-            }
-        }
+        //if jwt, userid가 유저디폴트에 있다면 -- 카카오 자동로그인(jwt,userId필요)
+        //          -- 성공시 홈뷰로 - my탭 유저 정보 세팅
+        //없다면 카카오 로그인(토큰필요)
+//                  -- 성공시 홈뷰로 - my탭 유저 정보 세팅
+        //          -- 실패하면 set nick name view로 전환 회원가입 - (토큰, 닉네임 필요)
+
+        //로그아웃 하면 -- userDefault 값 삭제
         
-        //토큰 없음 - 회원가입
+        if ud.string(forKey: "jwt") != nil {
+//            kakaoLogin().auto_loin(self)
+            // 성공하면 거기서 홈 뷰로
+            kakaoLogin().auto_loin(self)
+            
+        }
         else {
-            //로그인 필요
+            
+            
             //카톡 설치 됐을 시 간편로그인 - 시뮬레이터에서 동작 안함
-            if (UserApi.isKakaoTalkLoginAvailable()) {
-                UserApi.shared.loginWithKakaoTalk {(oauthToken, error) in
-                    if let error = error {
-                        print(error)
-                    }
-                    else {
-                        print("loginWithKakaoTalk() success.")
-
-                        //do something
-                        _ = oauthToken
-                        
-                        let accessToken = oauthToken?.accessToken
-                        let refreshToken = oauthToken?.refreshToken
-                        ud.set(accessToken, forKey: "token")
-                        ud.set(refreshToken, forKey: "refreshtoken")
-
-                        print("access token : ", accessToken!)
-                        print("refresh token : ", refreshToken!)
-
-                    }
-                }
-            }
-
+                       if (UserApi.isKakaoTalkLoginAvailable()) {
+                           UserApi.shared.loginWithKakaoTalk {(oauthToken, error) in
+                               if let error = error {
+                                   print(error)
+                               }
+                               else {
+                                   print("loginWithKakaoTalk() success.")
            
-            //안됐을 시 브라우저 로그인
-            else {
-            UserApi.shared.loginWithKakaoAccount {(oauthToken, error) in
-                       if let error = error {
-                           print(error)
+                                   //do something
+                                   _ = oauthToken
+           
+                                   let accessToken = oauthToken?.accessToken
+                                   ud.set(accessToken, forKey: "token")
+           
+                                   print("access token : ", accessToken!)
+           
+                               }
+                           }
                        }
-                       else {
-                           print("loginWithKakaoAccount() success.")
-                           
-                           //do something
-                           _ = oauthToken
+           
+            //카톡 없을 때 브라우저로 카카오 로그인
+            UserApi.shared.loginWithKakaoAccount {(oauthToken, error) in
+                           if let error = error {
+                               print(error)
+                           }
+                           else {
+                               print("loginWithKakaoAccount() success.")
+                               //do something
+                               _ = oauthToken
 
-                           // 어세스토큰
-                           let accessToken = oauthToken?.accessToken
-                           let refreshToken = oauthToken?.refreshToken
-                           ud.set(accessToken, forKey: "token")
-                           ud.set(refreshToken, forKey: "refreshtoken")
-
-                           print("access token : ", accessToken!)
-                           print("refresh token : ", refreshToken!)
-                           
-                           // 닉네임 설정창 - 회원가입
-                            let setNickname = UIStoryboard.init(name: "SetNickname", bundle: nil)
-                            let vc = setNickname.instantiateViewController(withIdentifier: "SetNicknameViewController")
-                            vc.modalPresentationStyle = UIModalPresentationStyle.fullScreen
-
-                            self.present(vc, animated: true, completion: nil)
+                               // 어세스토큰
+                               let accessToken = oauthToken?.accessToken
+                               ud.set(accessToken, forKey: "token")
+                           }
+                print(ud.string(forKey: "token"))
+                     kakaoLogin().Login(self)  //   -- 성공 -- 거기서 홈뷰로
+                // 실패 -- set nick 뷰로
     
-                       
-                       }}
-
-
-
         }
     
        
-//        else {
-//        UserApi.shared.loginWithKakaoAccount {(oauthToken, error) in
-//                    if let error = error {
-//                        print(error)
-//                    }
-//                    else {
-//                        print("loginWithKakaoAccount() success.")
-//
-//                        //do something
-//                        _ = oauthToken
-////                        // 어세스토큰
-////                        let accessToken = oauthToken?.accessToken
-////                        ud.set(accessToken, forKey: "token")
-////
-////                        let setNickname = UIStoryboard.init(name: "SetNickname", bundle: nil)
-////                        let vc = setNickname.instantiateViewController(withIdentifier: "SetNicknameViewController")
-////                        self.present(vc, animated: true, completion: nil)
-////
-//
-//
-//                        //카카오 로그인을 통해 사용자 토큰을 발급 받은 후 사용자 관리 API 호출
-////                        self.setUserInfo()
-//                    }
-//
-//
-//            let accessToken = oauthToken?.accessToken
-//            let refreshToken = oauthToken?.refreshToken
-//            ud.set(accessToken, forKey: "token")
-//            print("access token : ", accessToken!)
-//            print("refresh token : ", refreshToken!)
-
-//            kakaoLogin().Login(self)
-            
-            //response code 받아서 if == 1000 기존회원 로그인 - 홈뷰 전환
-//            if ud.integer(forKey: "code") == 1000 {
-//                let storyboard = UIStoryboard(name: "Main", bundle: nil)
-//                let vc = storyboard.instantiateViewController(withIdentifier: "MainViewController")
-//                vc.modalPresentationStyle = UIModalPresentationStyle.fullScreen
-//                self.present(vc, animated: true, completion: nil)
-//            }
-////
-            //else==2017  신규회원 set nick name 창으로 전환 - 가입
-//            else{
-//                print("로그인---------else code")
-//            let setNickname = UIStoryboard.init(name: "SetNickname", bundle: nil)
-//            let vc = setNickname.instantiateViewController(withIdentifier: "SetNicknameViewController") as! SetNicknameViewController
-//            vc.modalPresentationStyle = UIModalPresentationStyle.fullScreen
-//
-//            self.present(vc, animated: true)
-//            }
-            
-
-            
-                        
-//                }
         }
     }
 //    
@@ -223,6 +135,8 @@ class OnboardingViewController: UIViewController  {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+//        ud.set(jwt, forKey: "jwt")
+//        ud.set(6, forKey: "userId")
 
         //페이지 컨트롤
         pageControl.numberOfPages = images.count
@@ -289,3 +203,38 @@ class OnboardingViewController: UIViewController  {
 
 }
 
+
+//api setting 함수
+extension OnboardingViewController{
+    
+    func didSuccess_autoLogin(){
+       
+       let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let vc = storyboard.instantiateViewController(withIdentifier: "MainViewController")
+        vc.modalPresentationStyle = UIModalPresentationStyle.fullScreen
+        self.present(vc, animated: true, completion: nil)
+    }
+    
+    
+    
+    
+    func didSuccess_Login(){
+        
+           let storyboard = UIStoryboard(name: "Main", bundle: nil)
+            let vc = storyboard.instantiateViewController(withIdentifier: "MainViewController")
+            vc.modalPresentationStyle = UIModalPresentationStyle.fullScreen
+            self.present(vc, animated: true, completion: nil)
+        }
+
+    func register_user(){
+        
+        let setNickname = UIStoryboard.init(name: "SetNickname", bundle: nil)
+          let vc = setNickname.instantiateViewController(withIdentifier: "SetNicknameViewController") as! SetNicknameViewController
+          vc.modalPresentationStyle = UIModalPresentationStyle.fullScreen
+
+          self.present(vc, animated: true)
+       
+        }
+    
+    
+}

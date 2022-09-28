@@ -18,7 +18,7 @@ class SetNicknameViewController: UIViewController, UITextFieldDelegate {
     
     @IBAction func setNickButton(_ sender: Any) {
         ud.set(setNickText.text, forKey: "nickName")
-        print("nick name : " + ud.string(forKey: "nickName")!)
+//        print("nick name : " + ud.string(forKey: "nickName")!)
         kakaoLogin().join(self)
         
         if ud.integer(forKey: "joincode") == 1000 {
@@ -99,3 +99,17 @@ class SetNicknameViewController: UIViewController, UITextFieldDelegate {
     
     
 }
+
+
+
+extension SetNicknameViewController{
+    
+    func didSuccess_join(){
+    
+       let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let vc = storyboard.instantiateViewController(withIdentifier: "MainViewController")
+        vc.modalPresentationStyle = UIModalPresentationStyle.fullScreen
+        self.present(vc, animated: true, completion: nil)
+    }
+}
+    

@@ -281,7 +281,7 @@
                             </collectionView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="37M-cm-fAx"/>
-                        <color key="backgroundColor" systemColor="systemBrownColor"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="1sb-vA-VdL" firstAttribute="top" secondItem="bSP-jS-5mQ" secondAttribute="top" id="FpP-st-bvY"/>
                             <constraint firstItem="37M-cm-fAx" firstAttribute="bottom" secondItem="1sb-vA-VdL" secondAttribute="bottom" id="llJ-n2-hsw"/>
@@ -295,7 +295,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fS6-cS-N8S" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="201.53846153846152" y="639.81042654028431"/>
+            <point key="canvasLocation" x="3" y="1056"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="fJX-WU-kWr">
@@ -403,7 +403,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QhJ-wf-u44" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1294" y="714"/>
+            <point key="canvasLocation" x="1198" y="1056"/>
         </scene>
         <!--brandList-->
         <scene sceneID="XsF-ag-gYk">
@@ -424,9 +424,6 @@
         <image name="brand" width="750" height="344"/>
         <image name="house" catalog="system" width="128" height="106"/>
         <image name="menu_heart" width="85" height="85"/>
-        <systemColor name="systemBrownColor">
-            <color red="0.63529411764705879" green="0.51764705882352946" blue="0.36862745098039218" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </systemColor>
         <systemColor name="systemGray4Color">
             <color red="0.81960784313725488" green="0.81960784313725488" blue="0.83921568627450982" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>

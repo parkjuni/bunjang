@@ -46,7 +46,7 @@ extension homeGoodsViewController:UICollectionViewDelegate, UICollectionViewData
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "collectCell", for: indexPath) as! goodsCollectionViewCell
     
         
-        cell.price.text = String(DataList[indexPath.row].price) + "원"
+        cell.price.text = DataList[indexPath.row].price
 
         cell.content.text = DataList[indexPath.row].title
         cell.content.sizeToFit()
@@ -78,8 +78,8 @@ extension homeGoodsViewController:UICollectionViewDelegate, UICollectionViewData
 
         let width = collectionView.frame.width
         let height = collectionView.frame.height
-        let itemsPerRow: CGFloat = 3
-        let widthPadding = sectionInsets.left * (itemsPerRow + 1)
+        let itemsPerRow: CGFloat = 2
+        let widthPadding = sectionInsets.left * (itemsPerRow)
         let itemsPerColumn: CGFloat = 5
         let heightPadding = sectionInsets.top * (itemsPerColumn + 1)
         let cellWidth = (width-(widthPadding)) / 2 - widthPadding

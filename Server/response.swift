@@ -8,9 +8,8 @@
 import Foundation
 
 /////////////////카카오 회원가입, 로그인
-struct Login_kakao: Decodable {
+struct login_kakao: Decodable {
     let isSuccess: Bool
-    
     let code: Int?
     let message: String
     let result: [loginResult]
@@ -80,7 +79,7 @@ struct category: Decodable {
 struct cateResult: Decodable {
         let categoryId : Int
         let categoryName : String
-
+    let imgUrl : String
 }
 
 //////카테고리  디테일
@@ -115,7 +114,8 @@ struct homelist: Decodable {
 struct homegoods: Decodable {
     let goodsId: Int
     let title: String
-    let price, likes: Int
+    let price: String
+    let likes: Int
     let canBungaePay, imgUrl, isLike, status: String
 }
 
@@ -130,11 +130,15 @@ struct goods_Detail: Decodable {
 struct Detail: Decodable {
     let goodsId: Int
     let title, content, seller: String
-    let price, categoryId: Int
+    let price: String
+    let categoryId: Int
     let isFreeShipping: String
     let numberOfGoods: Int
     let isUserGoods, canExchange, isAdvertising, canBungaePay: String
     let region, status: String
+    let likes: Int
+    let isLike: String
+    let views: Int
     let goodsImgList: [GoodsImgList]
 }
 
@@ -143,7 +147,6 @@ struct GoodsImgList: Decodable {
 }
 
 //////user 정보
-
 struct Users: Decodable {
     let isSuccess: Bool!
     let code: Int!
@@ -164,3 +167,29 @@ struct UserResult: Decodable {
 
 }
 
+// 검색뷰 - 요즘 많이 찾는 검색어
+struct search_Popular: Decodable {
+    let isSuccess: Bool!
+    let code: Int!
+    let message: String!
+    let result: [poResult]
+}
+
+struct poResult: Decodable {
+    let searchId: Int!
+    let content: String!
+}
+
+
+// 검색뷰 - 최근 검색어
+struct search_Recent: Decodable {
+    let isSuccess: Bool!
+    let code: Int!
+    let message: String!
+    let result: [reResult]
+}
+
+struct reResult: Decodable {
+    let searchId: Int!
+    let content: String!
+}

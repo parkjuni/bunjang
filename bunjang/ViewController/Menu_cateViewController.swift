@@ -81,7 +81,13 @@ extension Menu_cateViewController:UICollectionViewDelegate, UICollectionViewData
     
             if(indexPath.section == 0){
             cell.labe.text = cateDataList[indexPath.row].categoryName
-            cell.img.image = UIImage(named: img1[indexPath.row])
+//            cell.img.image = UIImage(named: img1[indexPath.row])
+                
+                let url = URL(string:cateDataList[indexPath.row].imgUrl)
+                let data = try! Data(contentsOf: url!)
+                cell.img.image = UIImage(data: data)
+
+                
             
         }
         

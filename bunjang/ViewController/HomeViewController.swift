@@ -94,7 +94,7 @@ class HomeViewController: UIViewController,UIScrollViewDelegate {
 //        self.view.addSubview(stackView)
         
         NSLayoutConstraint.activate([
-              self.segmentedControl.leftAnchor.constraint(equalTo: self.scrollCollectView.leftAnchor),
+              self.segmentedControl.leftAnchor.constraint(equalTo: self.scrollCollectView.leftAnchor , constant: 10),
               self.segmentedControl.rightAnchor.constraint(equalTo: self.scrollCollectView.rightAnchor),
               self.segmentedControl.topAnchor.constraint(equalTo: self.scrollCollectView.topAnchor, constant: 5),
               self.segmentedControl.heightAnchor.constraint(equalToConstant: 40),
@@ -114,15 +114,7 @@ class HomeViewController: UIViewController,UIScrollViewDelegate {
         }
         
         
-        
-//        self.segmentedControl.setTitleTextAttributes([NSAttributedString.Key.foregroundColor: UIColor.gray], for: .normal)
-//           self.segmentedControl.setTitleTextAttributes(
-//             [
-//               NSAttributedString.Key.foregroundColor: UIColor.black,
-//               .font: UIFont.systemFont(ofSize: 13, weight: .semibold)
-//             ],
-//             for: .selected
-//           )
+ 
            self.segmentedControl.selectedSegmentIndex = 0
         
     }

@@ -3,8 +3,6 @@
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
-        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
-        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -21,7 +19,7 @@
                     </tabBar>
                     <connections>
                         <segue destination="8zf-2n-TZM" kind="relationship" relationship="viewControllers" id="I5y-xK-r9V"/>
-                        <segue destination="naI-QU-E84" kind="relationship" relationship="viewControllers" id="Er8-vU-Mwz"/>
+                        <segue destination="lnc-2e-Q08" kind="relationship" relationship="viewControllers" id="mEq-HK-H5D"/>
                         <segue destination="hk8-X4-Z9w" kind="relationship" relationship="viewControllers" id="8lg-T5-hqV"/>
                         <segue destination="AR3-SO-Lrr" kind="relationship" relationship="viewControllers" id="IpL-0w-Mrp"/>
                         <segue destination="6Nu-6D-i3s" kind="relationship" relationship="viewControllers" id="9wT-ZY-eDa"/>
@@ -41,23 +39,15 @@
             </objects>
             <point key="canvasLocation" x="-1161" y="450"/>
         </scene>
-        <!--검색-->
-        <scene sceneID="Hqo-pn-ao0">
+        <!--Search-->
+        <scene sceneID="9iJ-97-os3">
             <objects>
-                <viewController storyboardIdentifier="seViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="naI-QU-E84" customClass="seViewController" customModule="bunjang" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="bXC-Rk-hJ2">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <viewLayoutGuide key="safeArea" id="pEf-eY-73c"/>
-                        <color key="backgroundColor" systemColor="systemBrownColor"/>
-                    </view>
-                    <tabBarItem key="tabBarItem" title="검색" image="magnifyingglass" catalog="system" id="lio-75-FdS"/>
-                    <navigationItem key="navigationItem" id="0li-2J-TIz"/>
-                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="G3B-5f-AS6" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <viewControllerPlaceholder storyboardName="Search" id="lnc-2e-Q08" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="검색" image="magnifyingglass" catalog="system" id="KIf-Vl-BBr"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Tfb-VN-ask" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-755" y="822"/>
+            <point key="canvasLocation" x="-594" y="468"/>
         </scene>
         <!--Add-->
         <scene sceneID="Rjl-n2-xCV">
@@ -92,8 +82,5 @@
     </scenes>
     <resources>
         <image name="magnifyingglass" catalog="system" width="128" height="115"/>
-        <systemColor name="systemBrownColor">
-            <color red="0.63529411764705879" green="0.51764705882352946" blue="0.36862745098039218" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </systemColor>
     </resources>
 </document>

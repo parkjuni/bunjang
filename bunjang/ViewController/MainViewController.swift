@@ -27,10 +27,6 @@ class MainViewController: UITabBarController {
 }
 
 extension MainViewController : UITabBarControllerDelegate{
-
-   
-    
-    
     
     func tabBarController(_ tabBarController: UITabBarController, shouldSelect viewController: UIViewController) -> Bool {
 
@@ -70,7 +66,7 @@ extension MainViewController : UITabBarControllerDelegate{
             if index == 1 {
             // 이전 인덱스로 화면 전환!
         
-                self.selectedIndex = previousTabIndex
+                selectedIndex = previousTabIndex
 //                tabBarController?.selectedIndex = previousTabIndex
                 print("selected index")
                         print(selectedIndex)

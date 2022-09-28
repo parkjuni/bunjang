@@ -11,13 +11,24 @@ class SearchViewController: UIViewController {
 
     var brandDataList : [brandResult] = []
     var cateDataList : [cateResult] = []
+    var popuDataList : [poResult] = []
 
+
+    @IBAction func all_brand(_ sender: Any) {
+        
+    }
+    
     let sectionInsets = UIEdgeInsets(top: 10, left: 10, bottom: 10, right: 10)
+    
+    
+    
     
     @IBOutlet weak var brandTable: UITableView!
     @IBOutlet weak var recent_SearchView: UIView!
     
-    @IBOutlet weak var collectionView: UICollectionView!
+    @IBOutlet weak var catecollectionView: UICollectionView!
+    
+    @IBOutlet weak var popuCollectionView: UICollectionView!
     
     @IBAction func homeButton(_ sender: Any) {
     }
@@ -30,18 +41,20 @@ class SearchViewController: UIViewController {
         brandTable.rowHeight = 70
         
     
-        collectionView.delegate = self
-        collectionView.dataSource = self
-        let collectionViewLayout = collectionView.collectionViewLayout as? UICollectionViewFlowLayout
+        catecollectionView.delegate = self
+        catecollectionView.dataSource = self
+        let collectionViewLayout = catecollectionView.collectionViewLayout as? UICollectionViewFlowLayout
         collectionViewLayout?.sectionInset = sectionInsets
         collectionViewLayout?.invalidateLayout()
         // Do any additional setup after loading the view.
-        
-        
+        let pocollectionViewLayout = popuCollectionView.collectionViewLayout as? UICollectionViewFlowLayout
+        pocollectionViewLayout?.sectionInset = sectionInsets
         setNavigationBar()
 
         goods().recoBrands(self)
         goods().popuCategory(self)
+        userRequest().searchPopular(self)
+        
     }
     
     func setNavigationBar(){
@@ -100,6 +113,9 @@ extension SearchViewController: UITableViewDelegate, UITableViewDataSource {
         
         cell.brandName.text = brandDataList[indexPath.row].brandName
         cell.eng_num.text = brandDataList[indexPath.row].brandEngName + " · "+String(brandDataList[indexPath.row].counting)+"개"
+        let url = URL(string:brandDataList[indexPath.row].imgUrl)
+        let data = try! Data(contentsOf: url!)
+        cell.brandImg.image = UIImage(data: data)
 
         return cell
 
@@ -140,12 +156,29 @@ class searchTableViewCell: UITableViewCell {
 extension SearchViewController:UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout{
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
           
+        
+    if collectionView == popuCollectionView {
+//            return 받아오기
+        return popuDataList.count
+        }
         return 12
-//        return 12
 
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        
+        if collectionView == popuCollectionView {
+    //            return 받아오기
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "popuCell", for: indexPath) as! popuCollectionViewCell
+        
+//            cell.name.text = cateDataList[indexPath.row].categoryName
+            
+            cell.num.text = "0" + String(indexPath.row + 1)
+//            cell.num.text =  String(popuDataList[indexPath.row].searchId)
+            cell.text.text = popuDataList[indexPath.row].content
+            return cell
+        }
+        
         
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "collectcell", for: indexPath) as! searcheCollectionViewCell
     
@@ -153,12 +186,19 @@ extension SearchViewController:UICollectionViewDelegate, UICollectionViewDataSou
 //            cell.img.image = UIImage(named: img3[indexPath.row])
 //
         
+        let url = URL(string:cateDataList[indexPath.row].imgUrl)
+        let data = try! Data(contentsOf: url!)
+        cell.img.image = UIImage(data: data)
+
+        
         return cell
         
     }
     
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        
+        if collectionView == catecollectionView {
         let width = collectionView.frame.width
         let numberOfItemsPerRow: CGFloat = 4
         let spacing: CGFloat = 10
@@ -166,6 +206,8 @@ extension SearchViewController:UICollectionViewDelegate, UICollectionViewDataSou
         let itemDimension = floor(availableWidth / numberOfItemsPerRow)
 
         return CGSize(width: itemDimension, height: itemDimension)
+        }
+         return CGSize(width: 150, height: 50)
     }
 
     //셀 터치 이벤트 -- 화면이동 추가
@@ -194,6 +236,7 @@ class searcheCollectionViewCell: UICollectionViewCell {
 //api setting 함수
 extension SearchViewController{
 
+    //인기 카테고리 컬렉션 뷰 세팅
     func didSuccess_poca(_ response: category){
 
 //        let brandName = response.result[0].brandName
@@ -205,20 +248,17 @@ extension SearchViewController{
         print(cateDataList[0].categoryName)
         print(cateDataList[2].categoryName)
 
-        self.collectionView.reloadData()
+        self.catecollectionView.reloadData()
 
 //        self.brandTable.reloadData()
 
                
 
     }
-}
 
 
 
-//api setting 함수
-extension SearchViewController{
-
+    //추천 브랜드 테이블뷰 세팅
     func didSuccess_recobrand(_ response: brand){
 
 //        let brandName = response.result[0].brandName
@@ -230,7 +270,49 @@ extension SearchViewController{
 
 //
     }
+
+    //인기 검색어
+    func didSuccess_poSearch(_ response: search_Popular){
+
+//        let brandName = response.result[0].brandName
+//        self.testlabel.text = brandName
+//
+//        self.brandDataList = response.result
+//        self.brandTable.reloadData()
+        self.popuDataList = response.result
+        self.popuCollectionView.reloadData()
+
+//
+    }
+
+    //최근 검색어
+    func didSuccess_searchRecent(_ response: search_Recent){
+
+//        let brandName = response.result[0].brandName
+//        self.testlabel.text = brandName
+//
+//        self.brandDataList = response.result
+//        self.brandTable.reloadData()
+
+    }
+    
 }
 
 
+// 인기 검색어 cell
 
+class popuCollectionViewCell: UICollectionViewCell {
+
+//    @IBOutlet weak var menuCell_img: UIImageView!
+    
+    @IBOutlet weak var text: UILabel!
+    @IBOutlet weak var num: UILabel!
+    override func awakeFromNib(){
+        super.awakeFromNib()
+        self.layer.cornerRadius = 4
+        self.layer.borderWidth = 1
+        self.layer.borderColor = UIColor.systemGray5.cgColor
+   
+    }
+    
+}
