@@ -18,7 +18,7 @@ class AddDetailViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         payButton.layer.borderWidth = 1
-        payButton.layer.borderColor = UIColor.red.cgColor
+//        payButton.layer.borderColor = UIColor.red.cgColor
         payButton.layer.cornerRadius = 4
         addB.layer.cornerRadius = 4
 

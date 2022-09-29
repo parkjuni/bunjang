@@ -177,16 +177,16 @@ extension Keyword_notiViewController{
     func didSuccess_postkeywords(){
         //성공하면 ui에 키워드 추가하기
       
-        
-        tableView.beginUpdates()
-
-        tableView.insertRows(at: [IndexPath(row: 0, section: 0)], with: .automatic)
-        let cell = tableView.dequeueReusableCell(withIdentifier: "cell") as! keywordViewCell
-        
-        cell.keywordName.text = keywordField.text
-//        let brandName = response.result[0].brandName
-//        self.testlabel.text = brandName
-        tableView.endUpdates()
+        print("post 성공")
+//        tableView.beginUpdates()
+//
+//        tableView.insertRows(at: [IndexPath(row: 0, section: 0)], with: .automatic)
+//        let cell = tableView.dequeueReusableCell(withIdentifier: "cell") as! keywordViewCell
+//
+//        cell.keywordName.text = keywordField.text
+////        let brandName = response.result[0].brandName
+////        self.testlabel.text = brandName
+//        tableView.endUpdates()
 
                
 //

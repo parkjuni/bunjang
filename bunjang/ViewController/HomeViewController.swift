@@ -168,7 +168,8 @@ class HomeViewController: UIViewController,UIScrollViewDelegate {
     }
    
     
-    
+//    self.navigationController?.navigationBar.tintColor =  // 원하는 색상
+
     
     @objc func menubuttonAction(sender: UIButton!) {
 

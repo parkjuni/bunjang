@@ -15,6 +15,12 @@ class SearchViewController: UIViewController {
 
 
     @IBAction func all_brand(_ sender: Any) {
+        let storyboard = UIStoryboard(name: "Menu2", bundle: nil)
+        let vc = storyboard.instantiateViewController(withIdentifier: "MenuViewController")
+        vc.modalPresentationStyle = .fullScreen
+//        self.segmentedControl.selectedSegmentIndex = 0
+
+         self.present(vc, animated: true, completion: nil)
         
     }
     

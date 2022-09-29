@@ -111,6 +111,17 @@
                                                         <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                                         <state key="normal" title="옵션선택"/>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                                <real key="value" value="1"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                                <real key="value" value="5"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                            <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                                                <color key="value" red="0.92866059919999999" green="0.92866059919999999" blue="0.92866059919999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                        </userDefinedRuntimeAttributes>
                                                     </button>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1개 · 중고상품 · 교환불가" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DlB-j2-wzd">
                                                         <rect key="frame" x="107" y="13" width="139" height="21"/>
@@ -176,9 +187,9 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="k4D-Lx-Wbk">
                                 <rect key="frame" x="0.0" y="511" width="375" height="156"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="내 상품에 안전결제 배지가 표시돼요 " textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6Ci-7w-lXi">
-                                        <rect key="frame" x="102" y="80" width="173" height="16"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="내 상품에 안전결제 배지가 표시돼요 " textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6Ci-7w-lXi">
+                                        <rect key="frame" x="109.5" y="80" width="158" height="16"/>
+                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="11"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
@@ -217,22 +228,55 @@
                                                 </fragment>
                                             </attributedString>
                                         </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                                <color key="value" red="0.75294119120000003" green="0.27450981740000002" blue="0.21568629149999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wKf-IE-T6s">
+                                        <rect key="frame" x="150.5" y="35" width="30" height="17"/>
+                                        <color key="backgroundColor" red="0.75294119120000003" green="0.27450981740000002" blue="0.21568629149999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="17" id="lfr-pZ-nCw"/>
+                                            <constraint firstAttribute="width" constant="30" id="pCF-MA-Mur"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="11"/>
+                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                        <state key="normal" title="페이">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="자세히" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mUA-bw-IPw">
-                                        <rect key="frame" x="283" y="80" width="55" height="16"/>
+                                        <rect key="frame" x="275.5" y="80" width="55" height="16"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="55" id="ggK-1V-mEy"/>
                                         </constraints>
-                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="13"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="13"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yP1-Qf-VEG">
+                                        <rect key="frame" x="235.5" y="32.5" width="18.5" height="22"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="18.5" id="0gM-mf-vfp"/>
+                                            <constraint firstAttribute="height" constant="22" id="VXh-ky-gBs"/>
+                                        </constraints>
+                                        <color key="tintColor" red="0.75294119120000003" green="0.27450981740000002" blue="0.21568629149999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                        <state key="normal" image="checkmark" catalog="system">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" red="0.97297645702673141" green="0.98179768041237114" blue="0.96622280855965914" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <constraints>
+                                    <constraint firstItem="wKf-IE-T6s" firstAttribute="centerY" secondItem="5xt-CQ-OhM" secondAttribute="centerY" id="4DV-mH-ZKA"/>
+                                    <constraint firstItem="orm-6m-uNi" firstAttribute="leading" secondItem="yP1-Qf-VEG" secondAttribute="trailing" constant="29" id="4Lb-hp-n1d"/>
                                     <constraint firstItem="orm-6m-uNi" firstAttribute="height" secondItem="5xt-CQ-OhM" secondAttribute="height" id="5MY-UQ-8hm"/>
                                     <constraint firstAttribute="bottom" secondItem="6Ci-7w-lXi" secondAttribute="bottom" constant="60" id="B91-tD-PxS"/>
                                     <constraint firstItem="mUA-bw-IPw" firstAttribute="top" secondItem="orm-6m-uNi" secondAttribute="bottom" constant="8" id="EYE-qb-w27"/>
+                                    <constraint firstItem="yP1-Qf-VEG" firstAttribute="centerY" secondItem="5xt-CQ-OhM" secondAttribute="centerY" id="Fok-ul-P4k"/>
                                     <constraint firstItem="6Ci-7w-lXi" firstAttribute="bottom" secondItem="mUA-bw-IPw" secondAttribute="bottom" id="J6z-Mt-wqE"/>
                                     <constraint firstItem="6Ci-7w-lXi" firstAttribute="top" secondItem="5xt-CQ-OhM" secondAttribute="bottom" constant="8" id="K42-RZ-Huf"/>
                                     <constraint firstItem="orm-6m-uNi" firstAttribute="leading" secondItem="5xt-CQ-OhM" secondAttribute="trailing" constant="11" id="QEG-oc-xpf"/>
@@ -241,10 +285,12 @@
                                     <constraint firstItem="mUA-bw-IPw" firstAttribute="centerY" secondItem="6Ci-7w-lXi" secondAttribute="centerY" id="ZZZ-AO-OqU"/>
                                     <constraint firstItem="5xt-CQ-OhM" firstAttribute="centerX" secondItem="6Ci-7w-lXi" secondAttribute="centerX" constant="-40.5" id="bdI-Ha-fJM"/>
                                     <constraint firstItem="5xt-CQ-OhM" firstAttribute="leading" secondItem="k4D-Lx-Wbk" secondAttribute="leading" constant="24" id="cUh-e8-85V"/>
+                                    <constraint firstItem="6Ci-7w-lXi" firstAttribute="centerX" secondItem="k4D-Lx-Wbk" secondAttribute="centerX" id="cyH-A2-qHK"/>
                                     <constraint firstItem="6Ci-7w-lXi" firstAttribute="top" secondItem="5xt-CQ-OhM" secondAttribute="bottom" constant="8" id="hjO-eR-wmu"/>
                                     <constraint firstItem="orm-6m-uNi" firstAttribute="centerY" secondItem="5xt-CQ-OhM" secondAttribute="centerY" id="nl0-wY-1q9"/>
                                     <constraint firstItem="5xt-CQ-OhM" firstAttribute="top" secondItem="k4D-Lx-Wbk" secondAttribute="top" constant="15" id="oM3-bI-7k2"/>
                                     <constraint firstItem="mUA-bw-IPw" firstAttribute="leading" secondItem="6Ci-7w-lXi" secondAttribute="trailing" constant="8" id="qra-Nf-AVx"/>
+                                    <constraint firstItem="yP1-Qf-VEG" firstAttribute="leading" secondItem="wKf-IE-T6s" secondAttribute="trailing" constant="55" id="yDX-Zx-V8Q"/>
                                 </constraints>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ff3-7P-cBE">
@@ -294,6 +340,7 @@
     </scenes>
     <resources>
         <image name="camera.fill" catalog="system" width="128" height="94"/>
+        <image name="checkmark" catalog="system" width="128" height="114"/>
         <image name="chevron.backward" catalog="system" width="96" height="128"/>
     </resources>
 </document>

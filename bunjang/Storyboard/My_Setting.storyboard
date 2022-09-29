@@ -106,6 +106,7 @@
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
                                     <constraint firstItem="ho5-Ws-A9P" firstAttribute="centerX" secondItem="zFV-R7-k9S" secondAttribute="centerX" id="Ghb-KT-7eq"/>
+                                    <constraint firstAttribute="height" constant="358" id="QNk-d5-cSo"/>
                                     <constraint firstItem="ho5-Ws-A9P" firstAttribute="top" secondItem="zFV-R7-k9S" secondAttribute="top" constant="39" id="X2V-ka-nXx"/>
                                     <constraint firstAttribute="bottom" secondItem="ho5-Ws-A9P" secondAttribute="bottom" constant="32" id="c3N-5L-e1C"/>
                                 </constraints>
@@ -114,9 +115,8 @@
                         <viewLayoutGuide key="safeArea" id="RBp-6C-g5e"/>
                         <constraints>
                             <constraint firstItem="zFV-R7-k9S" firstAttribute="centerX" secondItem="uKH-du-xwb" secondAttribute="centerX" id="4p0-kY-p86"/>
-                            <constraint firstItem="zFV-R7-k9S" firstAttribute="top" secondItem="RBp-6C-g5e" secondAttribute="top" constant="494" id="7e0-OO-Ewx"/>
-                            <constraint firstAttribute="bottomMargin" secondItem="zFV-R7-k9S" secondAttribute="bottom" constant="-34" id="I3L-UW-ooU"/>
                             <constraint firstItem="zFV-R7-k9S" firstAttribute="leading" secondItem="RBp-6C-g5e" secondAttribute="leading" id="bNf-5d-61h"/>
+                            <constraint firstAttribute="bottom" secondItem="zFV-R7-k9S" secondAttribute="bottom" id="llX-8g-cBo"/>
                         </constraints>
                     </view>
                     <connections>

@@ -17,7 +17,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3vZ-qb-m6S">
-                                <rect key="frame" x="0.0" y="88" width="414" height="619"/>
+                                <rect key="frame" x="0.0" y="88" width="414" height="690"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2gL-x3-TGe">
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="1000"/>
@@ -118,7 +118,7 @@
                                 <viewLayoutGuide key="frameLayoutGuide" id="fyg-tn-Hk4"/>
                             </scrollView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="11" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4HJ-vU-opM">
-                                <rect key="frame" x="24" y="344" width="370" height="24"/>
+                                <rect key="frame" x="24" y="725" width="370" height="24"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -127,7 +127,7 @@
                                 <rect key="frame" x="0.0" y="778" width="414" height="118"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Geq-sD-P3V">
-                                        <rect key="frame" x="66" y="21" width="117" height="57"/>
+                                        <rect key="frame" x="58" y="21" width="125" height="57"/>
                                         <color key="backgroundColor" red="1" green="0.89808062698703872" blue="0.90252971534975912" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="57" id="Lbs-t4-PCO"/>
@@ -160,27 +160,27 @@
                                         </userDefinedRuntimeAttributes>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FIg-Oe-u6h">
-                                        <rect key="frame" x="1" y="34" width="57" height="31"/>
+                                        <rect key="frame" x="14" y="34" width="44" height="31"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="31" id="DBf-0K-59i"/>
-                                            <constraint firstAttribute="width" constant="57" id="dOT-FC-J4u"/>
+                                            <constraint firstAttribute="width" constant="44" id="dOT-FC-J4u"/>
                                         </constraints>
                                         <color key="tintColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="plain" image="suit.heart" catalog="system"/>
                                     </button>
                                 </subviews>
-                                <color key="backgroundColor" systemColor="systemGray4Color"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstItem="FIg-Oe-u6h" firstAttribute="centerY" secondItem="32q-48-jEz" secondAttribute="centerY" constant="-9.5" id="4Do-ZB-NpM"/>
-                                    <constraint firstItem="FIg-Oe-u6h" firstAttribute="leading" secondItem="32q-48-jEz" secondAttribute="leading" constant="1" id="6wm-Id-TmB"/>
+                                    <constraint firstItem="FIg-Oe-u6h" firstAttribute="leading" secondItem="32q-48-jEz" secondAttribute="leading" constant="14" id="6wm-Id-TmB"/>
                                     <constraint firstAttribute="bottom" secondItem="sjD-8V-nZ5" secondAttribute="bottom" constant="39" id="Aaw-Ln-ceD"/>
                                     <constraint firstItem="Geq-sD-P3V" firstAttribute="centerY" secondItem="32q-48-jEz" secondAttribute="centerY" constant="-9.5" id="FKz-bJ-9ce"/>
                                     <constraint firstAttribute="bottom" secondItem="FIg-Oe-u6h" secondAttribute="bottom" constant="53" id="ISh-fm-As2"/>
                                     <constraint firstItem="FIg-Oe-u6h" firstAttribute="centerY" secondItem="32q-48-jEz" secondAttribute="centerY" constant="-9.5" id="Kwa-d3-YZz"/>
                                     <constraint firstItem="sjD-8V-nZ5" firstAttribute="centerY" secondItem="32q-48-jEz" secondAttribute="centerY" constant="-9" id="XKx-6u-oR6"/>
                                     <constraint firstAttribute="bottom" secondItem="Geq-sD-P3V" secondAttribute="bottom" constant="40" id="YfB-K1-j4Y"/>
-                                    <constraint firstItem="Geq-sD-P3V" firstAttribute="leading" secondItem="FIg-Oe-u6h" secondAttribute="trailing" constant="8" id="cc5-lI-925"/>
+                                    <constraint firstItem="Geq-sD-P3V" firstAttribute="leading" secondItem="FIg-Oe-u6h" secondAttribute="trailing" id="cc5-lI-925"/>
                                     <constraint firstAttribute="trailing" secondItem="sjD-8V-nZ5" secondAttribute="trailing" constant="17" id="fem-ZV-baD"/>
                                     <constraint firstItem="Geq-sD-P3V" firstAttribute="centerY" secondItem="FIg-Oe-u6h" secondAttribute="centerY" id="tmV-Cj-EtZ"/>
                                     <constraint firstItem="sjD-8V-nZ5" firstAttribute="leading" secondItem="Geq-sD-P3V" secondAttribute="trailing" constant="19" id="w0y-qg-QPO"/>
@@ -199,7 +199,7 @@
                             <constraint firstItem="4HJ-vU-opM" firstAttribute="leading" secondItem="5EZ-qb-Rvc" secondAttribute="leading" constant="24" id="abx-pe-0wp"/>
                             <constraint firstItem="32q-48-jEz" firstAttribute="trailing" secondItem="vDu-zF-Fre" secondAttribute="trailing" id="cgQ-ys-z96"/>
                             <constraint firstItem="4HJ-vU-opM" firstAttribute="top" secondItem="IEn-WG-hsd" secondAttribute="bottom" constant="43" id="clU-ZX-tSf"/>
-                            <constraint firstItem="32q-48-jEz" firstAttribute="top" secondItem="3vZ-qb-m6S" secondAttribute="bottom" constant="71" id="jdd-4G-9Bd"/>
+                            <constraint firstItem="32q-48-jEz" firstAttribute="top" secondItem="3vZ-qb-m6S" secondAttribute="bottom" id="jdd-4G-9Bd"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="cxD-Ma-sY5"/>
@@ -238,9 +238,6 @@
     <resources>
         <image name="loading" width="750" height="1334"/>
         <image name="suit.heart" catalog="system" width="128" height="109"/>
-        <systemColor name="systemGray4Color">
-            <color red="0.81960784313725488" green="0.81960784313725488" blue="0.83921568627450982" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </systemColor>
         <systemColor name="systemGray5Color">
             <color red="0.89803921568627454" green="0.89803921568627454" blue="0.91764705882352937" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>

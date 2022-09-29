@@ -15,6 +15,7 @@ class MyViewController: UIViewController {
     @IBOutlet weak var bankAcB: UIButton!
     @IBOutlet weak var pointB: UIButton!
    
+    @IBOutlet weak var userImg: UIImageView!
     //api
     @IBOutlet weak var nickName: UILabel!
     @IBOutlet weak var content: UILabel!
@@ -185,13 +186,19 @@ extension MyViewController{
 //
 //        self.brandDataList = response.result
         nickName.text = response.result.nickName
-        content.text = response.result.content
+        content.text = "       " + response.result.content!
         created.setTitle("오픈일+" + String(response.result.gapCreatedAt), for: .normal)
         follower.setTitle("팔로워 " + String(response.result.follower), for: .normal)
         star.setTitle("평점 " + String(response.result.star), for: .normal)
         follwing.setTitle("팔로잉 " + String(response.result.following), for: .normal)
 
+        let url = URL(string:response.result.imgUrl!)
+        let data = try! Data(contentsOf: url!)
+        userImg.image = UIImage(data: data)
+//        userImg.layer.cornerRadius = userImg.frame.height*0.6
 
+        
+        
     }
 }
 

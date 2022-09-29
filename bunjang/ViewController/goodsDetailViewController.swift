@@ -64,7 +64,7 @@ class goodsDetailViewController: UIViewController {
 
         
         searchButton.addTarget(self, action: #selector(searchbuttonAction), for: .touchUpInside)
-        shareButton.addTarget(self, action: #selector(sharebuttonAction), for: .touchUpInside)
+//        shareButton.addTarget(self, action: #selector(sharebuttonAction), for: .touchUpInside)
 
         
     }
