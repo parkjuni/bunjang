@@ -154,7 +154,20 @@ extension Menu_cateViewController:UICollectionViewDelegate, UICollectionViewData
     
     
     //셀 터치 이벤트 -- 화면이동 추가
-    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath){}
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath){
+        
+        ud.set(cateDataList[indexPath.row].categoryId , forKey: "menu_catedId")
+        ud.set(cateDataList[indexPath.row].categoryName , forKey: "menu_cateName")
+        ud.set(cateDataList[indexPath.row].imgUrl, forKey: "menu_cateUrl")
+
+        
+        
+        let storyboard = UIStoryboard(name: "CaDStoryboard", bundle: nil)
+        let vc = storyboard.instantiateViewController(withIdentifier: "CaDViewController")
+        
+         self.present(vc, animated: true)
+        
+    }
 }
 
 

@@ -9,10 +9,22 @@ import UIKit
 
 class goodsDetailViewController: UIViewController {
 
-    var DataList : [Detail] = []
+//    var DataList : Detail = []
 
     
-    override func viewDidLoad() {
+    @IBOutlet weak var DgoodImg: UIImageView!
+    
+    @IBOutlet weak var Dtitle: UILabel!
+    @IBOutlet weak var Dprice: UILabel!
+    
+    @IBOutlet weak var Dregion: UILabel!
+    
+    @IBOutlet weak var Dviewlikes: UILabel!
+    
+    @IBOutlet weak var Dcontent: UILabel!
+    
+    
+        override func viewDidLoad() {
         super.viewDidLoad()
         setNavigationBar()
         goods().goodsDetail(self)
@@ -91,17 +103,25 @@ extension goodsDetailViewController{
 //        let brandName = response.result[0].brandName
 //        self.testlabel.text = brandName
 //
-        self.DataList = response.result
+//        self.DataList = response
 
-        print("굿즈디테일")
-        print(DataList.count)
-        print(DataList[0].title)
-//        print(homelist[2].categoryName)
-//        self.collectionView.reloadData()
+        print("굿즈디테일 성공")
+//
+//        @IBOutlet weak var goodImg: UIImageView!
+//
+        Dprice.text = response.result.price
+        Dregion.text = response.result.region
+        Dviewlikes.text =  "  𓁺" + String(response.result.views) + "  ♥" + String(response.result.likes)
+        Dcontent.text = response.result.content
+        Dtitle.text = response.result.title
 
-//        self.collectionView.reloadData()
+        let url = URL(string:response.result.goodsImgList[0].imgUrl)
+        let data = try! Data(contentsOf: url!)
+        DgoodImg.image = UIImage(data: data)
 
-//        self.brandTable.reloadData()
+        
+
+//        @IBOutlet weak var content: UILabel!
                    
                
 //

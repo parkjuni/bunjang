@@ -51,6 +51,22 @@ extension brandListViewController: UITableViewDelegate, UITableViewDataSource {
         return cell
 
     }
+    
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+            //클릭한 셀의 이벤트 처리
+            tableView.deselectRow(at: indexPath, animated: true)
+        ud.set(brandDataList[indexPath.row].brandId, forKey: "menu_brandId")
+        ud.set(brandDataList[indexPath.row].brandName, forKey: "menu_brandName")
+        ud.set(brandDataList[indexPath.row].imgUrl, forKey: "menu_brandUrl")
+        ud.set(brandDataList[indexPath.row].brandEngName, forKey: "menu_brandEng")
+
+        let storyboard = UIStoryboard(name: "GDStoryboard", bundle: nil)
+        let vc = storyboard.instantiateViewController(withIdentifier: "GDViewController")
+        
+         self.present(vc, animated: true)
+        }
+    
 
 }
 

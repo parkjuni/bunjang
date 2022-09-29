@@ -120,17 +120,18 @@ struct homegoods: Decodable {
 }
 
 /// 상품 디테일 뷰
+
 struct goods_Detail: Decodable {
     let isSuccess: Bool
     let code: Int
     let message: String
-    let result: [Detail]
+    let result: Detail
 }
+
 
 struct Detail: Decodable {
     let goodsId: Int
-    let title, content, seller: String
-    let price: String
+    let title, content, seller, price: String
     let categoryId: Int
     let isFreeShipping: String
     let numberOfGoods: Int
@@ -140,21 +141,35 @@ struct Detail: Decodable {
     let isLike: String
     let views: Int
     let goodsImgList: [GoodsImgList]
+    let tagList: [TagList]
+
 }
+
 
 struct GoodsImgList: Decodable {
     let imgUrl: String
+
 }
+
+struct TagList: Decodable {
+    let tagId: Int
+    let content: String
+
+   
+}
+
+
+
 
 //////user 정보
 struct user_info: Decodable {
     let isSuccess: Bool
     let code: Int
     let message: String
-    let result: [UserResult]
+    let result: User_Result
 }
 
-struct UserResult: Decodable {
+struct User_Result: Decodable {
     let nickName: String
     let imgUrl: String?
     let content: String?
@@ -163,10 +178,29 @@ struct UserResult: Decodable {
     let follower: Int
     let following: Int
     let gapCreatedAt: Int
-    
-
 
 }
+
+//struct user_info: Decodable {
+//    let isSuccess: Bool
+//    let code: Int
+//    let message: String
+//    let result: Result
+//}
+//
+//// MARK: - Result
+//struct User_Result: Codable {
+//    let nickName, imgURL, content: String
+//    let star, transaction, follower, following: Int
+//    let gapCreatedAt: Int
+//
+//    enum CodingKeys: String, CodingKey {
+//        case nickName
+//        case imgURL = "imgUrl"
+//        case content, star, transaction, follower, following, gapCreatedAt
+//    }
+//}
+
 
 // 검색뷰 - 요즘 많이 찾는 검색어
 struct search_Popular: Decodable {
@@ -207,4 +241,26 @@ struct keywordResult: Decodable {
     let keywordId: Int!
     let keyword: String!
 }
+
+//브랜드 상품 조회
+
+struct Brandgoods: Decodable {
+    let isSuccess: Bool
+    let code: Int
+    let message: String
+    let result: [BGResult]
+}
+
+// MARK: - Result
+struct BGResult: Decodable {
+    let goodsId: Int
+    let title, price: String
+    let likes: Int
+    let canBungaePay: String
+    let imgUrl: String
+    let isLike, status: String
+    }
+
+
+
 

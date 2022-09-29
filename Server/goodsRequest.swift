@@ -83,7 +83,7 @@ class goods{
         }
     
     
-    // 상품 디테일
+    // 상품 디테일. 
     func goodsDetail(_ viewController : goodsDetailViewController){
         let goodsId :String = String(ud.integer(forKey: "goodId"))
 
@@ -106,20 +106,21 @@ class goods{
         }
     
     // 브랜드 디테일
-    func brandDetail(_ viewController : goodsDetailViewController){  /// 뷰 추가 후 수정하기
+    func brandDetail(_ viewController : GDViewController, brandId : String){  /// 뷰 추가 후 수정하기
 
-        let brandId :String = String(ud.integer(forKey: "brandId"))
+//        let brandId :String = String(ud.integer(forKey: "brandId"))
 
             AF.request(base_url + "/goods/brand/" + brandId,
                        method: .get,
                        headers: headers)
-            .responseDecodable(of: brand_Detail.self) { response in
+            .responseDecodable(of: Brandgoods.self) { response in
                 
                       switch response.result {
                       case.success(let response):
                           print("성공")
+                          print(brandId)
                           /// 뷰 추가 후 수정하기
-//                          viewController.didSuccess_goodsDe(response)
+                          viewController.didSuccess_brand(response)
                       case.failure(let error):
                           print("브랜드 디테일 오류 \(error.localizedDescription)")
                       }
@@ -132,20 +133,20 @@ class goods{
     
     
     // 카테고리 디테일
-    func cateDetail(_ viewController : goodsDetailViewController){   /// 뷰 추가 후 수정하기
+    func cateDetail(_ viewController : CaDViewController, cateId : String){   /// 뷰 추가 후 수정하기
 
-        let categoryId :String = String(ud.integer(forKey: "categoryId"))
+        let categoryId :String = String(ud.integer(forKey: "menu_catedId"))
 
-            AF.request(base_url + "/goods/brand/" + categoryId,
+            AF.request(base_url + "/goods/category/" + categoryId,
                        method: .get,
                        headers: headers)
-            .responseDecodable(of: category_Detail.self) { response in
+            .responseDecodable(of: Brandgoods.self) { response in
                 
                       switch response.result {
                       case.success(let response):
                           print("성공")
                           /// 뷰 추가 후 수정하기 
-//                          viewController.didSuccess_goodsDe(response)
+                          viewController.didSuccess_cate(response)
                       case.failure(let error):
                           print("카테고리 디테일 오류 \(error.localizedDescription)")
                       }

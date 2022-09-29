@@ -184,9 +184,14 @@ extension MyViewController{
 //        self.testlabel.text = brandName
 //
 //        self.brandDataList = response.result
-        self.nickName.text = response.result[0].nickName
+        nickName.text = response.result.nickName
+        content.text = response.result.content
+        created.setTitle("오픈일+" + String(response.result.gapCreatedAt), for: .normal)
+        follower.setTitle("팔로워 " + String(response.result.follower), for: .normal)
+        star.setTitle("평점 " + String(response.result.star), for: .normal)
+        follwing.setTitle("팔로잉 " + String(response.result.following), for: .normal)
 
-//
+
     }
 }
 

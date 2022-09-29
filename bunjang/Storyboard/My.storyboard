@@ -92,7 +92,7 @@
                                             <stackView opaque="NO" contentMode="scaleToFill" spacing="6" translatesAutoresizingMaskIntoConstraints="NO" id="fKE-7I-T3C">
                                                 <rect key="frame" x="0.0" y="218" width="414" height="70"/>
                                                 <subviews>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rHq-b0-5j7">
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rHq-b0-5j7">
                                                         <rect key="frame" x="0.0" y="0.0" width="99" height="70"/>
                                                         <color key="backgroundColor" red="0.97297645700000002" green="0.98179768040000004" blue="0.96622280859999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                         <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -289,6 +289,7 @@
                     <view key="view" contentMode="scaleToFill" id="Z6R-lQ-8ZE">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="593"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="dCd-pj-fmD"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </view>
                 </viewController>
@@ -320,6 +321,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
+                        <viewLayoutGuide key="safeArea" id="D6Z-iW-v1E"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="oBn-g0-eTk" firstAttribute="top" secondItem="2KF-3k-pmG" secondAttribute="top" constant="120" id="PaK-Y7-Rjd"/>
@@ -402,6 +404,7 @@
                                 </constraints>
                             </imageView>
                         </subviews>
+                        <viewLayoutGuide key="safeArea" id="nNq-CF-hHc"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="5yU-xa-NPt" firstAttribute="bottom" secondItem="XTo-ne-nUG" secondAttribute="bottom" id="DEm-iX-Sr2"/>

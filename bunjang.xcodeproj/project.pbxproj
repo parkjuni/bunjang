@@ -29,6 +29,11 @@
 		BB07BCB628E321E1001A5219 /* seViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB07BCB528E321E1001A5219 /* seViewController.swift */; };
 		BB07BCB828E37DE3001A5219 /* userRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB07BCB728E37DE3001A5219 /* userRequest.swift */; };
 		BB4FACE128E526960081E980 /* keywordsRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB4FACE028E526960081E980 /* keywordsRequest.swift */; };
+		BB4FACE328E5821E0081E980 /* GDStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BB4FACE228E5821E0081E980 /* GDStoryboard.storyboard */; };
+		BB4FACE528E582490081E980 /* GDViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB4FACE428E582490081E980 /* GDViewController.swift */; };
+		BB4FACE728E5C7140081E980 /* CaDStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BB4FACE628E5C7140081E980 /* CaDStoryboard.storyboard */; };
+		BB4FACE928E5C71F0081E980 /* CaDViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB4FACE828E5C71F0081E980 /* CaDViewController.swift */; };
+		BB4FACEB28E5D5F20081E980 /* buttonExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB4FACEA28E5D5F20081E980 /* buttonExtension.swift */; };
 		BB8E928728DBE7CC00D38A42 /* SetNickname.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BB8E928628DBE7CC00D38A42 /* SetNickname.storyboard */; };
 		BB8E928A28DBFA9800D38A42 /* loginrequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB8E928928DBFA9800D38A42 /* loginrequest.swift */; };
 		BB8E928C28DBFAA500D38A42 /* response.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB8E928B28DBFAA500D38A42 /* response.swift */; };
@@ -108,6 +113,11 @@
 		BB07BCB528E321E1001A5219 /* seViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = seViewController.swift; sourceTree = "<group>"; };
 		BB07BCB728E37DE3001A5219 /* userRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = userRequest.swift; sourceTree = "<group>"; };
 		BB4FACE028E526960081E980 /* keywordsRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = keywordsRequest.swift; sourceTree = "<group>"; };
+		BB4FACE228E5821E0081E980 /* GDStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = GDStoryboard.storyboard; sourceTree = "<group>"; };
+		BB4FACE428E582490081E980 /* GDViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GDViewController.swift; sourceTree = "<group>"; };
+		BB4FACE628E5C7140081E980 /* CaDStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = CaDStoryboard.storyboard; sourceTree = "<group>"; };
+		BB4FACE828E5C71F0081E980 /* CaDViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CaDViewController.swift; sourceTree = "<group>"; };
+		BB4FACEA28E5D5F20081E980 /* buttonExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = buttonExtension.swift; sourceTree = "<group>"; };
 		BB75CFECE75988A78C038DBE /* Pods_bunjang.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_bunjang.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BB8E928628DBE7CC00D38A42 /* SetNickname.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SetNickname.storyboard; sourceTree = "<group>"; };
 		BB8E928928DBFA9800D38A42 /* loginrequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = loginrequest.swift; sourceTree = "<group>"; };
@@ -263,6 +273,8 @@
 				BB8E928628DBE7CC00D38A42 /* SetNickname.storyboard */,
 				BB05FCEF28DDBD07009DB49E /* OtherLogin.storyboard */,
 				BBCDB55528D6D4E500CB766D /* Main.storyboard */,
+				BB4FACE628E5C7140081E980 /* CaDStoryboard.storyboard */,
+				BB4FACE228E5821E0081E980 /* GDStoryboard.storyboard */,
 				BBCDB58028D6D55400CB766D /* Home.storyboard */,
 				BB07BCAF28E2B48B001A5219 /* goodsDetail.storyboard */,
 				BB07BCAB28E2B1A0001A5219 /* brandList.storyboard */,
@@ -286,19 +298,22 @@
 				BBCDB59D28D7F5F600CB766D /* OnboardingViewController.swift */,
 				BB05FCF128DDBD19009DB49E /* OtherLoginViewController.swift */,
 				BB8E928D28DBFDA600D38A42 /* SetNicknameViewController.swift */,
-				BBCDB55328D6D4E500CB766D /* MainViewController.swift */,
 				BBCDB58F28D6DDA600CB766D /* HomeViewController.swift */,
 				BB07BCB328E2B7B0001A5219 /* homeGoodsViewController.swift */,
 				BB07BCB128E2B497001A5219 /* goodsDetailViewController.swift */,
 				BB07BCAD28E2B1AC001A5219 /* brandListViewController.swift */,
 				BBCDB59128D6DDC700CB766D /* MenuViewController.swift */,
 				BB05FCF328DEC4E6009DB49E /* Menu_cateViewController.swift */,
+				BB4FACEA28E5D5F20081E980 /* buttonExtension.swift */,
 				BB05FCF528DEC502009DB49E /* Menu_brandViewController.swift */,
 				BB05FCF728DEC50F009DB49E /* Menu_servViewController.swift */,
 				BBCDB59328D6DDD400CB766D /* NotificationViewController.swift */,
 				BB05FCE728DD633D009DB49E /* Keyword_notiViewController.swift */,
 				BB05FCE928DD6B92009DB49E /* Setting_notiViewController.swift */,
 				BB8E928F28DC5E6700D38A42 /* SearchViewController.swift */,
+				BBCDB55328D6D4E500CB766D /* MainViewController.swift */,
+				BB4FACE428E582490081E980 /* GDViewController.swift */,
+				BB4FACE828E5C71F0081E980 /* CaDViewController.swift */,
 				BB05FCED28DD9B4C009DB49E /* AddViewController.swift */,
 				BBCDB59928D6F3C800CB766D /* AddDetailViewController.swift */,
 				BB05FCFB28DF7275009DB49E /* TalkViewController.swift */,
@@ -453,6 +468,8 @@
 				BBCDB58928D6D59700CB766D /* My.storyboard in Resources */,
 				BBCDB55728D6D4E500CB766D /* Main.storyboard in Resources */,
 				BB05FCF028DDBD07009DB49E /* OtherLogin.storyboard in Resources */,
+				BB4FACE328E5821E0081E980 /* GDStoryboard.storyboard in Resources */,
+				BB4FACE728E5C7140081E980 /* CaDStoryboard.storyboard in Resources */,
 				BBCDB58128D6D55400CB766D /* Home.storyboard in Resources */,
 				BB8E929428DC6CD100D38A42 /* Setting_notification.storyboard in Resources */,
 				BB07BCAC28E2B1A0001A5219 /* brandList.storyboard in Resources */,
@@ -573,6 +590,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BB4FACEB28E5D5F20081E980 /* buttonExtension.swift in Sources */,
 				BBCDB55428D6D4E500CB766D /* MainViewController.swift in Sources */,
 				BB05FCEA28DD6B92009DB49E /* Setting_notiViewController.swift in Sources */,
 				BBCDB59228D6DDC700CB766D /* MenuViewController.swift in Sources */,
@@ -598,9 +616,11 @@
 				BBCDB55228D6D4E500CB766D /* SceneDelegate.swift in Sources */,
 				BB4FACE128E526960081E980 /* keywordsRequest.swift in Sources */,
 				BB93C39928E1C0BA00CF8C41 /* My_SettingViewController.swift in Sources */,
+				BB4FACE928E5C71F0081E980 /* CaDViewController.swift in Sources */,
 				BBCDB59E28D7F5F600CB766D /* OnboardingViewController.swift in Sources */,
 				BB8E928C28DBFAA500D38A42 /* response.swift in Sources */,
 				BB07BCB828E37DE3001A5219 /* userRequest.swift in Sources */,
+				BB4FACE528E582490081E980 /* GDViewController.swift in Sources */,
 				BBCDB59028D6DDA600CB766D /* HomeViewController.swift in Sources */,
 				BB05FCF428DEC4E6009DB49E /* Menu_cateViewController.swift in Sources */,
 			);
