@@ -25,6 +25,12 @@ class NotificationViewController: UIViewController {
    
     
  
+    @IBAction func goKeyword(_ sender: Any) {
+        let storyboard = UIStoryboard(name: "Keyword_notification", bundle: nil)
+        let vc = storyboard.instantiateViewController(withIdentifier: "Keyword_notiViewcontroller")
+
+         self.show(vc, sender: self)
+    }
     
     
     @IBOutlet weak var keyword: UIButton!

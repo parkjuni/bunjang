@@ -8,10 +8,12 @@
 import UIKit
 
 //var goodsID : [Int] = []
+let homeImg = ["1","2","3","4","5","6","7","8","9"]
 
 
 class homeGoodsViewController: UIViewController {
-    
+   
+
     var DataList : [homegoods] = []
 
     
@@ -45,6 +47,7 @@ extension homeGoodsViewController:UICollectionViewDelegate, UICollectionViewData
         
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "collectCell", for: indexPath) as! goodsCollectionViewCell
     
+//        cell.img.image = UIImage(named: homeImg[indexPath.row])
         
         cell.price.text = DataList[indexPath.row].price
 

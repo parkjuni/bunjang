@@ -13,26 +13,33 @@ import Alamofire
 
 
 class userRequest{
-
+    
     //마이 뷰 - 유저 정보 
     func users(_ viewController : MyViewController){
-        
                
-            AF.request(base_url + "/users",
-                       method: .get,
-                       headers: headers)
-            .responseDecodable(of: Users.self) { response in
-                
-                      switch response.result {
-                      case.success(let response):
-                          
-                          print("성공")
-                          viewController.didSuccess_users(response)
-                      case.failure(let error):
-                          print("오류 \(error.localizedDescription)")
-                      }
-                      
-                  }
+          
+                    
+                    
+                 AF.request(base_url + "/users",
+                            method: .get,
+                            headers: headers)
+                 .responseDecodable(of: user_info.self) { response in
+                     
+                     
+                     switch response.result {
+                     case.success(let response):
+                         
+                         print("성공")
+                         viewController.didSuccess_users(response)
+                     case.failure(let error):
+                         print("user 정보 오류 \(error.localizedDescription)")
+                        
+
+                     }
+         
+     }
+        
+        
         
         }
     

@@ -49,13 +49,12 @@ class kakaoLogin{
                         
                         guard let jsonObject = object else {return}
                         let data = object!["result"] as? [String : Any]
-
+//                        print(jsonObject)
                             switch jsonObject["code"] as! Int {
                                 case 1000: //로그인 성공
                                 print("로그인 성공 ")
 
                                 viewController.didSuccess_join()
-                                                            
                                 ud.set(data!["userId"], forKey: "userId")
                                 ud.set(data!["jwt"], forKey: "jwt")
                                 
@@ -67,11 +66,10 @@ class kakaoLogin{
                                 case 4004:
                                     print("카카오 통신 실패")
                                 default :
-                                    print("에러")
-                                    }
+                                print("error")
+                                        }
                         
                     }
-                
                 
                 catch let e as NSError{
                         print("An error has occured while parsing JSONObject: \(e.localizedDescription)")
@@ -129,10 +127,10 @@ class kakaoLogin{
                         guard let jsonObject = object else {return}
                         
                       //자동 로그인 성공 시 결과 코드 1000번
-                        if jsonObject["code"] as! Int == 1000 {
-                            viewController.didSuccess_autoLogin()
-                        }
-                        print(jsonObject)
+//                        if jsonObject["code"] as! Int == 1000 {
+//                            viewController.didSuccess_autoLogin()
+//                        }
+//                        print(jsonObject)
                         
                         switch jsonObject["code"] as! Int {
                             case 1000: //로그인 성공
@@ -157,6 +155,7 @@ class kakaoLogin{
                         
                     }catch let e as NSError{
                         print("An error has occured while parsing JSONObject: \(e.localizedDescription)")
+                        print(e)
                     }
 
                 }
@@ -202,14 +201,15 @@ class kakaoLogin{
             }
             // 응답 처리 로직
             print("comment post success")
-
+//            let object = try JSONSerialization.jsonObject(with: data!, options: []) as? [String : Any]
+//            print(object)
             DispatchQueue.main.async {
                         
                     do{
                         let object = try JSONSerialization.jsonObject(with: data!, options: []) as? [String : Any]
                         
                         guard let jsonObject = object else {return}
-                        
+
                         let data = object!["result"] as? [String : Any]
                         print(jsonObject)
                             switch jsonObject["code"] as! Int {

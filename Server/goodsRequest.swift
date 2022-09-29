@@ -9,9 +9,11 @@ import Foundation
 import Alamofire
 
 //jwt토큰 값 카카오 로그인 후 user default로 받아서 추가하기
-let headers: HTTPHeaders = [
-    "X-ACCESS-TOKEN": String(ud.string(forKey: "jwt")!)
-]
+    let headers: HTTPHeaders = [
+        "X-ACCESS-TOKEN": String(ud.string(forKey: "jwt")!)
+//        "X-ACCESS-TOKEN": "abcdddd"
+
+    ]
 
 
 class goods{
@@ -32,6 +34,7 @@ class goods{
                           viewController.didSuccess_brand(response)
                       case.failure(let error):
                           print("오류 \(error.localizedDescription)")
+                          
                       }
                       
                   }

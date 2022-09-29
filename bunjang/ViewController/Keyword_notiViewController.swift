@@ -9,18 +9,34 @@ import UIKit
 
 class Keyword_notiViewController: UIViewController {
 
+    var keywordDataList : [keywordResult] = []
+
+    
     @IBOutlet weak var button_set: UIButton!
     
+    @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var keyword_num_label: UILabel!
     @IBOutlet weak var keywordField: UITextField!
+    
+    @IBAction func add_keyword(_ sender: Any) {
+        //공백검사 추가 하기 
+            keywords().key_create(self, key_word: keywordField.text!)}
+    
     //화면터치시 키보드 내리기
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {        keywordField.resignFirstResponder()    }
     
     
     override func viewDidLoad() {
+        keywords().key_get(self)
+
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         self.navigationController?.navigationBar.topItem?.title = "키워드 알림"
-
+    
+        keyword_num_label.sizeToFit()
+        tableView.delegate = self
+        tableView.dataSource = self
+        tableView.rowHeight = 50
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -32,7 +48,7 @@ class Keyword_notiViewController: UIViewController {
     }
 
     
-    
+   
     
     ///// 확인 버튼 키보드 위로 붙이기
     func addKeyboardNotifications(){
@@ -76,3 +92,104 @@ class Keyword_notiViewController: UIViewController {
     
     
 }
+
+
+
+extension Keyword_notiViewController: UITableViewDelegate, UITableViewDataSource {
+
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+//            print(brandDataList.count)
+//        return brandDataList.count
+        return keywordDataList.count
+    }
+
+    
+
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
+        let cell = tableView.dequeueReusableCell(withIdentifier: "cell") as! keywordViewCell
+        
+        cell.keywordName.text = keywordDataList[indexPath.row].keyword
+//            cell.eng_num.text = brandDataList[indexPath.row].brandEngName + " · "+String(brandDataList[indexPath.row].counting)+"개"
+//            let url = URL(string:brandDataList[indexPath.row].imgUrl)
+//            let data = try! Data(contentsOf: url!)
+//            cell.ima.image = UIImage(data: data)
+//
+//
+        
+        return cell
+
+    }
+
+}
+
+class keywordViewCell: UITableViewCell {
+
+
+    @IBAction func delButton(_ sender: Any) {
+    }
+    
+    @IBOutlet weak var keywordName: UILabel!
+    
+    override func awakeFromNib() {
+
+        super.awakeFromNib()
+//        keywordName.sizeToFit()
+        // Initialization code
+
+    }
+
+
+    override func setSelected(_ selected: Bool, animated: Bool) {
+
+        super.setSelected(selected, animated: animated)
+
+        // Configure the view for the selected state
+
+    }
+
+
+}
+
+
+
+//api setting 함수
+extension Keyword_notiViewController{
+    
+    func didSuccess_getkeywords(_ response: Keyword){
+        //화면 로딩시 세팅
+//        let brandName = response.result[0].brandName
+//        self.testlabel.text = brandName
+////
+        
+//        self.brandDataList = response.result
+//        self.tableVIew.reloadData()
+        self.keywordDataList = response.result
+        keyword_num_label.text = String(keywordDataList.count)
+        self.tableView.reloadData()
+                   
+               
+//
+
+}
+
+    
+    func didSuccess_postkeywords(){
+        //성공하면 ui에 키워드 추가하기
+      
+        
+        tableView.beginUpdates()
+
+        tableView.insertRows(at: [IndexPath(row: 0, section: 0)], with: .automatic)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "cell") as! keywordViewCell
+        
+        cell.keywordName.text = keywordField.text
+//        let brandName = response.result[0].brandName
+//        self.testlabel.text = brandName
+        tableView.endUpdates()
+
+               
+//
+    }
+}
+

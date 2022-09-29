@@ -165,8 +165,13 @@
                                 <state key="normal" title="키워드 등록하기">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="3"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                                 <connections>
-                                    <segue destination="TXi-JF-3mL" kind="show" id="n2f-ZS-F5Z"/>
+                                    <action selector="goKeyword:" destination="Z21-WN-Sx1" eventType="touchUpInside" id="MGx-9i-As2"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -185,6 +190,7 @@
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cpJ-gs-Owa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <exit id="Z21-WN-Sx1" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="1629" y="749"/>
         </scene>

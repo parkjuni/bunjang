@@ -147,21 +147,22 @@ struct GoodsImgList: Decodable {
 }
 
 //////user 정보
-struct Users: Decodable {
-    let isSuccess: Bool!
-    let code: Int!
-    let message: String!
+struct user_info: Decodable {
+    let isSuccess: Bool
+    let code: Int
+    let message: String
     let result: [UserResult]
 }
 
 struct UserResult: Decodable {
-    let nickName: String!
-    let content: String!
-    let star: Float!
-    let transaction: Int!
-    let follower: Int!
-    let following: Int!
-    let gapCreatedAt: Int!
+    let nickName: String
+    let imgUrl: String?
+    let content: String?
+    let star: Float
+    let transaction: Int
+    let follower: Int
+    let following: Int
+    let gapCreatedAt: Int
     
 
 
@@ -193,3 +194,17 @@ struct reResult: Decodable {
     let searchId: Int!
     let content: String!
 }
+
+
+//키워드
+struct Keyword: Decodable {
+    let isSuccess: Bool!
+    let code: Int!
+    let message: String!
+    let result: [keywordResult]
+}
+struct keywordResult: Decodable {
+    let keywordId: Int!
+    let keyword: String!
+}
+

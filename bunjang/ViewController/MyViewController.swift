@@ -40,8 +40,7 @@ class MyViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        userRequest().users(self
-        )
+        userRequest().users(self)
         setNavigationBar()
         bankAcB.layer.borderWidth = 1
         bankAcB.layer.borderColor = UIColor.systemGray4.cgColor
@@ -135,7 +134,7 @@ class MyViewController: UIViewController {
         
         
         notiButton.addTarget(self, action: #selector(searchbuttonAction), for: .touchUpInside)
-        shareButton.addTarget(self, action: #selector(searchbuttonAction), for: .touchUpInside)
+//        shareButton.addTarget(self, action: #selector(searchbuttonAction), for: .touchUpInside)
         setButton.addTarget(self, action: #selector(setbuttonAction), for: .touchUpInside)
 
         
@@ -179,7 +178,7 @@ class MyViewController: UIViewController {
 //api setting 함수
 extension MyViewController{
 
-    func didSuccess_users(_ response: Users){
+    func didSuccess_users(_ response: user_info){
 
 //        let brandName = response.result[0].brandName
 //        self.testlabel.text = brandName

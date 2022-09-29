@@ -161,7 +161,7 @@ extension SearchViewController:UICollectionViewDelegate, UICollectionViewDataSou
 //            return 받아오기
         return popuDataList.count
         }
-        return 12
+        else {return 12}
 
     }
     
@@ -179,6 +179,7 @@ extension SearchViewController:UICollectionViewDelegate, UICollectionViewDataSou
             return cell
         }
         
+        else{
         
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "collectcell", for: indexPath) as! searcheCollectionViewCell
     
@@ -191,7 +192,7 @@ extension SearchViewController:UICollectionViewDelegate, UICollectionViewDataSou
         cell.img.image = UIImage(data: data)
 
         
-        return cell
+            return cell}
         
     }
     
