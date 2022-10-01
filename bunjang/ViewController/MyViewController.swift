@@ -181,10 +181,6 @@ extension MyViewController{
 
     func didSuccess_users(_ response: user_info){
 
-//        let brandName = response.result[0].brandName
-//        self.testlabel.text = brandName
-//
-//        self.brandDataList = response.result
         nickName.text = response.result.nickName
         content.text = "       " + response.result.content!
         created.setTitle("오픈일+" + String(response.result.gapCreatedAt), for: .normal)
@@ -195,7 +191,6 @@ extension MyViewController{
         let url = URL(string:response.result.imgUrl!)
         let data = try! Data(contentsOf: url!)
         userImg.image = UIImage(data: data)
-//        userImg.layer.cornerRadius = userImg.frame.height*0.6
 
         
         

@@ -190,8 +190,7 @@ extension SearchViewController:UICollectionViewDelegate, UICollectionViewDataSou
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "collectcell", for: indexPath) as! searcheCollectionViewCell
     
         cell.name.text = cateDataList[indexPath.row].categoryName
-//            cell.img.image = UIImage(named: img3[indexPath.row])
-//
+
         
         let url = URL(string:cateDataList[indexPath.row].imgUrl)
         let data = try! Data(contentsOf: url!)
@@ -246,9 +245,6 @@ extension SearchViewController{
     //인기 카테고리 컬렉션 뷰 세팅
     func didSuccess_poca(_ response: category){
 
-//        let brandName = response.result[0].brandName
-//        self.testlabel.text = brandName
-//
         self.cateDataList = response.result
         print("카테고리")
         print(cateDataList.count)
@@ -256,9 +252,6 @@ extension SearchViewController{
         print(cateDataList[2].categoryName)
 
         self.catecollectionView.reloadData()
-
-//        self.brandTable.reloadData()
-
                
 
     }
@@ -268,24 +261,15 @@ extension SearchViewController{
     //추천 브랜드 테이블뷰 세팅
     func didSuccess_recobrand(_ response: brand){
 
-//        let brandName = response.result[0].brandName
-//        self.testlabel.text = brandName
-//
         self.brandDataList = response.result
         self.brandTable.reloadData()
 
-
-//
     }
 
     //인기 검색어
     func didSuccess_poSearch(_ response: search_Popular){
 
-//        let brandName = response.result[0].brandName
-//        self.testlabel.text = brandName
-//
-//        self.brandDataList = response.result
-//        self.brandTable.reloadData()
+
         self.popuDataList = response.result
         self.popuCollectionView.reloadData()
 
@@ -295,11 +279,6 @@ extension SearchViewController{
     //최근 검색어
     func didSuccess_searchRecent(_ response: search_Recent){
 
-//        let brandName = response.result[0].brandName
-//        self.testlabel.text = brandName
-//
-//        self.brandDataList = response.result
-//        self.brandTable.reloadData()
 
     }
     
@@ -310,7 +289,6 @@ extension SearchViewController{
 
 class popuCollectionViewCell: UICollectionViewCell {
 
-//    @IBOutlet weak var menuCell_img: UIImageView!
     
     @IBOutlet weak var text: UILabel!
     @IBOutlet weak var num: UILabel!

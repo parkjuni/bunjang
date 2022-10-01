@@ -103,9 +103,7 @@ extension brandListViewController{
     
     func didSuccess_brandList(_ response: brand){
         
-//        let brandName = response.result[0].brandName
-//        self.testlabel.text = brandName
-//
+
         self.brandDataList = response.result
         self.tableVIew.reloadData()
                    

@@ -204,10 +204,7 @@ class menu_cateHeader: UICollectionReusableView {
 extension Menu_cateViewController{
     
     func didSuccess_category(_ response: category){
-        
-//        let brandName = response.result[0].brandName
-//        self.testlabel.text = brandName
-//
+
         self.cateDataList = response.result
         print("카테고리")
         print(cateDataList.count)
@@ -215,10 +212,6 @@ extension Menu_cateViewController{
         print(cateDataList[2].categoryName)
 
         self.collectionView.reloadData()
-
-//        self.brandTable.reloadData()
                    
-               
-//
-    }
+                   }
 }

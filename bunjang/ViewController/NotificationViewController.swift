@@ -48,15 +48,9 @@ class NotificationViewController: UIViewController {
         keywordButton.isHidden = true
 
             self.navigationController?.navigationBar.topItem?.title = "알림"
-//        self.title = ""
 
-     
-//        self.segmentedControl.selectedSegmentIndex = 0
-//
-//
         
           self.view.addSubview(self.segmentedControl)
-//          self.view.addSubview(self.pageViewController.view)
           
           NSLayoutConstraint.activate([
             self.segmentedControl.leftAnchor.constraint(equalTo: self.view.leftAnchor),

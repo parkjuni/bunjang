@@ -46,13 +46,6 @@ extension Menu_brandViewController: UITableViewDelegate, UITableViewDataSource {
         cell.brandName.text = brandDataList[indexPath.row].brandName
         cell.brandEngName.text = brandDataList[indexPath.row].brandEngName + " · "+String(brandDataList[indexPath.row].counting)+"개"
         
-        
-//        let url = URL(string:brandDataList[indexPath.row].imgUrl)
-//        let url = URL(string: "http://guriman.shop/brand/lui-vuitton.png")
-//            let data = try! Data(contentsOf: url!)
-//        cell.brandImg.image = UIImage(data: data)
-
-        
         let url = URL(string:brandDataList[indexPath.row].imgUrl)
         let data = try! Data(contentsOf: url!)
         cell.brandImg.image = UIImage(data: data)
@@ -116,15 +109,11 @@ extension Menu_brandViewController{
     
     func didSuccess_brand(_ response: brand){
         
-//        let brandName = response.result[0].brandName
-//        self.testlabel.text = brandName
-//
+
         self.brandDataList = response.result
         self.brandTable.reloadData()
 
-    
-//
-    }
+        }
 }
 
 

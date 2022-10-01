@@ -326,7 +326,7 @@
                                 <viewLayoutGuide key="frameLayoutGuide" id="Dq3-FM-rK9"/>
                             </scrollView>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="검색어를 입력해주세요" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Wkz-OM-Pgk">
-                                <rect key="frame" x="60" y="30" width="292" height="34"/>
+                                <rect key="frame" x="60" y="50" width="292" height="34"/>
                                 <color key="backgroundColor" systemColor="tertiarySystemGroupedBackgroundColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
@@ -341,7 +341,7 @@
                             <constraint firstItem="uP1-wO-pUc" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="fet-tX-lQ4"/>
                             <constraint firstItem="uP1-wO-pUc" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" id="gPY-T4-bxu"/>
                             <constraint firstItem="uP1-wO-pUc" firstAttribute="trailing" secondItem="vDu-zF-Fre" secondAttribute="trailing" id="uS7-vq-Jen"/>
-                            <constraint firstItem="Wkz-OM-Pgk" firstAttribute="top" secondItem="5EZ-qb-Rvc" secondAttribute="top" constant="30" id="xFv-PD-b5N"/>
+                            <constraint firstItem="Wkz-OM-Pgk" firstAttribute="top" secondItem="5EZ-qb-Rvc" secondAttribute="top" constant="50" id="xFv-PD-b5N"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="LgT-aR-ZVC"/>

@@ -98,8 +98,7 @@ class Keyword_notiViewController: UIViewController {
 extension Keyword_notiViewController: UITableViewDelegate, UITableViewDataSource {
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-//            print(brandDataList.count)
-//        return brandDataList.count
+//        
         return keywordDataList.count
     }
 
@@ -110,13 +109,8 @@ extension Keyword_notiViewController: UITableViewDelegate, UITableViewDataSource
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell") as! keywordViewCell
         
         cell.keywordName.text = keywordDataList[indexPath.row].keyword
-//            cell.eng_num.text = brandDataList[indexPath.row].brandEngName + " · "+String(brandDataList[indexPath.row].counting)+"개"
-//            let url = URL(string:brandDataList[indexPath.row].imgUrl)
-//            let data = try! Data(contentsOf: url!)
-//            cell.ima.image = UIImage(data: data)
+
 //
-//
-        
         return cell
 
     }
@@ -135,7 +129,6 @@ class keywordViewCell: UITableViewCell {
 
         super.awakeFromNib()
 //        keywordName.sizeToFit()
-        // Initialization code
 
     }
 
@@ -157,39 +150,21 @@ class keywordViewCell: UITableViewCell {
 extension Keyword_notiViewController{
     
     func didSuccess_getkeywords(_ response: Keyword){
-        //화면 로딩시 세팅
-//        let brandName = response.result[0].brandName
-//        self.testlabel.text = brandName
-////
         
-//        self.brandDataList = response.result
-//        self.tableVIew.reloadData()
+        //화면 로딩시 세팅
         self.keywordDataList = response.result
         keyword_num_label.text = String(keywordDataList.count)
         self.tableView.reloadData()
-                   
-               
-//
+  
 
 }
 
     
     func didSuccess_postkeywords(){
+       
         //성공하면 ui에 키워드 추가하기
-      
         print("post 성공")
-//        tableView.beginUpdates()
-//
-//        tableView.insertRows(at: [IndexPath(row: 0, section: 0)], with: .automatic)
-//        let cell = tableView.dequeueReusableCell(withIdentifier: "cell") as! keywordViewCell
-//
-//        cell.keywordName.text = keywordField.text
-////        let brandName = response.result[0].brandName
-////        self.testlabel.text = brandName
-//        tableView.endUpdates()
-
-               
-//
+     
     }
 }
 

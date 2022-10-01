@@ -154,11 +154,6 @@ extension GDViewController{
         
         print("카테고리 api 성공")
         print(response.result[0].title)
-        
-//        self.DataList = response.result
-//
-//        self.collectionView.reloadData()
 
-//
     }
 }

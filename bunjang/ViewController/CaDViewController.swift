@@ -24,7 +24,6 @@ class CaDViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
             goods().cateDetail(self, cateId: String(ud.integer(forKey: "menu_catedId")))
-//        goods().brandDetail(self, cateId: String(ud.integer(forKey: "menu_catedId")))
 
         // Do any additional setup after loading the view.
         
@@ -129,19 +128,7 @@ class caDCollectionViewCell: UICollectionViewCell {
 }
 //
 ////api setting 함수
-//extension GDViewController{
-//
-//    func didSuccess_brand(_ response: Brandgoods){
-//
-//        print(response.result[0].title)
-//        self.DataList = response.result
-//
-//        self.collectionView.reloadData()
-//
-////
-//    }
-//}
-//
+
 extension CaDViewController{
 
     func didSuccess_cate(_ response: Brandgoods){
@@ -150,10 +137,7 @@ extension CaDViewController{
         print(response.result[0].title)
 
         self.DataList = response.result
-//
         self.collectionView.reloadData()
 
-//
     }
 }
-////

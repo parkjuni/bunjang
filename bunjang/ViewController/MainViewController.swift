@@ -19,10 +19,6 @@ class MainViewController: UITabBarController {
         
     }
     
-  
-
-
-
 
 }
 
@@ -33,7 +29,7 @@ extension MainViewController : UITabBarControllerDelegate{
      
 
         if viewController is AddViewController{
-//        if tabBarController.selectedIndex == 1{
+
             let add : UIStoryboard = UIStoryboard(name: "AddDetail", bundle: nil)
             let addVC = add.instantiateViewController(withIdentifier: "AddDetailViewController") as! AddDetailViewController
             addVC.modalPresentationStyle = .fullScreen
@@ -62,14 +58,14 @@ extension MainViewController : UITabBarControllerDelegate{
         print(previousTabIndex)
         
         for (index, tabBarItem) in items.enumerated() where tabBarItem == item {
-        // viewController3의 index는 2입니다!
+
             if index == 1 {
             // 이전 인덱스로 화면 전환!
         
                 selectedIndex = previousTabIndex
 //                tabBarController?.selectedIndex = previousTabIndex
                 print("selected index")
-                        print(selectedIndex)
+                print(selectedIndex)
 //               // search view push!
 //                guard let baseNavigationController = self as? UINavigationController else { return }
 //                      baseNavigationController.pushViewController(SearchViewController(), animated: true)

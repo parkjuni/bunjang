@@ -11,6 +11,10 @@ class goodsDetailViewController: UIViewController {
 
 //    var DataList : Detail = []
 
+    @IBAction func exit(_ sender: Any) {
+        dismiss(animated: true, completion: nil)
+
+    }
     
     @IBOutlet weak var DgoodImg: UIImageView!
     
@@ -100,15 +104,9 @@ extension goodsDetailViewController{
     
     func didSuccess_goodsDe(_ response: goods_Detail){
         
-//        let brandName = response.result[0].brandName
-//        self.testlabel.text = brandName
-//
-//        self.DataList = response
 
         print("굿즈디테일 성공")
-//
-//        @IBOutlet weak var goodImg: UIImageView!
-//
+
         Dprice.text = response.result.price
         Dregion.text = response.result.region
         Dviewlikes.text =  "  𓁺" + String(response.result.views) + "  ♥" + String(response.result.likes)
@@ -121,9 +119,5 @@ extension goodsDetailViewController{
 
         
 
-//        @IBOutlet weak var content: UILabel!
-                   
-               
-//
     }
 }
